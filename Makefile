@@ -48,6 +48,8 @@ easylogging/easylogging.o : easylogging/easylogging++.h easylogging/easylogging+
 
 clean : 
 	rm -rf *.o
+	rm -rf start
+	rm -rf libcore.a
 
 
 
