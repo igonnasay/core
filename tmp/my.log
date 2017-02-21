@@ -1,0 +1,16 @@
+2017-02-17 23:47:37,542492 int main() hello
+2017-02-17 23:47:37,542759 int main() world
+2017-02-17 23:49:07,082223 int main() hello
+2017-02-17 23:49:07,082374 int main() world
+2017-02-20 22:50:53,779400 virtual void CTraderSpi::OnRtnOrder(CThostFtdcOrderField*) --->>> OnRtnOrder  orderstatus: a
+2017-02-20 22:50:53,820963 virtual void CTraderSpi::OnRtnOrder(CThostFtdcOrderField*) --->>> OnRtnOrder  orderstatus: 3
+2017-02-20 22:50:53,822169 virtual void CTraderSpi::OnRtnOrder(CThostFtdcOrderField*) --->>> OnRtnOrder  orderstatus: 0
+2017-02-20 22:50:53,822246 virtual void CTraderSpi::OnRtnTrade(CThostFtdcTradeField*) --->>> OnRtnTrade  i1705  成交数量1  成交价格：714.5
+2017-02-20 23:02:43,455874 virtual void CTraderSpi::OnRtnOrder(CThostFtdcOrderField*) --->>> OnRtnOrder  orderstatus: a
+2017-02-20 23:02:43,502490 virtual void CTraderSpi::OnRtnOrder(CThostFtdcOrderField*) --->>> OnRtnOrder  orderstatus: 3
+2017-02-20 23:02:43,502564 virtual void CTraderSpi::OnRtnOrder(CThostFtdcOrderField*) --->>> OnRtnOrder  orderstatus: 0
+2017-02-20 23:02:43,502606 virtual void CTraderSpi::OnRtnTrade(CThostFtdcTradeField*) --->>> OnRtnTrade  i1705  成交数量1  成交价格：719
+2017-02-20 23:14:14,320603 virtual void CTraderSpi::OnRtnOrder(CThostFtdcOrderField*) --->>> OnRtnOrder  orderstatus: a
+2017-02-20 23:14:14,363377 virtual void CTraderSpi::OnRtnOrder(CThostFtdcOrderField*) --->>> OnRtnOrder  orderstatus: 3
+2017-02-20 23:15:20,118364 virtual void CTraderSpi::OnRtnOrder(CThostFtdcOrderField*) --->>> OnRtnOrder  orderstatus: 0
+2017-02-20 23:15:20,119324 virtual void CTraderSpi::OnRtnTrade(CThostFtdcTradeField*) --->>> OnRtnTrade  i1705  成交数量1  成交价格：722
