@@ -1,0 +1,4 @@
+config/
+*.o
+start
+libcore.a
