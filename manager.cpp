@@ -70,11 +70,6 @@ void StrategyControl::CmdStart() {
             // command sample : shominutes m1705
             this->marketSpi->ShowMinutesData(cmd_vec[1]);
         }
-        else if(cmd_vec.size()==2 && cmd_vec[0] == "show5minutes")
-        {
-            // command sample : show5minutes m1705
-            this->marketSpi->Show5MinutesData(cmd_vec[1]);
-        }
         else if(cmd_vec.size()==3 && command == "saveminutes")
         {
             // command sample : saveminutes m1705 ./m1705.mdt
@@ -93,6 +88,17 @@ void StrategyControl::CmdStart() {
             }
             base->instrument = cmd_vec[2];
         }
+		else if(cmd_vec.size()==1 && cmd_vec[0]=="loadall") {
+			// loadall
+			this->marketSpi->load_all();
+		}
+		else if(cmd_vec.size()==2 && cmd_vec[0]=="showbar") {
+			// showbar m1705
+			this->marketSpi->show_bar_data(cmd_vec[1]);
+		}
+		else if(cmd_vec.size()==2 && cmd_vec[0]=="showbark") {
+			this->marketSpi->show_bark_data(cmd_vec[1]);
+		}
     }
 }
 

@@ -89,13 +89,9 @@ public:
 	MinuteData GetMinuteDataAtIndex(const std::string instrument, int index);
     void ShowMinutesData(const std::string instrument);
     void save_all();
-
-	// API for 5 Minutes
-	// old version
-	void Get5MinutesBarList(const std::string& instrument, std::vector<Bar>& vec);
-	double Get5MinutesBarTailRangeMax(const std::string& instrument, int tailcnt);
-	double Get5MinutesBarTailRangeMin(const std::string& instrument, int tailcnt);
-	void Show5MinutesData(const std::string& instrument);
+	void load_all();
+	void show_bar_data(const string& instrument);
+	void show_bark_data(const string& instrument);
 
 	// Public Getter
 	Data& get_data_table(const string& instrument);

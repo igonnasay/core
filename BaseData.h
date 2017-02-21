@@ -25,32 +25,45 @@ public:
     int hour, minute, second;
 };
 
-struct Data {
-	const static int N = 1000;
-    Data();
-	string instrument;
-	int cur;
-	double open[N], high[N], low[N], close[N];
-	double close_sum[N];
-	void clear();
-    void add(double _open, double _high, double _low, double _close);
-	void update(double _open, double _high, double _low, double _close);
-    void update(double _price);
-	void update_close_sum();
-};
-
 struct Bar {
 	double open, high, low, close;
-	Time b_time;
 
-    void set_bar_data(const string& t, double _open, double _high, double _low, double _close)
+    void set_bar_data(double _open, double _high, double _low, double _close)
     {
-        b_time.set_time(t);
         open = _open;
         high = _high;
         low = _low;
         close = _close;
     }
+};
+
+struct BarList
+{
+    int bar_size;
+	int cur;
+    std::vector<Bar> bar_list;
+	void clear() {
+		bar_size = 0;
+		cur = 0;
+		bar_list.clear();
+	}
+};
+
+struct Data {
+	const static int N = 2000;
+    Data();
+	string instrument;
+	int cur;
+	double open[N], high[N], low[N], close[N];
+	double close_sum[N];
+	BarList bark;
+	void clear();
+    void add(double _open, double _high, double _low, double _close);
+	void update(double _open, double _high, double _low, double _close);
+    void update(double _price);
+	void update_close_sum();
+	void update_bark();
+	void show_bark();
 };
 
 class Tick

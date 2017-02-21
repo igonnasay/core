@@ -33,24 +33,4 @@ public:
     static void split(const string& str, const string& ch_set, vector<string>& result);
 };
 
-class BarList
-{
-public:
-
-    BarList();
-    BarList(int bar_size);
-    BarList(int bar_size, const std::string& path);
-
-    void add_bar(const Bar& bar);
-    void set_bar_size(int sz);
-    void set_data_from_file(const std::string& path);
-    double get_range_open(int _begin, int _end);
-    double get_range_high(int _begin, int _end);
-    double get_range_low(int _begin, int _end);
-    double get_range_close(int _begin, int _end);
-
-    int bar_size_;
-    std::vector<Bar> bar_list_;
-};
-
 #endif //CLION_TUTILS_H

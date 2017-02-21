@@ -109,6 +109,7 @@ void CMdSpi::OnRtnDepthMarketData(CThostFtdcDepthMarketDataField *pDepthMarketDa
 	}
     this->current_time_.set_time(pDepthMarketData->UpdateTime);
 
+	// return;
 	// Update MinuteData List & Data Table.
     vector<MinuteData> &minutes_vec = this->GetMinutesList(instrument);
 	Data& data = this->get_data_table(pDepthMarketData->InstrumentID);
@@ -290,6 +291,28 @@ void CMdSpi::save_all() {
     fclose(file);
 }
 
+void CMdSpi::load_all() {
+	FILE* file = fopen("./data_all.mdt", "rb");
+	char instrument[30], t[15];
+	double open, high, low, close;
+	while(fscanf(file, "%s %s %lf %lf %lf %lf", instrument, t, &open, &high, &low, &close) != EOF) {
+		Data& data = this->get_data_table(instrument);
+		data.add(open, high, low, close);
+	}
+	fclose(file);
+}
+
+void CMdSpi::show_bar_data(const string& instrument) {
+	Data& data = this->get_data_table(instrument);
+	for(int i = 0; i < data.cur; i++) {
+		printf("%s %.4f %.4f %.4f %.4f\n", instrument.c_str(), data.open[i], data.high[i], data.low[i], data.close[i]);
+	}
+}
+void CMdSpi::show_bark_data(const string& instrument) {
+	Data& data = this->get_data_table(instrument);
+	data.show_bark();
+}
+
 void CMdSpi::ShowMinutesData(const std::string instrument) {
     if(this->m_map.find(instrument) == this->m_map.end())
 		return;
@@ -304,75 +327,6 @@ void CMdSpi::ShowMinutesData(const std::string instrument) {
             cout << list[i].ToString() << " " << list[i].GetTs() << endl;
         }
     }
-}
-
-void CMdSpi::Get5MinutesBarList(const std::string& instrument, std::vector<Bar>& vec) {
-	if(this->m_map.find(instrument) == this->m_map.end()) {
-		return;
-	}
-	vector<MinuteData> &list = this->m_map[instrument];
-	if(list.size() == 0) {
-		return;
-	}
-	vec.clear();
-	int n = (int)list.size();
-	for(int i = 0; i < n - 1; i++)
-	{
-		int ts = list[i].GetTs();
-		ts = (ts % 3600) / 60;
-		if((ts+1) % 5 == 0)
-		{
-			Bar bar;
-			int head = max(0, i-4), tail = i;
-			bar.open = list[head].GetOpenPrice();
-			bar.close = list[i].GetClosePrice();
-			bar.low = list[i].GetLowPrice();
-			bar.high = list[i].GetHighPrice();
-			bar.b_time.set_time(list[i].GetTime());
-			for(int j = head; j <= tail; j++) {
-				bar.low = min(bar.low, list[j].GetLowPrice());
-				bar.high = max(bar.high, list[j].GetHighPrice());
-			}
-			vec.push_back(bar);
-		}
-	}
-}
-
-double CMdSpi::Get5MinutesBarTailRangeMax(const std::string& instrument, int tailcnt) {
-	double ret;
-    std::vector<Bar> vec;
-    Get5MinutesBarList(instrument, vec);
-    int n = (int)vec.size();
-    tailcnt = min(tailcnt, n);
-    ret = vec.back().high;
-    for(int i = 1; i <= tailcnt; i++) {
-        ret = max(ret, vec[n-i].high);
-    }
-	return  ret;
-}
-
-double CMdSpi::Get5MinutesBarTailRangeMin(const std::string& instrument, int tailcnt) {
-    double ret;
-    std::vector<Bar> vec;
-    Get5MinutesBarList(instrument, vec);
-    int n = vec.size();
-    tailcnt = min(tailcnt, n);
-    ret = vec.back().low;
-    for(int i = 1; i <= tailcnt; i++) {
-        ret = max(ret, vec[n-i].low);
-    }
-    return  ret;
-}
-
-void CMdSpi::Show5MinutesData(const std::string& instrument)
-{
-	std::vector<Bar> vec;
-	Get5MinutesBarList(instrument, vec);
-	int n = vec.size();
-	for(int i = 0; i < n; i++)
-	{
-		printf("%s %.2f %.2f %.2f %.2f\n", vec[i].b_time.ToString().c_str(), vec[i].open, vec[i].high, vec[i].low, vec[i].close);
-	}
 }
 
 Data& CMdSpi::get_data_table(const string& instrument)

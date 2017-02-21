@@ -8118,7 +8118,7 @@ bits_	core_test/googletest/include/gtest/internal/gtest-internal.h	/^    Bits bi
 bitwise	easylogging/easylogging++.h	/^namespace bitwise {$/;"	n	namespace:el::Level::ConfigurationType::LoggingFlag::base::TimestampUnit::FormatFlags::utils
 blockName	easylogging/easylogging++.h	/^inline const std::string* PerformanceTrackingData::blockName() const {$/;"	f	class:el::Level::ConfigurationType::LoggingFlag::base::TimestampUnit::base::base::PerformanceTrackingData::PerformanceTrackingData
 bool_constant	core_test/googletest/include/gtest/internal/gtest-port.h	/^struct bool_constant {$/;"	s	namespace:testing::internal
-brief	easylogging/easylogging++.h	/^  const char* brief;$/;"	m	struct:el::Level::ConfigurationType::LoggingFlag::base::consts::__anon2
+brief	easylogging/easylogging++.h	/^  const char* brief;$/;"	m	struct:el::Level::ConfigurationType::LoggingFlag::base::consts::__anon4
 build	easylogging/easylogging++.cc	/^base::type::string_t DefaultLogBuilder::build(const LogMessage* logMessage, bool appendNewLine) const {$/;"	f	class:el::base::DefaultLogBuilder
 build	easylogging/easylogging++.cc	/^void TypedConfigurations::build(Configurations* configurations) {$/;"	f	class:el::base::TypedConfigurations
 buildBaseFilename	easylogging/easylogging++.cc	/^void File::buildBaseFilename(const std::string& fullPath, char buff[], std::size_t limit, const char* separator) {$/;"	f	class:el::base::utils::File
@@ -8285,7 +8285,7 @@ default_result_printer_	core_test/googletest/include/gtest/gtest.h	/^  TestEvent
 default_xml_generator	core_test/googletest/include/gtest/gtest.h	/^  TestEventListener* default_xml_generator() const {$/;"	f	class:testing::TestEventListeners
 default_xml_generator_	core_test/googletest/include/gtest/gtest.h	/^  TestEventListener* default_xml_generator_;$/;"	m	class:testing::TestEventListeners
 depart	core_test/googletest/include/gtest/internal/gtest-linked_ptr.h	/^  void depart() {$/;"	f	class:testing::internal::linked_ptr
-detail	easylogging/easylogging++.h	/^  const char* detail;$/;"	m	struct:el::Level::ConfigurationType::LoggingFlag::base::consts::__anon2
+detail	easylogging/easylogging++.h	/^  const char* detail;$/;"	m	struct:el::Level::ConfigurationType::LoggingFlag::base::consts::__anon4
 difference_type	core_test/googletest/include/gtest/internal/gtest-param-util.h	/^  typedef ptrdiff_t difference_type;$/;"	t	class:testing::internal::ParamIterator
 direction	StrategyData.h	/^    TThostFtdcDirectionType direction;$/;"	m	class:TradeInfo
 dispatch	easylogging/easylogging++.cc	/^void DefaultLogDispatchCallback::dispatch(base::type::string_t&& logLine) {$/;"	f	class:el::base::DefaultLogDispatchCallback
@@ -8721,12 +8721,12 @@ kAdd	core_test/googletest/include/gtest/internal/gtest-internal.h	/^enum EditTyp
 kAm	easylogging/easylogging++.h	/^static const char* kAm                              =      "AM";$/;"	m	namespace:el::Level::ConfigurationType::LoggingFlag::base::consts
 kAppNameFormatSpecifier	easylogging/easylogging++.h	/^static const base::type::char_t* kAppNameFormatSpecifier          =      ELPP_LITERAL("%app");$/;"	m	namespace:el::Level::ConfigurationType::LoggingFlag::base::consts
 kBitCount	core_test/googletest/include/gtest/internal/gtest-internal.h	/^  static const size_t kBitCount = 8*sizeof(RawType);$/;"	m	class:testing::internal::FloatingPoint
-kCheckTypeIsNotConstOrAReference	core_test/googletest/include/gtest/internal/gtest-internal.h	/^    kCheckTypeIsNotConstOrAReference = StaticAssertTypeEqHelper<$/;"	e	enum:testing::internal::NativeArray::__anon4
+kCheckTypeIsNotConstOrAReference	core_test/googletest/include/gtest/internal/gtest-internal.h	/^    kCheckTypeIsNotConstOrAReference = StaticAssertTypeEqHelper<$/;"	e	enum:testing::internal::NativeArray::__anon2
 kConfigurationComment	easylogging/easylogging++.h	/^static const char* kConfigurationComment                   =      "##";$/;"	m	namespace:el::Level::ConfigurationType::LoggingFlag::base::consts
 kConfigurationLevel	easylogging/easylogging++.h	/^static const char* kConfigurationLevel                     =      "*";$/;"	m	namespace:el::Level::ConfigurationType::LoggingFlag::base::consts
 kConfigurationLoggerId	easylogging/easylogging++.h	/^static const char* kConfigurationLoggerId                  =      "--";$/;"	m	namespace:el::Level::ConfigurationType::LoggingFlag::base::consts
 kConvertibleToInteger	core_test/googletest/include/gtest/gtest-printers.h	/^  kConvertibleToInteger,  \/\/ a type implicitly convertible to BiggestInt$/;"	e	enum:testing::internal2::TypeKind
-kCrashSignals	easylogging/easylogging++.h	/^} kCrashSignals[] = {$/;"	m	namespace:el::Level::ConfigurationType::LoggingFlag::base::consts	typeref:struct:el::Level::ConfigurationType::LoggingFlag::base::consts::__anon2
+kCrashSignals	easylogging/easylogging++.h	/^} kCrashSignals[] = {$/;"	m	namespace:el::Level::ConfigurationType::LoggingFlag::base::consts	typeref:struct:el::Level::ConfigurationType::LoggingFlag::base::consts::__anon4
 kCrashSignalsCount	easylogging/easylogging++.h	/^static const int kCrashSignalsCount                          =      sizeof(kCrashSignals) \/ sizeof(kCrashSignals[0]);$/;"	m	namespace:el::Level::ConfigurationType::LoggingFlag::base::consts
 kCurrentHostFormatSpecifier	easylogging/easylogging++.h	/^static const base::type::char_t* kCurrentHostFormatSpecifier      =      ELPP_LITERAL("%host");$/;"	m	namespace:el::Level::ConfigurationType::LoggingFlag::base::consts
 kCurrentUserFormatSpecifier	easylogging/easylogging++.h	/^static const base::type::char_t* kCurrentUserFormatSpecifier      =      ELPP_LITERAL("%user");$/;"	m	namespace:el::Level::ConfigurationType::LoggingFlag::base::consts
@@ -8809,7 +8809,7 @@ kStaticMutex	core_test/googletest/include/gtest/internal/gtest-port.h	/^  enum S
 kSuccess	core_test/googletest/include/gtest/gtest-test-part.h	/^    kSuccess,          \/\/ Succeeded.$/;"	e	enum:testing::TestPartResult::Type
 kSysLogLoggerId	easylogging/easylogging++.h	/^static const char* kSysLogLoggerId                         =      "syslog";$/;"	m	namespace:el::Level::ConfigurationType::LoggingFlag::base::consts
 kThreadIdFormatSpecifier	easylogging/easylogging++.h	/^static const base::type::char_t* kThreadIdFormatSpecifier         =      ELPP_LITERAL("%thread");$/;"	m	namespace:el::Level::ConfigurationType::LoggingFlag::base::consts
-kTimeFormats	easylogging/easylogging++.h	/^} kTimeFormats[] = {$/;"	m	namespace:el::Level::ConfigurationType::LoggingFlag::base::consts	typeref:struct:el::Level::ConfigurationType::LoggingFlag::base::consts::__anon1
+kTimeFormats	easylogging/easylogging++.h	/^} kTimeFormats[] = {$/;"	m	namespace:el::Level::ConfigurationType::LoggingFlag::base::consts	typeref:struct:el::Level::ConfigurationType::LoggingFlag::base::consts::__anon3
 kTimeFormatsCount	easylogging/easylogging++.h	/^static const int kTimeFormatsCount                           =      sizeof(kTimeFormats) \/ sizeof(kTimeFormats[0]);$/;"	m	namespace:el::Level::ConfigurationType::LoggingFlag::base::consts
 kTraceLevelLogValue	easylogging/easylogging++.h	/^static const base::type::char_t* kTraceLevelLogValue    =   ELPP_LITERAL("TRACE");$/;"	m	namespace:el::Level::ConfigurationType::LoggingFlag::base::consts
 kTraceLevelShortLogValue	easylogging/easylogging++.h	/^static const base::type::char_t* kTraceLevelShortLogValue    =   ELPP_LITERAL("T");$/;"	m	namespace:el::Level::ConfigurationType::LoggingFlag::base::consts
@@ -8852,6 +8852,7 @@ linked_ptr	core_test/googletest/include/gtest/internal/gtest-linked_ptr.h	/^  li
 linked_ptr	core_test/googletest/include/gtest/internal/gtest-linked_ptr.h	/^  template <typename U> linked_ptr(linked_ptr<U> const& ptr) { copy(&ptr); }$/;"	f	class:testing::internal::linked_ptr
 linked_ptr	core_test/googletest/include/gtest/internal/gtest-linked_ptr.h	/^class linked_ptr {$/;"	c	namespace:testing::internal
 linked_ptr_internal	core_test/googletest/include/gtest/internal/gtest-linked_ptr.h	/^class linked_ptr_internal {$/;"	c	namespace:testing::internal
+load_all	market.cpp	/^void CMdSpi::load_all() {$/;"	f	class:CMdSpi
 location_	core_test/googletest/include/gtest/gtest.h	/^  internal::CodeLocation location_;$/;"	m	class:testing::TestInfo
 lock	easylogging/easylogging++.h	/^  inline void lock(void) {$/;"	f	class:el::Level::ConfigurationType::LoggingFlag::base::TimestampUnit::FormatFlags::threading::internal::Mutex
 log	easylogging/easylogging++.cc	/^void Configuration::log(el::base::type::ostream_t& os) const {$/;"	f	class:el::Configuration
@@ -9056,7 +9057,7 @@ myOrder	trade.h	/^	CThostFtdcOrderField *myOrder;$/;"	m	class:CTraderSpi
 name	core_test/googletest/include/gtest/gtest.h	/^  const char* name() const { return name_.c_str(); }$/;"	f	class:testing::TestCase
 name	core_test/googletest/include/gtest/gtest.h	/^  const char* name() const { return name_.c_str(); }$/;"	f	class:testing::TestInfo
 name	core_test/googletest/include/gtest/internal/gtest-param-util.h	/^      std::string name;$/;"	m	struct:testing::internal::ParameterizedTestCaseInfo::InstantiationInfo
-name	easylogging/easylogging++.h	/^  const char* name;$/;"	m	struct:el::Level::ConfigurationType::LoggingFlag::base::consts::__anon2
+name	easylogging/easylogging++.h	/^  const char* name;$/;"	m	struct:el::Level::ConfigurationType::LoggingFlag::base::consts::__anon4
 name	ta-lib/include/ta_abstract.h	/^   const char * name;$/;"	m	struct:TA_FuncInfo
 name_	core_test/googletest/include/gtest/gtest.h	/^  const std::string name_;               \/\/ Test name$/;"	m	class:testing::TestInfo
 name_	core_test/googletest/include/gtest/gtest.h	/^  std::string name_;$/;"	m	class:testing::TestCase
@@ -9071,7 +9072,7 @@ next	easylogging/easylogging++.h	/^  inline AsyncLogItem next(void) {$/;"	f	clas
 next_	core_test/googletest/include/gtest/internal/gtest-linked_ptr.h	/^  mutable linked_ptr_internal const* next_;$/;"	m	class:testing::internal::linked_ptr_internal
 nonfatally_failed	core_test/googletest/include/gtest/gtest-test-part.h	/^  bool nonfatally_failed() const { return type_ == kNonFatalFailure; }$/;"	f	class:testing::TestPartResult
 notified_	core_test/googletest/include/gtest/internal/gtest-port.h	/^  bool notified_;$/;"	m	class:testing::internal::Notification
-numb	easylogging/easylogging++.h	/^  int numb;$/;"	m	struct:el::Level::ConfigurationType::LoggingFlag::base::consts::__anon2
+numb	easylogging/easylogging++.h	/^  int numb;$/;"	m	struct:el::Level::ConfigurationType::LoggingFlag::base::consts::__anon4
 old_reporter_	core_test/googletest/include/gtest/gtest-spi.h	/^  TestPartResultReporterInterface* old_reporter_;$/;"	m	class:testing::ScopedFakeTestPartResultReporter
 open	BaseData.h	/^	double open, close, high, low;$/;"	m	class:MinuteData
 open	BaseData.h	/^	double open, high, low, close;$/;"	m	struct:Bar
@@ -9659,7 +9660,7 @@ uninstallLoggerRegistrationCallback	easylogging/easylogging++.h	/^  static inlin
 uninstallPerformanceTrackingCallback	easylogging/easylogging++.h	/^  inline void uninstallPerformanceTrackingCallback(const std::string& id) {$/;"	f	class:el::Level::ConfigurationType::LoggingFlag::base::TimestampUnit::base::base::Storage
 uninstallPerformanceTrackingCallback	easylogging/easylogging++.h	/^  static inline void uninstallPerformanceTrackingCallback(const std::string& id) {$/;"	f	class:el::Level::ConfigurationType::LoggingFlag::base::TimestampUnit::base::base::PerformanceTrackingData::Helpers
 uninstallPreRollOutCallback	easylogging/easylogging++.h	/^  static inline void uninstallPreRollOutCallback(void) {$/;"	f	class:el::Level::ConfigurationType::LoggingFlag::base::TimestampUnit::base::base::PerformanceTrackingData::Helpers
-unit	easylogging/easylogging++.h	/^  const base::type::char_t* unit;$/;"	m	struct:el::Level::ConfigurationType::LoggingFlag::base::consts::__anon1
+unit	easylogging/easylogging++.h	/^  const base::type::char_t* unit;$/;"	m	struct:el::Level::ConfigurationType::LoggingFlag::base::consts::__anon3
 unlock	easylogging/easylogging++.h	/^  inline void unlock(void) {$/;"	f	class:el::Level::ConfigurationType::LoggingFlag::base::TimestampUnit::FormatFlags::threading::internal::Mutex
 unregister	easylogging/easylogging++.h	/^  inline void unregister(Logger*& logger) {$/;"	f	class:el::Level::ConfigurationType::LoggingFlag::base::TimestampUnit::base::base::RegisteredLoggers
 unregister	easylogging/easylogging++.h	/^  void unregister(const T_Key& uniqKey) {$/;"	f	class:el::Level::ConfigurationType::LoggingFlag::base::TimestampUnit::FormatFlags::utils::Registry
@@ -10971,7 +10972,7 @@ value	core_test/googletest/include/gtest/internal/gtest-internal.h	/^  const cha
 value	core_test/googletest/include/gtest/internal/gtest-internal.h	/^  static const bool value = __is_convertible(From, To);$/;"	m	class:testing::internal::ImplicitlyConvertible
 value	core_test/googletest/include/gtest/internal/gtest-internal.h	/^  static const bool value =$/;"	m	class:testing::internal::ImplicitlyConvertible
 value	core_test/googletest/include/gtest/internal/gtest-internal.h	/^const bool ImplicitlyConvertible<From, To>::value;$/;"	m	class:testing::internal::ImplicitlyConvertible
-value	core_test/googletest/include/gtest/internal/gtest-port.h	/^  enum { value = true };$/;"	e	enum:testing::internal::StaticAssertTypeEqHelper::__anon3
+value	core_test/googletest/include/gtest/internal/gtest-port.h	/^  enum { value = true };$/;"	e	enum:testing::internal::StaticAssertTypeEqHelper::__anon1
 value	core_test/googletest/include/gtest/internal/gtest-port.h	/^  static const bool value = bool_value;$/;"	m	struct:testing::internal::bool_constant
 value	core_test/googletest/include/gtest/internal/gtest-port.h	/^template <bool bool_value> const bool bool_constant<bool_value>::value;$/;"	m	class:testing::internal::bool_constant
 value	core_test/googletest/include/gtest/internal/gtest-tuple.h	/^  static const int value = 0;$/;"	m	struct:std::tr1::tuple_size
@@ -10985,7 +10986,7 @@ value	core_test/googletest/include/gtest/internal/gtest-tuple.h	/^  static const
 value	core_test/googletest/include/gtest/internal/gtest-tuple.h	/^  static const int value = 7;$/;"	m	struct:std::tr1::tuple_size
 value	core_test/googletest/include/gtest/internal/gtest-tuple.h	/^  static const int value = 8;$/;"	m	struct:std::tr1::tuple_size
 value	core_test/googletest/include/gtest/internal/gtest-tuple.h	/^  static const int value = 9;$/;"	m	struct:std::tr1::tuple_size
-value	easylogging/easylogging++.h	/^  double value;$/;"	m	struct:el::Level::ConfigurationType::LoggingFlag::base::consts::__anon1
+value	easylogging/easylogging++.h	/^  double value;$/;"	m	struct:el::Level::ConfigurationType::LoggingFlag::base::consts::__anon3
 value	easylogging/easylogging++.h	/^  inline const std::string& value(void) const {$/;"	f	class:el::Level::ConfigurationType::LoggingFlag::base::TimestampUnit::Configuration
 value	ta-lib/include/ta_abstract.h	/^   TA_Integer  value;$/;"	m	struct:TA_IntegerDataPair
 value	ta-lib/include/ta_abstract.h	/^   TA_Real     value;$/;"	m	struct:TA_RealDataPair

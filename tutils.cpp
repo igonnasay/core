@@ -58,6 +58,7 @@ void MarketUtil::read_data_from_mdt(const string& mdt_file, Data& data)
     fclose(mdt);
 }
 
+
 string MarketUtil::strip(const string& str)
 {
     int head = 0, tail = str.length() - 1;
@@ -70,90 +71,6 @@ string MarketUtil::strip(const string& str)
 void MarketUtil::split(const string& str, const string& ch_set, vector<string>& result)
 {
     boost::algorithm::split(result, str, boost::algorithm::is_any_of(ch_set));
-}
-
-BarList::BarList()
-{
-    this->bar_list_.clear();
-    this->bar_size_ = 0;
-}
-
-BarList::BarList(int bar_size)
-{
-    this->bar_size_ = bar_size;
-    this->bar_list_.clear();
-}
-
-BarList::BarList(int bar_size, const std::string& path)
-{
-    this->bar_size_ = bar_size;
-    this->set_data_from_file(path);
-}
-
-void BarList::add_bar(const Bar& bar)
-{
-    this->bar_list_.push_back(bar);
-}
-
-void BarList::set_bar_size(int sz) {
-    this->bar_size_ = sz;
-}
-
-void BarList::set_data_from_file(const std::string& path)
-{
-    FILE* file = fopen(path.c_str(), "r");
-    char t[15];
-    double open, high, low, close;
-    this->bar_list_.clear();
-    while(fscanf(file, "%s %f %f %f %f", t, &open, &high, &low, &close) != EOF)
-    {
-        Bar bar;
-        bar.b_time.set_time(t);
-        bar.open = open;
-        bar.high = high;
-        bar.low = low;
-        bar.close = close;
-    }
-    fclose(file);
-}
-
-double BarList::get_range_open(int _begin, int _end)
-{
-    size_t n = this->bar_list_.size();
-    assert(_begin >= 0);
-    assert(_end <= n);
-    return  this->bar_list_[_begin].open;
-}
-double BarList::get_range_high(int _begin, int _end)
-{
-    size_t n = this->bar_list_.size();
-    assert(_begin >= 0);
-    assert(_end <= n);
-    double ret = this->bar_list_[_begin].high;
-    for(int i = _begin; i != _end; i++)
-    {
-        ret = max(ret, this->bar_list_[i].high);
-    }
-    return  ret;
-}
-double BarList::get_range_low(int _begin, int _end)
-{
-    size_t n = this->bar_list_.size();
-    assert(_begin >= 0);
-    assert(_end <= n);
-    double ret = this->bar_list_[_begin].low;
-    for(int i = _begin; i != _end; i++)
-    {
-        ret = min(ret, this->bar_list_[i].low);
-    }
-    return  ret;
-}
-double BarList::get_range_close(int _begin, int _end)
-{
-    size_t n = this->bar_list_.size();
-    assert(_begin >= 0);
-    assert(_end <= n);
-    return  this->bar_list_[_end-1].close;
 }
 
 double test_ta()
