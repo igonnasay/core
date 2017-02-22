@@ -84,8 +84,6 @@ void CMdSpi::SubscribeMarketData()
 {
 	int iResult = pMarketUserApi->SubscribeMarketData(marketInstrumentID, (int)this->GetInstrumentListSize());
 	cerr << "--->>> 发送行情订阅请求: " << ((iResult == 0) ? "成功" : "失败") << endl;
-	Data& data = this->get_data_table("m1705");
-	MarketUtil::read_data_from_mdt("data.mdt", data);
 }
 
 void CMdSpi::OnRspSubMarketData(CThostFtdcSpecificInstrumentField *pSpecificInstrument, CThostFtdcRspInfoField *pRspInfo, int nRequestID, bool bIsLast)
@@ -307,10 +305,6 @@ void CMdSpi::show_bar_data(const string& instrument) {
 	for(int i = 0; i < data.cur; i++) {
 		printf("%s %.4f %.4f %.4f %.4f\n", instrument.c_str(), data.open[i], data.high[i], data.low[i], data.close[i]);
 	}
-}
-void CMdSpi::show_bark_data(const string& instrument) {
-	Data& data = this->get_data_table(instrument);
-	data.show_bark();
 }
 
 void CMdSpi::ShowMinutesData(const std::string instrument) {

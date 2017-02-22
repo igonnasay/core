@@ -91,7 +91,6 @@ public:
     void save_all();
 	void load_all();
 	void show_bar_data(const string& instrument);
-	void show_bark_data(const string& instrument);
 
 	// Public Getter
 	Data& get_data_table(const string& instrument);

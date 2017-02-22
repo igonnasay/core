@@ -39,27 +39,6 @@ TEST(BaseData, Time)
     EXPECT_EQ(t1.get_ts(), t2.get_ts());
 }
 
-TEST(Tutils, BarList)
-{
-    Bar bar;
-    bar.set_bar_data("00:00:00", 2000, 2500, 1800, 2200.0);
-    BarList list;
-    list.set_bar_size(5);
-    for(int i = 0; i < 10; i++)
-    {
-        list.add_bar(bar);
-        bar.b_time.second += 1;
-        bar.high -= 1;
-        bar.low += 1;
-    }
-    EXPECT_NEAR(list.get_range_open(0, 10), 2000, 1e-6);
-    EXPECT_NEAR(list.get_range_close(0, 10), 2200.00, 1e-6);
-    EXPECT_NEAR(list.get_range_high(0, 10), 2500, 1e-6);
-    EXPECT_NEAR(list.get_range_low(0, 10), 1800, 1e-6);
-    EXPECT_NEAR(list.get_range_high(1, 10), 2499, 1e-6);
-    EXPECT_NEAR(list.get_range_low(1, 9), 1801, 1e-6);
-}
-
 TEST(Regex, Example)
 {
     string str = "192.168.1.1";
@@ -129,27 +108,6 @@ TEST(BaseData, Data)
     EXPECT_NEAR(data.low[data.cur-1], 2800, 1e-6);
 }
 
-TEST(Tutils, read_data)
-{
-    string path = "./data.mdt";
-    double eps = 1e-6;
-    Data dt;
-    MarketUtil::read_data_from_mdt(path, dt);
-    EXPECT_EQ(dt.cur, 15);
-    EXPECT_NEAR(dt.open[0], 2900, eps);
-    EXPECT_NEAR(dt.high[0], 2910, eps);
-    EXPECT_NEAR(dt.low[0], 2809, eps);
-    EXPECT_NEAR(dt.close[0], 2901, eps);
-    int last = dt.cur - 1;
-    EXPECT_NEAR(dt.open[last], 2883, eps);
-    EXPECT_NEAR(dt.high[last], 2890, eps);
-    EXPECT_NEAR(dt.low[last], 2700, eps);
-    EXPECT_NEAR(dt.close[last], 2701, eps);
-
-    EXPECT_NEAR(*max_element(dt.high, dt.high+dt.cur), 2910, eps);
-    EXPECT_NEAR(*min_element(dt.low, dt.low+dt.cur), 2700, eps);
-}
-
 TEST(Tutils, strip)
 {
     string str = "  hello \n \t  \n \t";
@@ -168,6 +126,7 @@ TEST(tutils, split)
 	double x = 42.0;
 	EXPECT_NEAR(x, 42.0, 1e-6);
 }
+
 
 
 

@@ -65,8 +65,6 @@ void Data::clear() {
 	memset(low, 0, sizeof(low));
 	memset(close, 0, sizeof(close));
 	memset(close_sum, 0, sizeof(close_sum));
-	bark.clear();
-	bark.bar_size = 5;
 }
 
 void Data::add(double _open, double _high, double _low, double _close)
@@ -79,7 +77,6 @@ void Data::add(double _open, double _high, double _low, double _close)
 	if(cur >= Data::N)
 		LOG(FATAL) << this->instrument << " Data's size has exceeded it's capacity.";
 	this->update_close_sum();
-	this->update_bark();
 }
 
 void Data::update(double _open, double _high, double _low, double _close)
@@ -91,7 +88,6 @@ void Data::update(double _open, double _high, double _low, double _close)
 	low[index] = _low;
 	close[index] = _close;
 	this->update_close_sum();
-	this->update_bark();
 }
 
 void Data::update(double _price)
@@ -102,7 +98,6 @@ void Data::update(double _price)
 	low[index] = min(low[index], _price);
 	close[index] = _price;
 	this->update_close_sum();
-	this->update_bark();
 }
 
 void Data::update_close_sum()
@@ -111,42 +106,6 @@ void Data::update_close_sum()
 	if(index < 0)  return;
 	else if(index == 0)  close_sum[index] = close[index];
 	else close_sum[index] = close_sum[index-1] + close[index];
-}
-
-void Data::update_bark() {
-	while(this->bark.cur < this->cur) {
-		int index = this->bark.cur;
-		if(bark.bar_list.size() == 0) {
-			Bar bar;
-			bar.set_bar_data(open[index], high[index], low[index], close[index]);
-			this->bark.bar_list.push_back(bar);
-		}
-		else if(index > bark.bar_size && (index % bark.bar_size)==1) {
-			Bar bar;
-			bar.set_bar_data(open[index], high[index], low[index], close[index]);
-			this->bark.bar_list.push_back(bar);
-		}
-		else {
-			Bar& bar = bark.bar_list.back();
-			bar.high = max(bar.high, high[index]);
-			bar.low = min(bar.low, low[index]);
-			bar.close = close[index];
-		}
-		++(this->bark.cur);
-	}
-	if(bark.bar_list.size() != 0) {
-		Bar& bar = bark.bar_list.back();
-		bar.high = max(bar.high, high[cur-1]);
-		bar.low = min(bar.low, low[cur-1]);
-		bar.close = close[cur-1];
-	}
-}
-
-void Data::show_bark() {
-	vector<Bar>& list = bark.bar_list;
-	for(int i = 0; i < bark.bar_list.size(); i++) {
-		printf("%.4f %.4f %.4f %.4f\n", list[i].open, list[i].high, list[i].low, list[i].close);
-	}
 }
 
 Tick::Tick(const string &_instrument, const string &_time, double _price)

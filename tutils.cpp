@@ -47,18 +47,6 @@ bool MarketUtil::save_minutes_list(const std::vector<MinuteData>& list, std::str
     fclose(file);
 }
 
-void MarketUtil::read_data_from_mdt(const string& mdt_file, Data& data)
-{
-    FILE *mdt = fopen(mdt_file.c_str(), "r");
-    double _open, _high, _low, _close;
-    while(fscanf(mdt, "%lf %lf %lf %lf", &_open, &_high, &_low, &_close) != EOF)
-    {
-        data.add(_open, _high, _low, _close);
-    }
-    fclose(mdt);
-}
-
-
 string MarketUtil::strip(const string& str)
 {
     int head = 0, tail = str.length() - 1;

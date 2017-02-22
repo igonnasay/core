@@ -27,7 +27,6 @@ public:
     static bool is_same_5minute(int ts1, int ts2);
 
     static bool save_minutes_list(const vector<MinuteData>& list, string path);
-    static void read_data_from_mdt(const string& mdt_file, Data& data);
 
     static string strip(const string& str);
     static void split(const string& str, const string& ch_set, vector<string>& result);

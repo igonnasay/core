@@ -13,7 +13,7 @@ M_Strategy::M_Strategy(CMdSpi *marketSpi, CTraderSpi *traderSpi)
 
 void M_Strategy::StrategyMethod() {
     TThostFtdcInstrumentIDType contract;
-    int N_ = 15;
+    int N_ = 30;
     double orderPrice = 0;
     double stopLoss = 0;
     char orderDirection = '-';
@@ -34,14 +34,14 @@ void M_Strategy::StrategyMethod() {
             openPrice = this->marketSpi->GetOpenPrice(this->instrument);
             printf("openPrice = %.2f\n", openPrice);
         }
-        if(data.cur <= N_) {
+        if(data.cur <= N_+1) {
             continue;
         }
         else
         {
             currentPrice = this->marketSpi->GetLastPrice(this->instrument);
-            tailMax = *max_element(data.high+(data.cur-N_), data.high+(data.cur-1));
-			tailMin = *min_element(data.low+(data.cur-N_), data.low+(data.cur-1));
+            tailMax = *max_element(data.high+(data.cur-N_-1), data.high+(data.cur-1));
+			tailMin = *min_element(data.low+(data.cur-N_-1), data.low+(data.cur-1));
 
             // Do stoploss first
             if(orderDirection == 'b' && currentPrice < stopLoss) {
@@ -59,7 +59,6 @@ void M_Strategy::StrategyMethod() {
             // Check whether should AI open new position.
             if(orderDirection == '-' && currentPrice > tailMax) {
                 orderDirection = 'b';
-                //stopLoss = max(tailMin, currentPrice-stop_loss_limit_value);
                 stopLoss = tailMin;
                 orderPrice = currentPrice;
                 printf("[Open Position] : Buy Open At %.2f\n", orderPrice);
@@ -67,7 +66,6 @@ void M_Strategy::StrategyMethod() {
             }
             if(orderDirection == '-' && currentPrice < tailMin) {
                 orderDirection = 's';
-                //stopLoss = min(tailMax, currentPrice+stop_loss_limit_value);
                 stopLoss = tailMax;
                 orderPrice = currentPrice;
                 printf("[Open Position] : Sell Open At %.2f\n", orderPrice);

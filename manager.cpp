@@ -60,7 +60,8 @@ void StrategyControl::CmdStart() {
         }
         else if(command == "stop")
         {
-            base->Stop();
+			if(base->run_sig_)
+            	base->Stop();
         }
         else if(command == "exit") {
             exit(0);
@@ -95,9 +96,6 @@ void StrategyControl::CmdStart() {
 		else if(cmd_vec.size()==2 && cmd_vec[0]=="showbar") {
 			// showbar m1705
 			this->marketSpi->show_bar_data(cmd_vec[1]);
-		}
-		else if(cmd_vec.size()==2 && cmd_vec[0]=="showbark") {
-			this->marketSpi->show_bark_data(cmd_vec[1]);
 		}
     }
 }
