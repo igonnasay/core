@@ -2,3 +2,4 @@ config/
 *.o
 start
 libcore.a
+data_all.mdt

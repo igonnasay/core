@@ -11,6 +11,11 @@ M_Strategy::M_Strategy(CMdSpi *marketSpi, CTraderSpi *traderSpi)
     this->traderSpi = traderSpi;
 }
 
+char M_Strategy::Signal(double ma, double tail_max, double tail_min, double current_price) {
+	if((current_price > ma) && (current_price > tail_max)) return 'b';
+	if((current_price < ma) && (current_price < tail_min)) return 's';
+}
+
 void M_Strategy::StrategyMethod() {
     TThostFtdcInstrumentIDType contract;
     int N_ = 11;
@@ -24,8 +29,6 @@ void M_Strategy::StrategyMethod() {
     double tailMin = 0;
 	double ma30;
     this->volume = 1;
-    //double stop_profit_limit_value = 20;
-    //double stop_loss_limit_value = 5;
     cout << "[M_Strategy] Trading Thread Start..." << endl;
     printf("instrument = %s\n", this->instrument.c_str());
     strcpy(contract, this->instrument.c_str());
@@ -47,13 +50,13 @@ void M_Strategy::StrategyMethod() {
 			ma30 = (data.close_sum[data.cur-1] - data.close_sum[data.cur-M_-1]) / M_;
 
             // Do stoploss first
-            if(orderDirection == 'b' && currentPrice < stopLoss) {
+            if(orderDirection == 'b' && (currentPrice < stopLoss || Signal(ma30, tailMax, tailMin, currentPrice) == 's')) {
                 this->traderSpi->ReqMarketPriceOrderInsert(contract, Sell, Close, volume);
                 LOG(INFO) << "[StopLoss position] : Sell Close At " << currentPrice;
                 orderDirection = '-';
             }
 
-            if(orderDirection == 's' && currentPrice > stopLoss) {
+            if(orderDirection == 's' && (currentPrice > stopLoss || Signal(ma30, tailMax, tailMin, currentPrice) == 'b')) {
                 this->traderSpi->ReqMarketPriceOrderInsert(contract, Buy, Close, volume);
                 LOG(INFO) << "[StopLoss position] : Buy Close At " << currentPrice;
                 orderDirection = '-';

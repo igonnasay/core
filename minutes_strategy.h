@@ -18,6 +18,7 @@ public:
 	int volume;
 
 private:
+	char Signal(double ma, double tail_max, double tail_min, double current_price);
     CMdSpi *marketSpi;
     CTraderSpi *traderSpi;
 };
