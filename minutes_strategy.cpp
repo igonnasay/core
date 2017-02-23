@@ -13,7 +13,8 @@ M_Strategy::M_Strategy(CMdSpi *marketSpi, CTraderSpi *traderSpi)
 
 void M_Strategy::StrategyMethod() {
     TThostFtdcInstrumentIDType contract;
-    int N_ = 30;
+    int N_ = 11;
+	int M_ = 30;
     double orderPrice = 0;
     double stopLoss = 0;
     char orderDirection = '-';
@@ -21,7 +22,8 @@ void M_Strategy::StrategyMethod() {
     double currentPrice = 0;
     double tailMax = 0;
     double tailMin = 0;
-    int volume = 1;
+	double ma30;
+    this->volume = 1;
     //double stop_profit_limit_value = 20;
     //double stop_loss_limit_value = 5;
     cout << "[M_Strategy] Trading Thread Start..." << endl;
@@ -34,7 +36,7 @@ void M_Strategy::StrategyMethod() {
             openPrice = this->marketSpi->GetOpenPrice(this->instrument);
             printf("openPrice = %.2f\n", openPrice);
         }
-        if(data.cur <= N_+1) {
+        if(data.cur <= N_+1 || data.cur <= M_+1) {
             continue;
         }
         else
@@ -42,33 +44,34 @@ void M_Strategy::StrategyMethod() {
             currentPrice = this->marketSpi->GetLastPrice(this->instrument);
             tailMax = *max_element(data.high+(data.cur-N_-1), data.high+(data.cur-1));
 			tailMin = *min_element(data.low+(data.cur-N_-1), data.low+(data.cur-1));
+			ma30 = (data.close_sum[data.cur-1] - data.close_sum[data.cur-M_-1]) / M_;
 
             // Do stoploss first
             if(orderDirection == 'b' && currentPrice < stopLoss) {
                 this->traderSpi->ReqMarketPriceOrderInsert(contract, Sell, Close, volume);
-                printf("[StopLoss] : Sell Close At %.2f\n", currentPrice);
+                LOG(INFO) << "[StopLoss position] : Sell Close At " << currentPrice;
                 orderDirection = '-';
             }
 
             if(orderDirection == 's' && currentPrice > stopLoss) {
                 this->traderSpi->ReqMarketPriceOrderInsert(contract, Buy, Close, volume);
-                printf("[StopLoss] : Buy Close At %.2f\n", currentPrice);
+                LOG(INFO) << "[StopLoss position] : Buy Close At " << currentPrice;
                 orderDirection = '-';
             }
 
             // Check whether should AI open new position.
-            if(orderDirection == '-' && currentPrice > tailMax) {
+            if(orderDirection == '-' && currentPrice > ma30 && currentPrice > tailMax) {
                 orderDirection = 'b';
                 stopLoss = tailMin;
                 orderPrice = currentPrice;
-                printf("[Open Position] : Buy Open At %.2f\n", orderPrice);
+                LOG(INFO) << "[Open position] : Buy Open At " << orderPrice;
                 this->traderSpi->ReqMarketPriceOrderInsert(contract, Buy, Open, volume);
             }
-            if(orderDirection == '-' && currentPrice < tailMin) {
+            if(orderDirection == '-' && currentPrice < ma30 && currentPrice < tailMin) {
                 orderDirection = 's';
                 stopLoss = tailMax;
                 orderPrice = currentPrice;
-                printf("[Open Position] : Sell Open At %.2f\n", orderPrice);
+                LOG(INFO) << "[Open position] : Sell Open At " << orderPrice;
                 this->traderSpi->ReqMarketPriceOrderInsert(contract, Sell, Open, volume);
             }
         }

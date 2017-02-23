@@ -15,6 +15,8 @@ public:
     void StrategyMethod();
     void Stop();
 
+	int volume;
+
 private:
     CMdSpi *marketSpi;
     CTraderSpi *traderSpi;
