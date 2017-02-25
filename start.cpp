@@ -8,8 +8,6 @@
 #include "trade.h"
 #include "strategy.h"
 #include "manager.h"
-#include <unistd.h>
-#include <ncurses.h>
 #include <cstring>
 #include <string>
 #include <mutex>
