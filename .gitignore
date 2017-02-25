@@ -1,5 +1,7 @@
 config/
 *.o
+*.con
+tmp/
 start
 libcore.a
 data_all.mdt

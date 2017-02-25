@@ -11,8 +11,8 @@
 
 bool MarketUtil::IsValidTradeTime(int ts)
 {
-    if((ts >= 32400 && ts <= 36900) || (ts >= 37800 && ts <= 41400)
-            || (ts >= 48600 && ts <= 54000) || (ts >= 75600 && ts <= 84600))
+    if((ts>=0 && ts<=10800) || (ts >= 32400 && ts <= 36900) || (ts >= 37800 && ts <= 41400)
+            || (ts >= 48600 && ts <= 54000) || (ts >= 75600 && ts <= 86399))
         return  true;
     else
         return  false;

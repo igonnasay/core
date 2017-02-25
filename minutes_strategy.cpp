@@ -4,6 +4,7 @@
 
 #include "minutes_strategy.h"
 #include "easylogging++.h"
+#include <thread>
 
 M_Strategy::M_Strategy(CMdSpi *marketSpi, CTraderSpi *traderSpi)
 {
@@ -54,12 +55,14 @@ void M_Strategy::StrategyMethod() {
                 this->traderSpi->ReqMarketPriceOrderInsert(contract, Sell, Close, volume);
                 LOG(INFO) << "[StopLoss position] : Sell Close At " << currentPrice;
                 orderDirection = '-';
+				this_thread::sleep_for(chrono::milliseconds(300));
             }
 
             if(orderDirection == 's' && (currentPrice > stopLoss || Signal(ma30, tailMax, tailMin, currentPrice) == 'b')) {
                 this->traderSpi->ReqMarketPriceOrderInsert(contract, Buy, Close, volume);
                 LOG(INFO) << "[StopLoss position] : Buy Close At " << currentPrice;
                 orderDirection = '-';
+				this_thread::sleep_for(chrono::milliseconds(300));
             }
 
             // Check whether should AI open new position.
