@@ -4,7 +4,7 @@ CFlag= -std=c++11 -I./ -Ieasylogging -Ictp -Ita-lib/include
 LFlag= -L./ -L/usr/lib -lpthread -lthostmduserapi -lthosttraderapi -lcurses -lta_lib \
 	   -lboost_regex -lboost_regex-mt -lboost_system -lboost_system-mt
 
-core_objects = init.o base.o tutils.o market.o trade.o strategy.o strategydata.o \
+core_objects = bfunc.o base.o tutils.o market.o trade.o strategy.o strategydata.o \
 			   minutes_strategy.o manager.o easylogging/easylogging.o
 
 start : $(core_objects) start.o
@@ -16,8 +16,8 @@ libcore.a : $(core_objects)
 start.o : start.cpp
 	g++ ${CFlag} -c start.cpp -o start.o
 
-init.o : init.h init.cpp
-	g++ ${CFlag} -c init.cpp -o init.o
+bfunc.o : bfunc.h bfunc.cpp
+	g++ ${CFlag} -c bfunc.cpp -o bfunc.o
 
 base.o : BaseData.h BaseData.cpp
 	g++ ${CFlag} -c BaseData.cpp -o base.o

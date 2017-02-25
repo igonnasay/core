@@ -1,0 +1,6 @@
+#include <cstdio>
+
+namespace bfunc {
+
+}
+
