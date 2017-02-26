@@ -148,6 +148,8 @@ ActiveUserID	ctp/ThostFtdcUserApiStruct.h	/^	TThostFtdcUserIDType	ActiveUserID;$
 AddEnvironment	core_test/googletest/include/gtest/gtest.h	/^  Environment* AddEnvironment(Environment* env);$/;"	p	class:testing::UnitTest	access:private	signature:(Environment* env)
 AddGlobalTestEnvironment	core_test/googletest/include/gtest/gtest.h	/^  friend Environment* AddGlobalTestEnvironment(Environment* env);$/;"	p	class:testing::UnitTest	access:friend	signature:(Environment* env)
 AddGlobalTestEnvironment	core_test/googletest/include/gtest/gtest.h	/^inline Environment* AddGlobalTestEnvironment(Environment* env) {$/;"	f	namespace:testing	signature:(Environment* env)
+AddGlobalTradeCnt	tutils.cpp	/^int MarketUtil::AddGlobalTradeCnt() {$/;"	f	class:MarketUtil	signature:()
+AddGlobalTradeCnt	tutils.h	/^	static int AddGlobalTradeCnt();$/;"	p	class:MarketUtil	access:public	signature:()
 AddRef	core_test/googletest/include/gtest/internal/gtest-tuple.h	/^struct AddRef { typedef T& type; };  \/\/ NOLINT$/;"	s	namespace:std::tr1::gtest_internal
 AddRef	core_test/googletest/include/gtest/internal/gtest-tuple.h	/^struct AddRef<T&> { typedef T& type; };  \/\/ NOLINT$/;"	s	namespace:std::tr1::gtest_internal
 AddReference	core_test/googletest/include/gtest/internal/gtest-internal.h	/^struct AddReference { typedef T& type; };  \/\/ NOLINT$/;"	s	namespace:testing::internal
@@ -6572,6 +6574,8 @@ GetDirection	StrategyData.cpp	/^char TradeInfo::GetDirection() {$/;"	f	class:Tra
 GetDirection	StrategyData.h	/^    TThostFtdcDirectionType GetDirection();$/;"	p	class:TradeInfo	access:public	signature:()
 GetEnv	core_test/googletest/include/gtest/internal/gtest-port.h	/^inline const char* GetEnv(const char* name) {$/;"	f	namespace:testing::internal::posix	signature:(const char* name)
 GetFileSize	core_test/googletest/include/gtest/internal/gtest-port.h	/^GTEST_API_ size_t GetFileSize(FILE* file);$/;"	p	namespace:testing::internal	signature:(FILE* file)
+GetGlobalTradeCnt	tutils.cpp	/^int MarketUtil::GetGlobalTradeCnt() {$/;"	f	class:MarketUtil	signature:()
+GetGlobalTradeCnt	tutils.h	/^	static int GetGlobalTradeCnt();$/;"	p	class:MarketUtil	access:public	signature:()
 GetHighPrice	BaseData.cpp	/^double MinuteData::GetHighPrice()$/;"	f	class:MinuteData	signature:()
 GetHighPrice	BaseData.h	/^	double GetHighPrice();$/;"	p	class:MinuteData	access:public	signature:()
 GetInjectableArgvs	core_test/googletest/include/gtest/internal/gtest-port.h	/^const ::std::vector<testing::internal::string>& GetInjectableArgvs();$/;"	p	namespace:testing::internal	signature:()
@@ -7557,6 +7561,10 @@ MarginRateByVolume	ctp/ThostFtdcUserApiStruct.h	/^	TThostFtdcRatioType	MarginRat
 MarketInit	start.cpp	/^void MarketInit()$/;"	f	signature:()
 MarketStatus	ctp/ThostFtdcUserApiStruct.h	/^	TThostFtdcInstrumentStatusType	MarketStatus;$/;"	m	struct:CThostFtdcExchangeSequenceField	access:public
 MarketUtil	tutils.h	/^class MarketUtil$/;"	c
+MarketUtil::AddGlobalTradeCnt	tutils.cpp	/^int MarketUtil::AddGlobalTradeCnt() {$/;"	f	class:MarketUtil	signature:()
+MarketUtil::AddGlobalTradeCnt	tutils.h	/^	static int AddGlobalTradeCnt();$/;"	p	class:MarketUtil	access:public	signature:()
+MarketUtil::GetGlobalTradeCnt	tutils.cpp	/^int MarketUtil::GetGlobalTradeCnt() {$/;"	f	class:MarketUtil	signature:()
+MarketUtil::GetGlobalTradeCnt	tutils.h	/^	static int GetGlobalTradeCnt();$/;"	p	class:MarketUtil	access:public	signature:()
 MarketUtil::IsValidTradeTime	tutils.cpp	/^bool MarketUtil::IsValidTradeTime(int ts)$/;"	f	class:MarketUtil	signature:(int ts)
 MarketUtil::IsValidTradeTime	tutils.h	/^    static bool IsValidTradeTime(int ts);$/;"	p	class:MarketUtil	access:public	signature:(int ts)
 MarketUtil::Trade_Time_Begin	tutils.h	/^    const static int Trade_Time_Begin = 9 * 3600;$/;"	m	class:MarketUtil	access:public
@@ -7573,6 +7581,8 @@ MarketUtil::split	tutils.cpp	/^void MarketUtil::split(const string& str, const s
 MarketUtil::split	tutils.h	/^    static void split(const string& str, const string& ch_set, vector<string>& result);$/;"	p	class:MarketUtil	access:public	signature:(const string& str, const string& ch_set, vector<string>& result)
 MarketUtil::strip	tutils.cpp	/^string MarketUtil::strip(const string& str)$/;"	f	class:MarketUtil	signature:(const string& str)
 MarketUtil::strip	tutils.h	/^    static string strip(const string& str);$/;"	p	class:MarketUtil	access:public	signature:(const string& str)
+MarketUtil::trade_cnt_	tutils.h	/^	static int trade_cnt_;$/;"	m	class:MarketUtil	access:private
+MarketUtil::trade_cnt_	tutils.h	/^int MarketUtil::trade_cnt_ = 0;$/;"	m	class:MarketUtil
 Max	core_test/googletest/include/gtest/internal/gtest-internal.h	/^  static RawType Max();$/;"	p	class:testing::internal::FloatingPoint	access:public	signature:()
 Max	core_test/googletest/include/gtest/internal/gtest-internal.h	/^inline double FloatingPoint<double>::Max() { return DBL_MAX; }$/;"	f	class:testing::internal::FloatingPoint	signature:()
 Max	core_test/googletest/include/gtest/internal/gtest-internal.h	/^inline float FloatingPoint<float>::Max() { return FLT_MAX; }$/;"	f	class:testing::internal::FloatingPoint	signature:()
@@ -12892,6 +12902,10 @@ begin8_	core_test/googletest/include/gtest/internal/gtest-param-util-generated.h
 begin9_	core_test/googletest/include/gtest/internal/gtest-param-util-generated.h	/^    const typename ParamGenerator<T9>::iterator begin9_;$/;"	m	class:testing::internal::CartesianProductGenerator10::Iterator	access:private
 begin9_	core_test/googletest/include/gtest/internal/gtest-param-util-generated.h	/^    const typename ParamGenerator<T9>::iterator begin9_;$/;"	m	class:testing::internal::CartesianProductGenerator9::Iterator	access:private
 begin_	core_test/googletest/include/gtest/internal/gtest-param-util.h	/^  const T begin_;$/;"	m	class:testing::internal::RangeGenerator	access:private
+bfunc	bfunc.cpp	/^namespace bfunc {$/;"	n	file:
+bfunc	bfunc.h	/^namespace bfunc {$/;"	n
+bfunc::split_str	bfunc.cpp	/^void split_str(const string& str, const string& ch_set, vector<string>& result) {$/;"	f	namespace:bfunc	signature:(const string& str, const string& ch_set, vector<string>& result)
+bfunc::split_str	bfunc.h	/^void split_str(const string& str, const string& ch_set, vector<string>& result);$/;"	p	namespace:bfunc	signature:(const string& str, const string& ch_set, vector<string>& result)
 bits	core_test/googletest/include/gtest/internal/gtest-internal.h	/^  const Bits &bits() const { return u_.bits_; }$/;"	f	class:testing::internal::FloatingPoint	access:public	signature:() const
 bits_	core_test/googletest/include/gtest/internal/gtest-internal.h	/^    Bits bits_;      \/\/ The bits that represent the number.$/;"	m	union:testing::internal::FloatingPoint::FloatingPointUnion	access:public
 bitwise	easylogging/easylogging++.h	/^namespace bitwise {$/;"	n	namespace:el::Level::ConfigurationType::LoggingFlag::base::TimestampUnit::FormatFlags::utils
@@ -12988,7 +13002,7 @@ convertToString	easylogging/easylogging++.cc	/^const char* LevelHelper::convertT
 convertToString	easylogging/easylogging++.h	/^  static const char* convertToString(ConfigurationType configurationType);$/;"	p	class:el::Level::ConfigurationType::ConfigurationTypeHelper	access:public	signature:(ConfigurationType configurationType)
 convertToString	easylogging/easylogging++.h	/^  static const char* convertToString(Level level);$/;"	p	class:el::Level::LevelHelper	access:public	signature:(Level level)
 copy	core_test/googletest/include/gtest/internal/gtest-linked_ptr.h	/^  template <typename U> void copy(linked_ptr<U> const* ptr) {$/;"	f	class:testing::internal::linked_ptr	access:private	signature:(linked_ptr<U> const* ptr)
-core_objects	Makefile	/^core_objects = init.o base.o tutils.o market.o trade.o strategy.o strategydata.o \\$/;"	m
+core_objects	Makefile	/^core_objects = bfunc.o base.o tutils.o market.o trade.o strategy.o strategydata.o \\$/;"	m
 crashAbort	easylogging/easylogging++.cc	/^static inline void crashAbort(int sig) {$/;"	f	namespace:el::base::debug	signature:(int sig)
 crashAbort	easylogging/easylogging++.cc	/^void Helpers::crashAbort(int sig, const char* sourceFile, unsigned int long line) {$/;"	f	class:el::Helpers	signature:(int sig, const char* sourceFile, unsigned int long line)
 crashAbort	easylogging/easylogging++.h	/^  static void crashAbort(int sig, const char* sourceFile = "", unsigned int long line = 0);$/;"	p	class:el::Level::ConfigurationType::LoggingFlag::base::TimestampUnit::base::base::PerformanceTrackingData::Helpers	access:public	signature:(int sig, const char* sourceFile = Ó, unsigned int long line = 0)
@@ -15576,6 +15590,8 @@ split	BaseData.cpp	/^void ExpInfo::split(const string& exp_str, vector<string>& 
 split	BaseData.h	/^	static void split(const string& exp_str, vector<string>& ret);$/;"	p	class:ExpInfo	access:public	signature:(const string& exp_str, vector<string>& ret)
 split	tutils.cpp	/^void MarketUtil::split(const string& str, const string& ch_set, vector<string>& result)$/;"	f	class:MarketUtil	signature:(const string& str, const string& ch_set, vector<string>& result)
 split	tutils.h	/^    static void split(const string& str, const string& ch_set, vector<string>& result);$/;"	p	class:MarketUtil	access:public	signature:(const string& str, const string& ch_set, vector<string>& result)
+split_str	bfunc.cpp	/^void split_str(const string& str, const string& ch_set, vector<string>& result) {$/;"	f	namespace:bfunc	signature:(const string& str, const string& ch_set, vector<string>& result)
+split_str	bfunc.h	/^void split_str(const string& str, const string& ch_set, vector<string>& result);$/;"	p	namespace:bfunc	signature:(const string& str, const string& ch_set, vector<string>& result)
 ss_	core_test/googletest/include/gtest/gtest-message.h	/^  const internal::scoped_ptr< ::std::stringstream> ss_;$/;"	m	class:testing::Message	access:private
 start	easylogging/easylogging++.cc	/^void AsyncDispatchWorker::start(void) {$/;"	f	class:el::base::AsyncDispatchWorker	signature:(void)
 start	easylogging/easylogging++.h	/^  virtual void start() = 0;$/;"	p	class:el::Level::ConfigurationType::LoggingFlag::base::TimestampUnit::base::base::IWorker	access:public	signature:()
@@ -19565,6 +19581,8 @@ tr1	core_test/googletest/include/gtest/internal/gtest-port.h	/^namespace tr1 {$/
 tr1	core_test/googletest/include/gtest/internal/gtest-tuple.h	/^namespace tr1 {$/;"	n	namespace:std
 tradeInited	trade.h	/^    bool tradeInited;$/;"	m	class:CTraderSpi	access:private
 tradeState	StrategyData.h	/^    char tradeState;$/;"	m	class:TradeInfo	access:private
+trade_cnt_	tutils.h	/^	static int trade_cnt_;$/;"	m	class:MarketUtil	access:private
+trade_cnt_	tutils.h	/^int MarketUtil::trade_cnt_ = 0;$/;"	m	class:MarketUtil
 trade_h	trade.h	2;"	d
 traderIRequestID	trade.h	/^	int traderIRequestID;$/;"	m	class:CTraderSpi	access:private
 traderSpi	manager.h	/^    CTraderSpi *traderSpi;$/;"	m	class:StrategyControl	access:private

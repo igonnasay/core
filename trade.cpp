@@ -1,3 +1,4 @@
+#include "tutils.h"
 #include "trade.h"
 #include "easylogging++.h"
 #include <iostream>
@@ -354,6 +355,10 @@ void CTraderSpi::ReqOrderInsert(TThostFtdcInstrumentIDType instrumentID,
 	AutoIncOrderRef();
 	int iResult = pTraderUserApi->ReqOrderInsert(&req, ++traderIRequestID);
 	cerr << "--->>> 报单录入请求: " << iResult << ((iResult == 0) ? ", 成功" : ", 失败") << endl;
+	MarketUtil::AddGlobalTradeCnt();
+	LOG(INFO) << "RequestLimitPriceOrderInsert --> GlobalTradeCnt : " << MarketUtil::GetGlobalTradeCnt();
+	if(MarketUtil::GetGlobalTradeCnt() > 100)
+		LOG(FATAL) << "GlobalTradeCnt exceeds 100. Too much Trade! Program will crash!";
 }
 
 void CTraderSpi::ReqMarketPriceOrderInsert(TThostFtdcInstrumentIDType instrumentID, 
@@ -416,6 +421,10 @@ void CTraderSpi::ReqMarketPriceOrderInsert(TThostFtdcInstrumentIDType instrument
 	AutoIncOrderRef();
 	int iResult = pTraderUserApi->ReqOrderInsert(&req, ++traderIRequestID);
 	cerr << "--->>> 报单录入请求: " << iResult << ((iResult == 0) ? ", 成功" : ", 失败") << endl;
+	MarketUtil::AddGlobalTradeCnt();
+	LOG(INFO) << "RequestMarketOrderInsert --> GlobalTradeCnt : " << MarketUtil::GetGlobalTradeCnt();
+	if(MarketUtil::GetGlobalTradeCnt() > 100)
+		LOG(FATAL) << "GlobalTradeCnt exceeds 100. Too much Trade! Program will crash!";
 }
 
 void CTraderSpi::OnRspOrderInsert(CThostFtdcInputOrderField *pInputOrder, CThostFtdcRspInfoField *pRspInfo, int nRequestID, bool bIsLast)
@@ -499,7 +508,7 @@ void CTraderSpi::OnHeartBeatWarning(int nTimeLapse)
 
 void CTraderSpi::OnRspError(CThostFtdcRspInfoField *pRspInfo, int nRequestID, bool bIsLast)
 {
-	cerr << "--->>> " << "OnRspError" << endl;
+	LOG(INFO) << "--->>> " << "OnRspError";
 	IsErrorRspInfo(pRspInfo);
 }
 
@@ -508,7 +517,7 @@ bool CTraderSpi::IsErrorRspInfo(CThostFtdcRspInfoField *pRspInfo)
 	// 如果ErrorID != 0, 说明收到了错误的响应
 	bool bResult = ((pRspInfo) && (pRspInfo->ErrorID != 0));
 	if (bResult)
-		cerr << "--->>> ErrorID=" << pRspInfo->ErrorID << ", ErrorMsg=" << pRspInfo->ErrorMsg << endl;
+		LOG(INFO) << "--->>> ErrorID=" << pRspInfo->ErrorID << ", ErrorMsg=" << pRspInfo->ErrorMsg;
 	return bResult;
 }
 

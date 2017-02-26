@@ -3,11 +3,11 @@
 //
 
 #include "tutils.h"
+#include "bfunc.h"
 #include "easylogging++.h"
 #include "ta_func.h"
 #include <cstdio>
 #include <cassert>
-#include <boost/algorithm/string.hpp>
 
 bool MarketUtil::IsValidTradeTime(int ts)
 {
@@ -58,7 +58,48 @@ string MarketUtil::strip(const string& str)
 
 void MarketUtil::split(const string& str, const string& ch_set, vector<string>& result)
 {
-    boost::algorithm::split(result, str, boost::algorithm::is_any_of(ch_set));
+	bfunc::split_str(str, ch_set, result);
+}
+
+int MarketUtil::trade_cnt_ = 0;
+map<string, vector<int> > MarketUtil::trade_time_;
+
+int MarketUtil::GetGlobalTradeCnt() {
+	return MarketUtil::trade_cnt_;
+}
+
+int MarketUtil::AddGlobalTradeCnt() {
+	++MarketUtil::trade_cnt_;
+}
+
+void MarketUtil::LoadTradeTime() {
+	char instrument[31];
+	char time_str[200];
+	map<string, vector<int> >& table = MarketUtil::trade_time_;
+	table.clear();
+
+	FILE* file = fopen("config/rule.cf", "rb");
+	vector<string> s_vec;
+	vector<int> t_vec;
+	while(fscanf(file, "%s %s", instrument, time_str) != EOF) {
+		s_vec.clear();
+		t_vec.clear();
+		bfunc::split_str(time_str, ",", s_vec);
+		for(int i = 0; i < s_vec.size(); i++) {
+			int t = std::stoi(s_vec[i]);
+			t_vec.push_back(t);
+		}
+		table[instrument] = t_vec;
+	}
+	fclose(file);
+	for(auto it = table.begin(); it != table.end(); it++) {
+		cout << it->first << " ";
+		vector<int>& data = it->second;
+		for(int i = 0; i < data.size(); i++) {
+			cout << data[i] << " ";
+		}
+		cout << endl;
+	}
 }
 
 double test_ta()

@@ -9,7 +9,6 @@
 #include <cassert>
 #include <string>
 #include <vector>
-#include <boost/regex.hpp>
 
 using namespace std;
 

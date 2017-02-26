@@ -2,7 +2,7 @@
 // Created by AIdancer on 17/2/12.
 //
 
-#include <gtest/gtest.h>
+#include "gtest/gtest.h"
 #include "../BaseData.h"
 #include "../tutils.h"
 #include "easylogging++.h"
@@ -112,19 +112,18 @@ TEST(Tutils, strip)
 {
     string str = "  hello \n \t  \n \t";
     EXPECT_EQ(MarketUtil::strip(str), "hello");
-    cout << MarketUtil::strip(str) << endl;
     str = "";
     EXPECT_EQ(MarketUtil::strip(str), "");
     str = "a";
     EXPECT_EQ(MarketUtil::strip(str), "a");
 }
 
-TEST(tutils, split)
+TEST(Tutils, Tradecnt)
 {
-	EXPECT_EQ(1, 1);
-	EXPECT_TRUE(true);
-	double x = 42.0;
-	EXPECT_NEAR(x, 42.0, 1e-6);
+	EXPECT_EQ(MarketUtil::GetGlobalTradeCnt(), 0);
+	for(int i = 0; i < 10; i++)
+		MarketUtil::AddGlobalTradeCnt();
+	EXPECT_EQ(MarketUtil::GetGlobalTradeCnt(), 10);
 }
 
 

@@ -9,6 +9,7 @@
 
 #include <cmath>
 #include <cstring>
+#include <map>
 #include <string>
 #include <vector>
 #include <utility>
@@ -30,6 +31,15 @@ public:
 
     static string strip(const string& str);
     static void split(const string& str, const string& ch_set, vector<string>& result);
+
+	static int GetGlobalTradeCnt();
+	static int AddGlobalTradeCnt();
+
+	static void LoadTradeTime();
+
+private:
+	static int trade_cnt_;
+	static map<string, vector<int> > trade_time_;
 };
 
 #endif //CLION_TUTILS_H
