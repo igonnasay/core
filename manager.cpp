@@ -57,6 +57,7 @@ void StrategyControl::CmdStart() {
 			LOG(INFO) << "Trade time end, core will save the data && exit later";
 			this->marketSpi->save_all();
 			LOG(INFO) << "Saveall data successfully, now core will exit, Bye!";
+			exit(0);
 		}
 
         printf("[Control] : option >> ");

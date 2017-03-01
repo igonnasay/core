@@ -104,7 +104,7 @@ void CMdSpi::OnRtnDepthMarketData(CThostFtdcDepthMarketDataField *pDepthMarketDa
 	time_t now = time(0);
 	tm *ltm = localtime(&now);
 	if(abs(ltm->tm_min - t.minute) >= 3)  {
-		printf("%s --> time : remote differ too much from local.\n", pDepthMarketData->InstrumentID);
+		//printf("%s --> time : remote differ too much from local.\n", pDepthMarketData->InstrumentID);
 		return;
 	}
 
@@ -341,6 +341,22 @@ Data& CMdSpi::get_data_table(const string& instrument)
 	return  data_table[instrument];
 }
 
+double CMdSpi::GetAskPrice1(const string& instrument) {
+	if(marketMap.find(instrument) == marketMap.end()) {
+		return  -1.0;
+	} else {
+		CThostFtdcDepthMarketDataField* p = marketMap[instrument];
+		return p->AskPrice1;
+	}
+}
+double CMdSpi::GetBidPrice1(const string& instrument) {
+	if(marketMap.find(instrument) == marketMap.end()) {
+		return  -1.0;
+	} else {
+		CThostFtdcDepthMarketDataField* p = marketMap[instrument];
+		return p->BidPrice1;
+	}
+}
 
 
 

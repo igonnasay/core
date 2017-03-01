@@ -93,6 +93,8 @@ public:
 	void show_bar_data(const string& instrument);
 
 	// Public Getter
+	double GetAskPrice1(const string& instrument);
+	double GetBidPrice1(const string& instrument);
 	Data& get_data_table(const string& instrument);
 
 	// Public field

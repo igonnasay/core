@@ -6,3 +6,19 @@
 2017-03-01 14:47:39,018922 virtual void CTraderSpi::OnRtnOrder(CThostFtdcOrderField*) --->>> OnRtnOrder  orderstatus: a
 2017-03-01 14:47:39,020056 virtual void CTraderSpi::OnRtnOrder(CThostFtdcOrderField*) --->>> OnRtnOrder  orderstatus: 0
 2017-03-01 14:47:39,020249 virtual void CTraderSpi::OnRtnTrade(CThostFtdcTradeField*) --->>> OnRtnTrade  rb1705  æˆäº¤æ•°é‡1  æˆäº¤ä»·æ ¼ï¼š3526
+2017-03-01 21:01:40,971813 virtual void M_Strategy::StrategyMethod() [Open position] : Buy Open At 3552
+2017-03-01 21:01:40,971952 void CTraderSpi::ReqMarketPriceOrderInsert(char*, TThostFtdcDirectionType, char, TThostFtdcVolumeType) RequestMarketOrderInsert --> GlobalTradeCnt : 1
+2017-03-01 21:01:41,050128 virtual void CTraderSpi::OnRtnOrder(CThostFtdcOrderField*) --->>> OnRtnOrder  orderstatus: a
+2017-03-01 21:01:41,052164 virtual void CTraderSpi::OnRtnOrder(CThostFtdcOrderField*) --->>> OnRtnOrder  orderstatus: 5
+2017-03-01 21:06:26,881344 void CTraderSpi::ReqMarketPriceOrderInsert(char*, TThostFtdcDirectionType, char, TThostFtdcVolumeType) RequestMarketOrderInsert --> GlobalTradeCnt : 2
+2017-03-01 21:06:26,887061 bool CTraderSpi::IsErrorRspInfo(CThostFtdcRspInfoField*) --->>> ErrorID=15, ErrorMsg=CTP:±¨µ¥×Ö¶ÎÓÐÎó
+2017-03-01 21:21:56,070927 virtual void M_Strategy::StrategyMethod() [Open position] : Buy Open At 3556
+2017-03-01 21:21:56,071047 void CTraderSpi::ReqMarketPriceOrderInsert(char*, TThostFtdcDirectionType, char, TThostFtdcVolumeType) RequestMarketOrderInsert --> GlobalTradeCnt : 3
+2017-03-01 21:21:56,142925 virtual void CTraderSpi::OnRtnOrder(CThostFtdcOrderField*) --->>> OnRtnOrder  orderstatus: a
+2017-03-01 21:21:56,143661 virtual void CTraderSpi::OnRtnOrder(CThostFtdcOrderField*) --->>> OnRtnOrder  orderstatus: 5
+2017-03-01 21:22:56,938648 void CTraderSpi::ReqMarketPriceOrderInsert(char*, TThostFtdcDirectionType, char, TThostFtdcVolumeType) RequestMarketOrderInsert --> GlobalTradeCnt : 4
+2017-03-01 21:22:56,944744 bool CTraderSpi::IsErrorRspInfo(CThostFtdcRspInfoField*) --->>> ErrorID=15, ErrorMsg=CTP:±¨µ¥×Ö¶ÎÓÐÎó
+2017-03-01 21:43:07,350945 virtual void CTraderSpi::OnRtnOrder(CThostFtdcOrderField*) --->>> OnRtnOrder  orderstatus: a
+2017-03-01 21:43:07,353069 virtual void CTraderSpi::OnRtnOrder(CThostFtdcOrderField*) --->>> OnRtnOrder  orderstatus: 3
+2017-03-01 21:43:50,035801 virtual void CTraderSpi::OnRtnOrder(CThostFtdcOrderField*) --->>> OnRtnOrder  orderstatus: 3
+2017-03-01 21:43:50,108422 virtual void CTraderSpi::OnRtnOrder(CThostFtdcOrderField*) --->>> OnRtnOrder  orderstatus: 5
