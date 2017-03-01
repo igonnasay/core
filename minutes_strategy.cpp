@@ -126,10 +126,6 @@ void M_Strategy::ShowInfo() {
 	printf("instrument : %s    volume : %d\n", this->instrument.c_str(), this->volume);
 }
 
-void M_Strategy::ShowInfo() {
-	printf("instrument : %s    volume : %d\n", this->instrument.c_str(), this->volume);
-}
-
 
 
 

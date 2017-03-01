@@ -104,11 +104,7 @@ void CMdSpi::OnRtnDepthMarketData(CThostFtdcDepthMarketDataField *pDepthMarketDa
 	time_t now = time(0);
 	tm *ltm = localtime(&now);
 	if(abs(ltm->tm_min - t.minute) >= 3)  {
-<<<<<<< HEAD
-		printf("%s --> time : remote differ too much from local.\n", pDepthMarketData->InstrumentID);
-=======
 		//printf("%s --> time : remote differ too much from local.\n", pDepthMarketData->InstrumentID);
->>>>>>> dev
 		return;
 	}
 
