@@ -14,8 +14,7 @@ public:
     void Start();
     void StrategyMethod();
     void Stop();
-
-	int volume;
+	void ShowInfo();
 
 private:
 	char Signal(double ma, double tail_max, double tail_min, double current_price);

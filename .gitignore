@@ -2,6 +2,7 @@ config/
 *.o
 *.con
 tmp/
+tags
 start
 libcore.a
 data_all.mdt

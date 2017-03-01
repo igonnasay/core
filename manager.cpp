@@ -7,6 +7,7 @@
 #include "easylogging++.h"
 #include "manager.h"
 #include <cassert>
+#include <ctime>
 #include <string>
 #include <vector>
 
@@ -50,6 +51,14 @@ void StrategyControl::CmdStart() {
     vector<string> cmd_vec;
     while(true)
     {
+		time_t now = time(0);
+		tm *ltm = localtime(&now);
+		if((ltm->tm_hour == 15 && ltm->tm_min == 17) || (ltm->tm_hour == 2 && ltm->tm_min == 32)) {
+			LOG(INFO) << "Trade time end, core will save the data && exit later";
+			this->marketSpi->save_all();
+			LOG(INFO) << "Saveall data successfully, now core will exit, Bye!";
+		}
+
         printf("[Control] : option >> ");
         getline(cin, command);
         command = MarketUtil::strip(command);
@@ -88,6 +97,9 @@ void StrategyControl::CmdStart() {
             }
             base->instrument = cmd_vec[2];
         }
+		else if(cmd_vec.size()==3 && cmd_vec[0]=="set" && cmd_vec[1]=="volume") {
+			base->volume = std::stoi(cmd_vec[2].c_str());
+		}
 		else if(cmd_vec.size()==1 && cmd_vec[0]=="loadall") {
 			// loadall
 			this->marketSpi->load_all();
@@ -95,6 +107,9 @@ void StrategyControl::CmdStart() {
 		else if(cmd_vec.size()==2 && cmd_vec[0]=="showbar") {
 			// showbar m1705
 			this->marketSpi->show_bar_data(cmd_vec[1]);
+		}
+		else if(cmd_vec.size()==1 && cmd_vec[0]=="showinfo") {
+			base->ShowInfo();
 		}
     }
 }

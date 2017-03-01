@@ -51,14 +51,14 @@ void M_Strategy::StrategyMethod() {
 			ma30 = (data.close_sum[data.cur-1] - data.close_sum[data.cur-M_-1]) / M_;
 
             // Do stoploss first
-            if(orderDirection == 'b' && (currentPrice < stopLoss || Signal(ma30, tailMax, tailMin, currentPrice) == 's')) {
+            if(orderDirection == 'b' && currentPrice < stopLoss){
                 this->traderSpi->ReqMarketPriceOrderInsert(contract, Sell, Close, volume);
                 LOG(INFO) << "[StopLoss position] : Sell Close At " << currentPrice;
                 orderDirection = '-';
 				this_thread::sleep_for(chrono::milliseconds(300));
             }
 
-            if(orderDirection == 's' && (currentPrice > stopLoss || Signal(ma30, tailMax, tailMin, currentPrice) == 'b')) {
+            if(orderDirection == 's' && currentPrice > stopLoss) {
                 this->traderSpi->ReqMarketPriceOrderInsert(contract, Buy, Close, volume);
                 LOG(INFO) << "[StopLoss position] : Buy Close At " << currentPrice;
                 orderDirection = '-';
@@ -113,6 +113,10 @@ void M_Strategy::Start() {
 void M_Strategy::Stop() {
     this->run_sig_ = false;
     cout << "[Day Strategy] : thread " << this->s_thread->get_id() << "will be ended..." << endl;
+}
+
+void M_Strategy::ShowInfo() {
+	printf("instrument : %s    volume : %d\n", this->instrument.c_str(), this->volume);
 }
 
 

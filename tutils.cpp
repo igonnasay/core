@@ -9,13 +9,25 @@
 #include <cstdio>
 #include <cassert>
 
-bool MarketUtil::IsValidTradeTime(int ts)
+int MarketUtil::IntToTs(int t) {
+	int hour = t / 100;
+	int minute = t % 100;
+	return  hour * 3600 + minute * 60;
+}
+
+bool MarketUtil::IsValidTradeTime(const string& instrument, int ts)
 {
-    if((ts>=0 && ts<=10800) || (ts >= 32400 && ts <= 36900) || (ts >= 37800 && ts <= 41400)
-            || (ts >= 48600 && ts <= 54000) || (ts >= 75600 && ts <= 86399))
-        return  true;
-    else
-        return  false;
+	auto it = MarketUtil::trade_time_.find(instrument);
+	vector<int>& t = it->second;
+	int n = t.size();
+	if(n & 1)
+		LOG(FATAL) << "time periods is not even!";
+	for(int i = 0; i < n; i += 2) {
+		if(ts>=t[i] && ts<=t[i+1]) {
+			return true;
+		}
+	}
+	return  false;
 }
 
 bool MarketUtil::is_same_minute(int ts1, int ts2)
@@ -87,19 +99,11 @@ void MarketUtil::LoadTradeTime() {
 		bfunc::split_str(time_str, ",", s_vec);
 		for(int i = 0; i < s_vec.size(); i++) {
 			int t = std::stoi(s_vec[i]);
-			t_vec.push_back(t);
+			t_vec.push_back(MarketUtil::IntToTs(t));
 		}
 		table[instrument] = t_vec;
 	}
 	fclose(file);
-	for(auto it = table.begin(); it != table.end(); it++) {
-		cout << it->first << " ";
-		vector<int>& data = it->second;
-		for(int i = 0; i < data.size(); i++) {
-			cout << data[i] << " ";
-		}
-		cout << endl;
-	}
 }
 
 double test_ta()
