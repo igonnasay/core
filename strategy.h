@@ -18,11 +18,13 @@ class StrategyBase
 {
 public:
     bool run_sig_;
+	int volume;
     string instrument;
     thread *s_thread;
     virtual void StrategyMethod() = 0;
     virtual void Start() = 0;
     virtual void Stop() = 0;
+	virtual void ShowInfo() = 0;
 };
 
 class TradeAssistant

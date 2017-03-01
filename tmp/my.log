@@ -2,3 +2,7 @@
 
 2017-02-23 23:06:00,672327 int main() main log
 
+2017-03-01 14:47:39,016709 virtual void CTraderSpi::OnRtnOrder(CThostFtdcOrderField*) --->>> OnRtnOrder  orderstatus: a
+2017-03-01 14:47:39,018922 virtual void CTraderSpi::OnRtnOrder(CThostFtdcOrderField*) --->>> OnRtnOrder  orderstatus: a
+2017-03-01 14:47:39,020056 virtual void CTraderSpi::OnRtnOrder(CThostFtdcOrderField*) --->>> OnRtnOrder  orderstatus: 0
+2017-03-01 14:47:39,020249 virtual void CTraderSpi::OnRtnTrade(CThostFtdcTradeField*) --->>> OnRtnTrade  rb1705  成交数量1  成交价格：3526

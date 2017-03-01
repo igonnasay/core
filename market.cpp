@@ -4,6 +4,7 @@
 #include <cstdio>
 #include <cstring>
 #include <cassert>
+#include <ctime>
 #include <string>
 #include <mutex>
 #include <thread>
@@ -100,9 +101,16 @@ void CMdSpi::OnRspUnSubMarketData(CThostFtdcSpecificInstrumentField *pSpecificIn
 void CMdSpi::OnRtnDepthMarketData(CThostFtdcDepthMarketDataField *pDepthMarketData)
 {
 	Time t(pDepthMarketData->UpdateTime);
+	time_t now = time(0);
+	tm *ltm = localtime(&now);
+	if(abs(ltm->tm_min - t.minute) >= 3)  {
+		printf("%s --> time : remote differ too much from local.\n", pDepthMarketData->InstrumentID);
+		return;
+	}
+
 	string instrument = pDepthMarketData->InstrumentID;
 	Tick tick(instrument, pDepthMarketData->UpdateTime, pDepthMarketData->LastPrice);
-    if(!MarketUtil::IsValidTradeTime(tick.GetTs())) {
+    if(!MarketUtil::IsValidTradeTime(instrument, tick.GetTs())) {
         return;
 	}
     this->current_time_.set_time(pDepthMarketData->UpdateTime);

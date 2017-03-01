@@ -126,7 +126,6 @@ int main()
     el::Loggers::reconfigureAllLoggers(conf);
 
 	MarketUtil::LoadTradeTime();
-	this_thread::sleep_for(chrono::seconds(200));
 
     cout << "Press your trade password : ";
     cin >> passwd;
