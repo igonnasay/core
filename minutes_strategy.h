@@ -18,6 +18,7 @@ public:
 
 private:
 	char Signal(double ma, double tail_max, double tail_min, double current_price);
+	char Signal(double ma10, double ma20, double ma30, double tail_max, double tail_min, double now);
     CMdSpi *marketSpi;
     CTraderSpi *traderSpi;
 };
