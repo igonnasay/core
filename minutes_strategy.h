@@ -16,6 +16,10 @@ public:
     void Stop();
 	void ShowInfo();
 
+	// Sample : MarketOrder("m1705", Buy, Open, 1);
+	// Sample : MarketOrder("m1705", Sell, Close, 1);
+	void MarketOrder(const string& instrument, char order_dir, char order_type, int volume);
+
 private:
 	char Signal(double ma, double tail_max, double tail_min, double current_price);
 	char Signal(double ma10, double ma20, double ma30, double tail_max, double tail_min, double now);

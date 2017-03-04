@@ -3,13 +3,15 @@
 
 #include "ThostFtdcTraderApi.h"
 #include <string>
-
+#include <map>
 
 #define Buy THOST_FTDC_D_Buy
 #define Sell THOST_FTDC_D_Sell
 
 #define Open THOST_FTDC_OFEN_Open
 #define Close THOST_FTDC_OFEN_Close
+
+using namespace std;
 
 class CTraderSpi : public CThostFtdcTraderSpi
 {
@@ -106,6 +108,7 @@ public:
 	void DebugInfo();
 	bool IsTradeInited();
     int ReqPositionVolume(const std::string instrument);
+	string GetExchange(const string& instrument);
 
 private:
     bool tradeInited;
@@ -126,6 +129,8 @@ private:
 	TThostFtdcOrderRefType	ORDER_REF;	//报单引用
 
 	int iNextOrderRef;
+
+	map<string, string> exch_table;
 };
 
 

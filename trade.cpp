@@ -35,6 +35,7 @@ CTraderSpi::CTraderSpi(CThostFtdcTraderApi *pTraderAPI)
 	this->traderIRequestID = 0;
 	this->iNextOrderRef = 0;
     this->tradeInited = false;
+	exch_table.clear();
 }
 
 void CTraderSpi::OnFrontConnected()
@@ -72,9 +73,10 @@ void CTraderSpi::OnRspUserLogin(CThostFtdcRspUserLoginField *pRspUserLogin,
 		cerr << "Onrsp trade succeed..." << endl;
 		this->tradeInited = true;
 		cerr << "tradeAPI inited succeed..." << endl;
+		this->ReqQryInstrument();
 		///投资者结算结果确认
         //this->ReqSettlementInfoConfirm();
-		TThostFtdcInstrumentIDType instrument="m1701";
+		//TThostFtdcInstrumentIDType instrument="m1701";
 		//ReqOrderInsert(instrument, Buy, Open, 2850, 1);
 		//ReqMarketPriceOrderInsert(instrument, Buy, Open, 1);
 		//ReqSettlementInfoConfirm();
@@ -171,7 +173,10 @@ void CTraderSpi::OnRspSettlementInfoConfirm(CThostFtdcSettlementInfoConfirmField
 
 void CTraderSpi::OnRspQryInstrument(CThostFtdcInstrumentField *pInstrument, CThostFtdcRspInfoField *pRspInfo, int nRequestID, bool bIsLast)
 {
-	cout<<"instrument info: "<<pInstrument->InstrumentID<<endl;
+	//cout<<"instrument info: "<<pInstrument->InstrumentID<<endl;
+	string instrument_id = pInstrument->InstrumentID;
+	string exch = pInstrument->ExchangeID;
+	exch_table[instrument_id] = exch;
 }
 
 void CTraderSpi::OnRspQryInstrumentCommissionRate(CThostFtdcInstrumentCommissionRateField *pInstrumentCommissionRate, CThostFtdcRspInfoField *pRspInfo, int nRequestID, bool bIsLast){
@@ -196,10 +201,8 @@ void CTraderSpi::OnRspQryInstrumentMarginRate(CThostFtdcInstrumentMarginRateFiel
 
 void CTraderSpi::ReqQryInstrument()
 {
-	TThostFtdcInstrumentIDType INSTRUMENT_ID = "m1701";
 	CThostFtdcQryInstrumentField req;
 	memset(&req, 0, sizeof(req));
-	strcpy(req.InstrumentID, INSTRUMENT_ID);
 	while (true)
 	{
 		int iResult = pTraderUserApi->ReqQryInstrument(&req, ++traderIRequestID);
@@ -330,8 +333,8 @@ void CTraderSpi::ReqOrderInsert(TThostFtdcInstrumentIDType instrumentID,
 	req.VolumeTotalOriginal = volume;
 
 	///有效期类型: 当日有效
-	//req.TimeCondition = THOST_FTDC_TC_IOC;
-	req.TimeCondition = THOST_FTDC_TC_GFD;
+	req.TimeCondition = THOST_FTDC_TC_IOC;
+	//req.TimeCondition = THOST_FTDC_TC_GFD;
 	///GTD日期
 	//	TThostFtdcDateType	GTDDate;
 	///成交量类型: 任何数量
@@ -586,6 +589,13 @@ void CTraderSpi::DebugInfo()
 
 bool CTraderSpi::IsTradeInited() {
     return  this->tradeInited;
+}
+
+string CTraderSpi::GetExchange(const string& instrument) {
+	if(exch_table.find(instrument) == exch_table.end())
+		return  "";
+	else
+		return  exch_table[instrument];
 }
 
 int ReqPositionVolume(const std::string instrument) {

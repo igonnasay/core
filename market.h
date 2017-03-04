@@ -74,8 +74,6 @@ public:
 
 	void DebugInfo();
     bool IsMarketInited();
-	double GetLastPrice(const std::string& instrument);
-	double GetOpenPrice(const std::string& instrument);
     int get_ts();
 	std::string get_trading_day();
 
@@ -93,8 +91,12 @@ public:
 	void show_bar_data(const string& instrument);
 
 	// Public Getter
+	double GetLastPrice(const std::string& instrument);
+	double GetOpenPrice(const std::string& instrument);
 	double GetAskPrice1(const string& instrument);
 	double GetBidPrice1(const string& instrument);
+	double GetUpperLimitPrice(const string& instrument);
+	double GetLowerLimitPrice(const string& instrument);
 	Data& get_data_table(const string& instrument);
 
 	// Public field

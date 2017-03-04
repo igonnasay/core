@@ -49,17 +49,24 @@ void StrategyControl::CmdStart() {
     StrategyBase *base = new M_Strategy(this->marketSpi, this->traderSpi);
     base->instrument = "m1705";
     vector<string> cmd_vec;
+
+	thread t([&]() {
+		while(true) {
+			time_t now = time(0);
+			tm *ltm = localtime(&now);
+			if((ltm->tm_hour == 15 && ltm->tm_min == 17) || (ltm->tm_hour == 2 && ltm->tm_min == 32)) {
+				LOG(INFO) << "Trade time end, core will save the data && exit later";
+				this->marketSpi->save_all();
+				LOG(INFO) << "Saveall data successfully, now core will exit, Bye!";
+				exit(0);
+			}
+			this_thread::sleep_for(chrono::seconds(1));
+		}
+	});
+	t.detach();
+
     while(true)
     {
-		time_t now = time(0);
-		tm *ltm = localtime(&now);
-		if((ltm->tm_hour == 15 && ltm->tm_min == 17) || (ltm->tm_hour == 2 && ltm->tm_min == 32)) {
-			LOG(INFO) << "Trade time end, core will save the data && exit later";
-			this->marketSpi->save_all();
-			LOG(INFO) << "Saveall data successfully, now core will exit, Bye!";
-			exit(0);
-		}
-
         printf("[Control] : option >> ");
         getline(cin, command);
         command = MarketUtil::strip(command);
