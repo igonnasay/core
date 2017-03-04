@@ -18,6 +18,8 @@ class StrategyBase
 {
 public:
     bool run_sig_;
+	bool buy_flag;
+	bool sell_flag;
 	int volume;
     string instrument;
     thread *s_thread;

@@ -11,6 +11,8 @@ M_Strategy::M_Strategy(CMdSpi *marketSpi, CTraderSpi *traderSpi)
     this->marketSpi = marketSpi;
     this->traderSpi = traderSpi;
 	this->volume = 0;
+	this->buy_flag = false;
+	this->sell_flag = false;
 }
 
 char M_Strategy::Signal(double ma, double tail_max, double tail_min, double current_price) {
@@ -72,14 +74,14 @@ void M_Strategy::StrategyMethod() {
             }
 
             // Check whether should AI open new position.
-            if(orderDirection == '-' && Signal(ma10, ma20, ma30, tailMax, tailMin, currentPrice) == 'b') {
+            if(orderDirection == '-' && this->buy_flag && Signal(ma10, ma20, ma30, tailMax, tailMin, currentPrice) == 'b') {
                 orderDirection = 'b';
                 stopLoss = tailMin;
                 orderPrice = currentPrice;
                 LOG(INFO) << "[Open position] : Buy Open At " << orderPrice;
                 MarketOrder(contract, Buy, Open, volume);
             }
-            if(orderDirection == '-' && Signal(ma10, ma20, ma30, tailMax, tailMin, currentPrice) == 's') {
+            if(orderDirection == '-' && this->sell_flag && Signal(ma10, ma20, ma30, tailMax, tailMin, currentPrice) == 's') {
                 orderDirection = 's';
                 stopLoss = tailMax;
                 orderPrice = currentPrice;
@@ -123,7 +125,8 @@ void M_Strategy::Stop() {
 }
 
 void M_Strategy::ShowInfo() {
-	printf("instrument : %s    volume : %d\n", this->instrument.c_str(), this->volume);
+	printf("instrument : %s    volume : %d\n buy_flag : %d   sell_flag : %d\n", this->instrument.c_str(), this->volume, 
+			this->buy_flag, this->sell_flag);
 }
 
 void M_Strategy::MarketOrder(const string& instrument, char order_dir, char order_type, int volume) {

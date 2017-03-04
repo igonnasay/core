@@ -119,6 +119,14 @@ void StrategyControl::CmdStart() {
 		else if(cmd_vec.size()==1 && cmd_vec[0]=="showinfo") {
 			base->ShowInfo();
 		}
+		else if(cmd_vec.size()==3 && cmd_vec[0]=="set" && cmd_vec[1]=="buy_flag") {
+			if(cmd_vec[2] == "true")  base->buy_flag = true;
+			else if(cmd_vec[2] == "false")  base->buy_flag = false;
+		}
+		else if(cmd_vec.size()==3 && cmd_vec[0]=="set" && cmd_vec[1]=="sell_flag") {
+			if(cmd_vec[2] == "true")  base->sell_flag = true;
+			else if(cmd_vec[2] == "false")  base->sell_flag = false;
+		}
     }
 }
 
