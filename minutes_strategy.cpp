@@ -97,13 +97,13 @@ void M_Strategy::StrategyMethod() {
         //clear rest buy position
         MarketOrder(contract, Sell, Close, volume);
         orderDirection = '-';
-        printf("[Close rest buy position ]\n");
+        LOG(INFO) << "[Close rest buy position]";
     }
     else if(orderDirection == 's') {
         // clear rest sell position
         MarketOrder(contract, Buy, Close, volume);
         orderDirection = '-';
-        printf("[Close rest sell position]\n");
+        LOG(INFO) << "[Close rest sell position]";
     }
 
     cout << "[M_Strategy]Trading Thread now have been Stopped" << endl;

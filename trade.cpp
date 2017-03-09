@@ -333,8 +333,8 @@ void CTraderSpi::ReqOrderInsert(TThostFtdcInstrumentIDType instrumentID,
 	req.VolumeTotalOriginal = volume;
 
 	///有效期类型: 当日有效
-	req.TimeCondition = THOST_FTDC_TC_IOC;
-	//req.TimeCondition = THOST_FTDC_TC_GFD;
+	//req.TimeCondition = THOST_FTDC_TC_IOC;
+	req.TimeCondition = THOST_FTDC_TC_GFD;
 	///GTD日期
 	//	TThostFtdcDateType	GTDDate;
 	///成交量类型: 任何数量
@@ -398,8 +398,7 @@ void CTraderSpi::ReqMarketPriceOrderInsert(TThostFtdcInstrumentIDType instrument
 	req.VolumeTotalOriginal = volume;
 
 	///有效期类型: 当日有效
-	//req.TimeCondition = THOST_FTDC_TC_IOC;
-	req.TimeCondition = THOST_FTDC_TC_IOC;
+	req.TimeCondition = THOST_FTDC_TC_GFD;
 	///GTD日期
 	//	TThostFtdcDateType	GTDDate;
 	///成交量类型: 任何数量
