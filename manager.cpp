@@ -45,6 +45,7 @@ void StrategyControl::CmdStart() {
     {
         LOG(FATAL) << "marketSpi == NULL or traderSpi == NULL";
     }
+	
     string command;
     StrategyBase *base = new M_Strategy(this->marketSpi, this->traderSpi);
     base->instrument = "m1705";

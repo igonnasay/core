@@ -177,6 +177,7 @@ void CTraderSpi::OnRspQryInstrument(CThostFtdcInstrumentField *pInstrument, CTho
 	string instrument_id = pInstrument->InstrumentID;
 	string exch = pInstrument->ExchangeID;
 	exch_table[instrument_id] = exch;
+	//printf("%s %s\n", instrument_id.c_str(), exch_table[instrument_id].c_str());
 }
 
 void CTraderSpi::OnRspQryInstrumentCommissionRate(CThostFtdcInstrumentCommissionRateField *pInstrumentCommissionRate, CThostFtdcRspInfoField *pRspInfo, int nRequestID, bool bIsLast){
@@ -292,76 +293,9 @@ void CTraderSpi::OnRspQryInvestorPosition(CThostFtdcInvestorPositionField *pInve
 	}
 }
 
-void CTraderSpi::ReqOrderInsert(TThostFtdcInstrumentIDType instrumentID, 
-								TThostFtdcDirectionType direction,
-								char offsetFlag,
-								TThostFtdcPriceType price,
-								TThostFtdcVolumeType volume
-								)
-{
-	CThostFtdcInputOrderField req;
-	memset(&req, 0, sizeof(req));
-	///经纪公司代码
-	strcpy(req.BrokerID, BROKER_ID);
-	///投资者代码
-	strcpy(req.InvestorID, INVESTOR_ID);
-	///合约代码
-	strcpy(req.InstrumentID, instrumentID);
-
-	///报单引用
-	strcpy(req.OrderRef, ORDER_REF);
-	///用户代码
-	//	TThostFtdcUserIDType	UserID;
-	///报单价格条件: 限价
-	req.OrderPriceType = THOST_FTDC_OPT_LimitPrice;
-	///买卖方向:
-	//req.Direction = THOST_FTDC_D_Buy;
-	req.Direction = direction;
-
-	///组合开平标志: 开仓
-	//req.CombOffsetFlag[0] = THOST_FTDC_OFEN_Open;
-	req.CombOffsetFlag[0] = offsetFlag;
-
-	///组合投机套保标志
-	req.CombHedgeFlag[0] = THOST_FTDC_HF_Speculation;
-	///价格
-	//req.LimitPrice = LIMIT_PRICE;
-	req.LimitPrice = price;
-
-	///数量: 1
-	//req.VolumeTotalOriginal = 1;
-	req.VolumeTotalOriginal = volume;
-
-	///有效期类型: 当日有效
-	//req.TimeCondition = THOST_FTDC_TC_IOC;
-	req.TimeCondition = THOST_FTDC_TC_GFD;
-	///GTD日期
-	//	TThostFtdcDateType	GTDDate;
-	///成交量类型: 任何数量
-	req.VolumeCondition = THOST_FTDC_VC_AV;
-	///最小成交量: 1
-	req.MinVolume = 1;
-	///触发条件: 立即
-	req.ContingentCondition = THOST_FTDC_CC_Immediately;
-	///止损价
-	//	TThostFtdcPriceType	StopPrice;
-	///强平原因: 非强平
-	req.ForceCloseReason = THOST_FTDC_FCC_NotForceClose;
-	///自动挂起标志: 否
-	req.IsAutoSuspend = 0;
-	///业务单元
-	//	TThostFtdcBusinessUnitType	BusinessUnit;
-	///请求编号
-	//	TThostFtdcRequestIDType	RequestID;
-	///用户强评标志: 否
-	req.UserForceClose = 0;
-	AutoIncOrderRef();
-	int iResult = pTraderUserApi->ReqOrderInsert(&req, ++traderIRequestID);
-	cerr << "--->>> 报单录入请求: " << iResult << ((iResult == 0) ? ", 成功" : ", 失败") << endl;
-	MarketUtil::AddGlobalTradeCnt();
-	LOG(INFO) << "RequestLimitPriceOrderInsert --> GlobalTradeCnt : " << MarketUtil::GetGlobalTradeCnt();
-	if(MarketUtil::GetGlobalTradeCnt() > 100)
-		LOG(FATAL) << "GlobalTradeCnt exceeds 100. Too much Trade! Program will crash!";
+void CTraderSpi::ReqOrderInsert(TThostFtdcInstrumentIDType instrumentID, TThostFtdcDirectionType direction, 
+		char offsetFlag, TThostFtdcPriceType price, TThostFtdcVolumeType volume) {
+	//
 }
 
 void CTraderSpi::ReqMarketPriceOrderInsert(TThostFtdcInstrumentIDType instrumentID, 
@@ -597,14 +531,191 @@ string CTraderSpi::GetExchange(const string& instrument) {
 		return  exch_table[instrument];
 }
 
-int ReqPositionVolume(const std::string instrument) {
-	// To Do
-	return  0;
+CThostFtdcInputOrderField CTraderSpi::GetSampleInputOrderField() {
+	CThostFtdcInputOrderField req;
+	memset(&req, 0, sizeof(req));
+	///经纪公司代码
+	strcpy(req.BrokerID, "");
+	///投资者代码
+	strcpy(req.InvestorID, "");
+	///合约代码
+	strcpy(req.InstrumentID, "");
+
+	///报单引用
+	strcpy(req.OrderRef, "");
+	///报单价格条件: 限价
+	req.OrderPriceType = THOST_FTDC_OPT_LimitPrice;
+	///买卖方向:
+	req.Direction = '-';
+
+	///组合开平标志: 开仓
+	req.CombOffsetFlag[0] = '-';
+
+	///组合投机套保标志
+	req.CombHedgeFlag[0] = THOST_FTDC_HF_Speculation;
+	///价格
+	req.LimitPrice = 0;
+
+	///数量: 1
+	req.VolumeTotalOriginal = 0;
+
+	///有效期类型: 当日有效
+	req.TimeCondition = THOST_FTDC_TC_GFD;
+	///成交量类型: 任何数量
+	req.VolumeCondition = THOST_FTDC_VC_AV;
+	///最小成交量: 1
+	req.MinVolume = 1;
+	///触发条件: 立即
+	req.ContingentCondition = THOST_FTDC_CC_Immediately;
+	///强平原因: 非强平
+	req.ForceCloseReason = THOST_FTDC_FCC_NotForceClose;
+	///自动挂起标志: 否
+	req.IsAutoSuspend = 0;
+	///用户强评标志: 否
+	req.UserForceClose = 0;
+	return req;
+}
+void CTraderSpi::SetOrderBrokerID(CThostFtdcInputOrderField &order, const string& broker) {
+	strcpy(order.BrokerID, broker.c_str());
+}
+void CTraderSpi::SetOrderInvestorID(CThostFtdcInputOrderField &order, const string& investor_id) {
+	strcpy(order.InvestorID, investor_id.c_str());
+}
+void CTraderSpi::SetOrderInstrumentID(CThostFtdcInputOrderField &order, const string& instrument_id) {
+	strcpy(order.InstrumentID, instrument_id.c_str());
+}
+void CTraderSpi::SetOrderRef(CThostFtdcInputOrderField &order, const string& order_ref) {
+	strcpy(order.OrderRef, order_ref.c_str());
+}
+void CTraderSpi::SetOrderPrice(CThostFtdcInputOrderField &order, double price) {
+	order.LimitPrice = price;
+}
+void CTraderSpi::SetOrderDirectionType(CThostFtdcInputOrderField &order, const string& direction) {
+	if(direction == "buy") {
+		order.Direction = THOST_FTDC_D_Buy;
+	} else if(direction == "sell") {
+		order.Direction = THOST_FTDC_D_Sell;
+	} else {
+		LOG(FATAL) << "Unknown order direction type.";
+	}
+}
+void CTraderSpi::SetOrderOpenCloseType(CThostFtdcInputOrderField &order, const string& direction) {
+	if(direction == "open") {
+		order.CombOffsetFlag[0] = THOST_FTDC_OFEN_Open;
+	} else if(direction == "close") {
+		order.CombOffsetFlag[0] = THOST_FTDC_OF_Close;
+	} else if(direction == "close_today") {
+		order.CombOffsetFlag[0] = THOST_FTDC_OF_CloseToday;
+	} else if(direction == "close_yesterday") {
+		order.CombOffsetFlag[0] = THOST_FTDC_OF_CloseYesterday;
+	} else {
+		LOG(FATAL) << "Unknown open/close type.";
+	}
+}
+void CTraderSpi::SetOrderVolume(CThostFtdcInputOrderField &order, int volume) {
+	order.VolumeTotalOriginal = volume;
 }
 
+void CTraderSpi::BuyOpen(const string& instrument, double price, int volume) {
+	CThostFtdcInputOrderField order = GetSampleInputOrderField();
+	SetOrderBrokerID(order, BROKER_ID);
+	SetOrderInvestorID(order, INVESTOR_ID);
+	SetOrderInstrumentID(order, instrument.c_str());
+	SetOrderRef(order, ORDER_REF);
+	SetOrderPrice(order, price);
+	SetOrderDirectionType(order, "buy");
+	SetOrderOpenCloseType(order, "open");
+	SetOrderVolume(order, volume);
+	SendOrder(order);
+}
+void CTraderSpi::SellOpen(const string& instrument, double price, int volume) {
+	CThostFtdcInputOrderField order = GetSampleInputOrderField();
+	SetOrderBrokerID(order, BROKER_ID);
+	SetOrderInvestorID(order, INVESTOR_ID);
+	SetOrderInstrumentID(order, instrument.c_str());
+	SetOrderRef(order, ORDER_REF);
+	SetOrderPrice(order, price);
+	SetOrderDirectionType(order, "sell");
+	SetOrderOpenCloseType(order, "open");
+	SetOrderVolume(order, volume);
+	SendOrder(order);
+}
+void CTraderSpi::BuyCloseToday(const string& instrument, double price, int volume) {
+	CThostFtdcInputOrderField order = GetSampleInputOrderField();
+	SetOrderBrokerID(order, BROKER_ID);
+	SetOrderInvestorID(order, INVESTOR_ID);
+	SetOrderInstrumentID(order, instrument.c_str());
+	SetOrderRef(order, ORDER_REF);
+	SetOrderPrice(order, price);
+	SetOrderDirectionType(order, "buy");
+	SetOrderOpenCloseType(order, "close_today");
+	SetOrderVolume(order, volume);
+	SendOrder(order);
+}
+void CTraderSpi::SellCloseToday(const string& instrument, double price, int volume) {
+	CThostFtdcInputOrderField order = GetSampleInputOrderField();
+	SetOrderBrokerID(order, BROKER_ID);
+	SetOrderInvestorID(order, INVESTOR_ID);
+	SetOrderInstrumentID(order, instrument.c_str());
+	SetOrderRef(order, ORDER_REF);
+	SetOrderPrice(order, price);
+	SetOrderDirectionType(order, "sell");
+	SetOrderOpenCloseType(order, "close_today");
+	SetOrderVolume(order, volume);
+	SendOrder(order);
+}
 
+void CTraderSpi::SendOrder(CThostFtdcInputOrderField &order) {
+	AutoIncOrderRef();
+	int iResult = pTraderUserApi->ReqOrderInsert(&order, ++traderIRequestID);
+	cerr << "--->>> 报单录入请求: " << iResult << ((iResult == 0) ? ", 成功" : ", 失败") << endl;
+	MarketUtil::AddGlobalTradeCnt();
+	LOG(INFO) << "RequestLimitPriceOrderInsert --> GlobalTradeCnt : " << MarketUtil::GetGlobalTradeCnt();
+	if(MarketUtil::GetGlobalTradeCnt() > 100)
+		LOG(FATAL) << "GlobalTradeCnt exceeds 100. Too much Trade! Program will crash!";
+}
 
+void CTraderSpi::ShowInputOrderField(CThostFtdcInputOrderField &order) {
+	///经纪公司代码
+	printf("BrokerID : %s\n", order.BrokerID);
+	///投资者代码
+	printf("InvestorID : %s\n", order.InvestorID);
+	///合约代码
+	printf("InstrumentID : %s\n", order.InstrumentID);
 
+	///报单引用
+	printf("OrderRef : %s\n", order.OrderRef);
+	///报单价格条件: 限价
+	printf("OrderPriceType : %c\n", order.OrderPriceType);
+	///买卖方向:
+	printf("Direction : %c\n", order.Direction);
+
+	///组合开平标志: 开仓
+	printf("CombOffsetFlag : %c\n", order.CombOffsetFlag[0]);
+
+	///组合投机套保标志
+	printf("CombHedgeFlag : %c\n", order.CombHedgeFlag[0]);
+	///价格
+	printf("LimitPrice : %.2f\n", order.LimitPrice);
+
+	///数量: 1
+	printf("VolumeTotalOriginal : %d\n", order.VolumeTotalOriginal);
+
+	///有效期类型: 当日有效
+	printf("TimeCondition : %c\n", order.TimeCondition);
+	///成交量类型: 任何数量
+	printf("VolumeCondition : %c\n", order.VolumeCondition);
+	///最小成交量: 1
+	printf("MinVolume : %d\n", order.MinVolume);
+	///触发条件: 立即
+	printf("ContigentCondition : %c\n", order.ContingentCondition);
+	///强平原因: 非强平
+	printf("ForceCloseReason : %c\n", order.ForceCloseReason);
+	///自动挂起标志: 否
+	printf("IsAutoSuspend : %c\n", order.IsAutoSuspend);
+	///用户强评标志: 否
+	printf("UserForceClose : %c\n", order.UserForceClose);
+}
 
 
 

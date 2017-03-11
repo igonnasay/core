@@ -110,7 +110,26 @@ public:
     int ReqPositionVolume(const std::string instrument);
 	string GetExchange(const string& instrument);
 
+	// Order API designed by liqiaz
+	void BuyOpen(const string& instrument, double price, int volume);
+	void SellOpen(const string& instrument, double price, int volume);
+	void BuyCloseToday(const string& instrument, double price, int volume);
+	void SellCloseToday(const string& instrument, double price, int volume);
+
 private:
+	CThostFtdcInputOrderField GetSampleInputOrderField();
+	void SetOrderBrokerID(CThostFtdcInputOrderField &order, const string& broker);
+	void SetOrderInvestorID(CThostFtdcInputOrderField &order, const string& investor);
+	void SetOrderInstrumentID(CThostFtdcInputOrderField &order, const string& instrument_id);
+	void SetOrderRef(CThostFtdcInputOrderField &order, const string& order_ref);
+	void SetOrderPrice(CThostFtdcInputOrderField &order, double price);
+	void SetOrderDirectionType(CThostFtdcInputOrderField &order, const string& direction);
+	void SetOrderOpenCloseType(CThostFtdcInputOrderField &order, const string& direction);
+	void SetOrderVolume(CThostFtdcInputOrderField &order, int volume);
+	void SendOrder(CThostFtdcInputOrderField &order);
+
+	void ShowInputOrderField(CThostFtdcInputOrderField &order);
+
     bool tradeInited;
 	CThostFtdcTraderApi* pTraderUserApi;
 	CThostFtdcOrderField *myOrder;

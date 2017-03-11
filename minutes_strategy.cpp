@@ -44,7 +44,8 @@ void M_Strategy::StrategyMethod() {
     {
         if(abs(openPrice) < 1e-7) {
             openPrice = this->marketSpi->GetOpenPrice(this->instrument);
-            printf("openPrice = %.2f\n", openPrice);
+            printf("openPrice = %.2f highlimit_price = %.2f  lowlimit_price = %.2f\n", openPrice,
+                   this->marketSpi->GetUpperLimitPrice(instrument), this->marketSpi->GetLowerLimitPrice(instrument));
         }
         if(data.cur <= N_+1 || data.cur <= M_+1) {
             continue;
