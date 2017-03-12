@@ -49,7 +49,7 @@ void StrategyControl::CmdStart() {
     string command;
     StrategyBase *base = new M_Strategy(this->marketSpi, this->traderSpi);
     base->instrument = "m1705";
-    vector<string> cmd_vec;
+    vector<string> cmd;
 
 	thread t([&]() {
 		while(true) {
@@ -71,7 +71,7 @@ void StrategyControl::CmdStart() {
         printf("[Control] : option >> ");
         getline(cin, command);
         command = MarketUtil::strip(command);
-        MarketUtil::split(command, " ", cmd_vec);
+        MarketUtil::split(command, " ", cmd);
         if(command == "start") {
             base->Start();
         }
@@ -83,50 +83,85 @@ void StrategyControl::CmdStart() {
         else if(command == "exit") {
             exit(0);
         }
-        else if(cmd_vec.size()==2 && cmd_vec[0]=="showminutes")
+        else if(cmd.size()==2 && cmd[0]=="showminutes")
         {
             // command sample : shominutes m1705
-            this->marketSpi->ShowMinutesData(cmd_vec[1]);
+            this->marketSpi->ShowMinutesData(cmd[1]);
         }
-        else if(cmd_vec.size()==3 && command == "saveminutes")
+        else if(cmd.size()==3 && command == "saveminutes")
         {
             // command sample : saveminutes m1705 ./m1705.mdt
-            this->save_minutes_data(cmd_vec[1], cmd_vec[2]);
+            this->save_minutes_data(cmd[1], cmd[2]);
         }
         else if(command == "saveall")
         {
             this->marketSpi->save_all();
         }
-        else if(cmd_vec.size()==3 && cmd_vec[0]=="set" && cmd_vec[1]=="instrument")
+        else if(cmd.size()==3 && cmd[0]=="set" && cmd[1]=="instrument")
         {
             // command sample : set instrument m1705
             if(base->run_sig_)
             {
                 base->Stop();
             }
-            base->instrument = cmd_vec[2];
+            base->instrument = cmd[2];
         }
-		else if(cmd_vec.size()==3 && cmd_vec[0]=="set" && cmd_vec[1]=="volume") {
-			base->volume = std::stoi(cmd_vec[2].c_str());
+		else if(cmd.size()==3 && cmd[0]=="set" && cmd[1]=="volume") {
+			base->volume = std::stoi(cmd[2].c_str());
 		}
-		else if(cmd_vec.size()==1 && cmd_vec[0]=="loadall") {
+		else if(cmd.size()==1 && cmd[0]=="loadall") {
 			// loadall
 			this->marketSpi->load_all();
 		}
-		else if(cmd_vec.size()==2 && cmd_vec[0]=="showbar") {
+		else if(cmd.size()==2 && cmd[0]=="showbar") {
 			// showbar m1705
-			this->marketSpi->show_bar_data(cmd_vec[1]);
+			this->marketSpi->show_bar_data(cmd[1]);
 		}
-		else if(cmd_vec.size()==1 && cmd_vec[0]=="showinfo") {
+		else if(cmd.size()==1 && cmd[0]=="showinfo") {
+			// showinfo
 			base->ShowInfo();
 		}
-		else if(cmd_vec.size()==3 && cmd_vec[0]=="set" && cmd_vec[1]=="buy_flag") {
-			if(cmd_vec[2] == "true")  base->buy_flag = true;
-			else if(cmd_vec[2] == "false")  base->buy_flag = false;
+		else if(cmd.size()==3 && cmd[0]=="set" && cmd[1]=="buy_flag") {
+			// set buy_flag true
+			if(cmd[2] == "true")  base->buy_flag = true;
+			else if(cmd[2] == "false")  base->buy_flag = false;
 		}
-		else if(cmd_vec.size()==3 && cmd_vec[0]=="set" && cmd_vec[1]=="sell_flag") {
-			if(cmd_vec[2] == "true")  base->sell_flag = true;
-			else if(cmd_vec[2] == "false")  base->sell_flag = false;
+		else if(cmd.size()==3 && cmd[0]=="set" && cmd[1]=="sell_flag") {
+			// set sell_flag true
+			if(cmd[2] == "true")  base->sell_flag = true;
+			else if(cmd[2] == "false")  base->sell_flag = false;
+		}
+		else if(cmd.size() == 2 && cmd[0] == "buy_open") {
+			// buy_open 3000
+			double price = std::stod(cmd[1].c_str());
+			this->traderSpi->GiveOrder(base->instrument, price, base->volume, "buy", "open");
+		}
+		else if(cmd.size() == 2 && cmd[0] == "sell_open") {
+			// sell_open 2900
+			double price = std::stod(cmd[1].c_str());
+			this->traderSpi->GiveOrder(base->instrument, price, base->volume, "sell", "open");
+		}
+		else if(cmd.size() == 2 && cmd[0] == "buy_close_today") {
+			// buy_close_today 3010
+			double price = std::stod(cmd[1].c_str());
+			string exchange = this->traderSpi->GetExchange(base->instrument);
+			if(exchange == "SHFE") {
+				this->traderSpi->GiveOrder(base->instrument, price, base->volume, "buy", "close_today");
+			}
+			else {
+				this->traderSpi->GiveOrder(base->instrument, price, base->volume, "buy", "close");
+			}
+		}
+		else if(cmd.size() == 2 && cmd[0] == "sell_close_today") {
+			// sell_close_today 2875
+			double price = std::stod(cmd[1].c_str());
+			string exchange = this->traderSpi->GetExchange(base->instrument);
+			if(exchange == "SHFE") {
+				this->traderSpi->GiveOrder(base->instrument, price, base->volume, "sell", "close_today");
+			}
+			else {
+				this->traderSpi->GiveOrder(base->instrument, price, base->volume, "sell", "close");
+			}
 		}
     }
 }

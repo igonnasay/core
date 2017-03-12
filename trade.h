@@ -115,6 +115,7 @@ public:
 	void SellOpen(const string& instrument, double price, int volume);
 	void BuyCloseToday(const string& instrument, double price, int volume);
 	void SellCloseToday(const string& instrument, double price, int volume);
+	void GiveOrder(const string& instrument, double price, int volume, const string& direction, const string& close_type);
 
 private:
 	CThostFtdcInputOrderField GetSampleInputOrderField();

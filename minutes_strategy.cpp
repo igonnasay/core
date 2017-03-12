@@ -32,20 +32,32 @@ void M_Strategy::StrategyMethod() {
     double stopLoss = 0;
     char orderDirection = '-';
     double openPrice = 0;
+	double upper_limit_price = 1e9;
+	double lower_limit_price = 0;
     double currentPrice = 0;
     double tailMax = 0;
     double tailMin = 0;
 	double ma10, ma20, ma30;
+	string exchange = this->traderSpi->GetExchange(this->instrument);
+
+	string open_type = "open";
+	string close_type = "close";
+	if(exchange == "SHFE") {
+		close_type = "close_today";
+	}
+
     cout << "[M_Strategy] Trading Thread Start..." << endl;
     printf("instrument = %s\n", this->instrument.c_str());
+	printf("exchange = %s\n", exchange.c_str());
     strcpy(contract, this->instrument.c_str());
     Data& data = this->marketSpi->get_data_table(contract);
     while(this->run_sig_)
     {
         if(abs(openPrice) < 1e-7) {
             openPrice = this->marketSpi->GetOpenPrice(this->instrument);
-            printf("openPrice = %.2f highlimit_price = %.2f  lowlimit_price = %.2f\n", openPrice,
-                   this->marketSpi->GetUpperLimitPrice(instrument), this->marketSpi->GetLowerLimitPrice(instrument));
+			upper_limit_price = this->marketSpi->GetUpperLimitPrice(this->instrument);
+			lower_limit_price = this->marketSpi->GetLowerLimitPrice(this->instrument);
+            printf("openPrice = %.2f highlimit_price = %.2f  lowlimit_price = %.2f\n", openPrice, upper_limit_price, lower_limit_price);
         }
         if(data.cur <= N_+1 || data.cur <= M_+1) {
             continue;
@@ -61,17 +73,17 @@ void M_Strategy::StrategyMethod() {
 
             // Do stoploss first
             if(orderDirection == 'b' && currentPrice < stopLoss){
-                MarketOrder(contract, Sell, Close, volume);
+				this->traderSpi->GiveOrder(this->instrument, lower_limit_price, this->volume, "sell", close_type);
                 LOG(INFO) << "[StopLoss position] : Sell Close At " << currentPrice;
                 orderDirection = '-';
-				this_thread::sleep_for(chrono::milliseconds(300));
+				this_thread::sleep_for(chrono::milliseconds(100));
             }
 
             if(orderDirection == 's' && currentPrice > stopLoss) {
-                MarketOrder(contract, Buy, Close, volume);
+				this->traderSpi->GiveOrder(this->instrument, upper_limit_price, this->volume, "buy", close_type);
                 LOG(INFO) << "[StopLoss position] : Buy Close At " << currentPrice;
                 orderDirection = '-';
-				this_thread::sleep_for(chrono::milliseconds(300));
+				this_thread::sleep_for(chrono::milliseconds(100));
             }
 
             // Check whether should AI open new position.
@@ -80,14 +92,14 @@ void M_Strategy::StrategyMethod() {
                 stopLoss = tailMin;
                 orderPrice = currentPrice;
                 LOG(INFO) << "[Open position] : Buy Open At " << orderPrice;
-                MarketOrder(contract, Buy, Open, volume);
+				this->traderSpi->GiveOrder(this->instrument, upper_limit_price, this->volume, "buy", open_type);
             }
             if(orderDirection == '-' && this->sell_flag && Signal(ma10, ma20, ma30, tailMax, tailMin, currentPrice) == 's') {
                 orderDirection = 's';
                 stopLoss = tailMax;
                 orderPrice = currentPrice;
                 LOG(INFO) << "[Open position] : Sell Open At " << orderPrice;
-                MarketOrder(contract, Sell, Open, volume);
+				this->traderSpi->GiveOrder(this->instrument, lower_limit_price, this->volume, "sell", open_type);
             }
         }
         this_thread::sleep_for(chrono::milliseconds(100));
@@ -96,13 +108,13 @@ void M_Strategy::StrategyMethod() {
     //End of while - run_sig_
     if(orderDirection == 'b') {
         //clear rest buy position
-        MarketOrder(contract, Sell, Close, volume);
+		this->traderSpi->GiveOrder(this->instrument, lower_limit_price, this->volume, "sell", close_type);
         orderDirection = '-';
         LOG(INFO) << "[Close rest buy position]";
     }
     else if(orderDirection == 's') {
         // clear rest sell position
-        MarketOrder(contract, Buy, Close, volume);
+		this->traderSpi->GiveOrder(this->instrument, upper_limit_price, this->volume, "buy", close_type);
         orderDirection = '-';
         LOG(INFO) << "[Close rest sell position]";
     }
@@ -129,29 +141,5 @@ void M_Strategy::ShowInfo() {
 	printf("instrument : %s    volume : %d\n buy_flag : %d   sell_flag : %d\n", this->instrument.c_str(), this->volume, 
 			this->buy_flag, this->sell_flag);
 }
-
-void M_Strategy::MarketOrder(const string& instrument, char order_dir, char order_type, int volume) {
-	double price;
-	if (order_dir == Buy)  price = this->marketSpi->GetUpperLimitPrice(instrument);
-	else if (order_dir == Sell)  price = this->marketSpi->GetLowerLimitPrice(instrument);
-	else {
-		LOG(FATAL) << "order_dir not correct!";
-	}
-	TThostFtdcInstrumentIDType contract;
-	strcpy(contract, instrument.c_str());
-	this->traderSpi->ReqOrderInsert(contract, order_dir, order_type, price, volume);
-}
-
-
-
-
-
-
-
-
-
-
-
-
 
 

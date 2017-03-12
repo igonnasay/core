@@ -829,6 +829,8 @@ BusinessUnit	ctp/ThostFtdcUserApiStruct.h	/^	TThostFtdcBusinessUnitType	Business
 BusinessUnit	ctp/ThostFtdcUserApiStruct.h	/^	TThostFtdcBusinessUnitType	BusinessUnit;$/;"	m	struct:CThostFtdcTradeField
 Buy	StrategyData.h	/^    const static char Buy = THOST_FTDC_D_Buy;$/;"	m	class:TradeInfo
 Buy	trade.h	8;"	d
+BuyCloseToday	trade.cpp	/^void CTraderSpi::BuyCloseToday(const string& instrument, double price, int volume) {$/;"	f	class:CTraderSpi
+BuyOpen	trade.cpp	/^void CTraderSpi::BuyOpen(const string& instrument, double price, int volume) {$/;"	f	class:CTraderSpi
 ByRef	core_test/googletest/include/gtest/internal/gtest-tuple.h	/^struct ByRef { typedef const T& type; };  \/\/ NOLINT$/;"	s	namespace:std::tr1::gtest_internal
 ByRef	core_test/googletest/include/gtest/internal/gtest-tuple.h	/^struct ByRef<T&> { typedef T& type; };  \/\/ NOLINT$/;"	s	namespace:std::tr1::gtest_internal
 CCHECK	easylogging/easylogging++.h	4430;"	d
@@ -2867,10 +2869,13 @@ Gender	ctp/ThostFtdcUserApiStruct.h	/^	TThostFtdcGenderType	Gender;$/;"	m	struct
 Gender	ctp/ThostFtdcUserApiStruct.h	/^	TThostFtdcGenderType	Gender;$/;"	m	struct:CThostFtdcReqChangeAccountField
 Gender	ctp/ThostFtdcUserApiStruct.h	/^	TThostFtdcGenderType	Gender;$/;"	m	struct:CThostFtdcReqOpenAccountField
 GeneratorCreationFunc	core_test/googletest/include/gtest/internal/gtest-param-util.h	/^  typedef ParamGenerator<ParamType>(GeneratorCreationFunc)();$/;"	t	class:testing::internal::ParameterizedTestCaseInfo
+GetAskPrice1	market.cpp	/^double CMdSpi::GetAskPrice1(const string& instrument) {$/;"	f	class:CMdSpi
+GetBidPrice1	market.cpp	/^double CMdSpi::GetBidPrice1(const string& instrument) {$/;"	f	class:CMdSpi
 GetClosePrice	BaseData.cpp	/^double MinuteData::GetClosePrice()$/;"	f	class:MinuteData
 GetCodeLocation	core_test/googletest/include/gtest/internal/gtest-internal.h	/^  const CodeLocation& GetCodeLocation(const std::string& test_name) const {$/;"	f	class:testing::internal::TypedTestCasePState
 GetDirection	StrategyData.cpp	/^char TradeInfo::GetDirection() {$/;"	f	class:TradeInfo
 GetEnv	core_test/googletest/include/gtest/internal/gtest-port.h	/^inline const char* GetEnv(const char* name) {$/;"	f	namespace:testing::internal::posix
+GetExchange	trade.cpp	/^string CTraderSpi::GetExchange(const string& instrument) {$/;"	f	class:CTraderSpi
 GetGlobalTradeCnt	tutils.cpp	/^int MarketUtil::GetGlobalTradeCnt() {$/;"	f	class:MarketUtil
 GetHighPrice	BaseData.cpp	/^double MinuteData::GetHighPrice()$/;"	f	class:MinuteData
 GetInput	market.cpp	/^std::string CMdSpi::GetInput(std::string prompt)$/;"	f	class:CMdSpi
@@ -2880,6 +2885,7 @@ GetInstrument	StrategyData.cpp	/^string TradeInfo::GetInstrument() {$/;"	f	class
 GetInstrumentListSize	market.cpp	/^int CMdSpi::GetInstrumentListSize()$/;"	f	class:CMdSpi
 GetLastPrice	market.cpp	/^double CMdSpi::GetLastPrice(const std::string& instrument) {$/;"	f	class:CMdSpi
 GetLowPrice	BaseData.cpp	/^double MinuteData::GetLowPrice()$/;"	f	class:MinuteData
+GetLowerLimitPrice	market.cpp	/^double CMdSpi::GetLowerLimitPrice(const string& instrument) {$/;"	f	class:CMdSpi
 GetMinuteDataAtIndex	market.cpp	/^MinuteData CMdSpi::GetMinuteDataAtIndex(const string instrument, int index)$/;"	f	class:CMdSpi
 GetMinutesList	market.cpp	/^std::vector<MinuteData>& CMdSpi::GetMinutesList(const std::string& instrument)$/;"	f	class:CMdSpi
 GetMinutesListSize	market.cpp	/^int CMdSpi::GetMinutesListSize(const string instrument)$/;"	f	class:CMdSpi
@@ -2896,6 +2902,7 @@ GetParamNameGen	core_test/googletest/include/gtest/internal/gtest-param-util.h	/
 GetParamNameGen	core_test/googletest/include/gtest/internal/gtest-param-util.h	/^typename ParamNameGenFunc<ParamType>::Type *GetParamNameGen() {$/;"	f	namespace:testing::internal
 GetPrefixUntilComma	core_test/googletest/include/gtest/internal/gtest-internal.h	/^inline std::string GetPrefixUntilComma(const char* str) {$/;"	f	namespace:testing::internal
 GetPrice	BaseData.cpp	/^double Tick::GetPrice()$/;"	f	class:Tick
+GetSampleInputOrderField	trade.cpp	/^CThostFtdcInputOrderField CTraderSpi::GetSampleInputOrderField() {$/;"	f	class:CTraderSpi
 GetStopLoss	StrategyData.cpp	/^double TradeInfo::GetStopLoss() {$/;"	f	class:TradeInfo
 GetStream	core_test/googletest/include/gtest/internal/gtest-port.h	/^  ::std::ostream& GetStream() { return ::std::cerr; }$/;"	f	class:testing::internal::GTestLog
 GetTestCaseName	core_test/googletest/include/gtest/internal/gtest-param-util.h	/^  virtual const string& GetTestCaseName() const { return test_case_name_; }$/;"	f	class:testing::internal::ParameterizedTestCaseInfo
@@ -2908,7 +2915,9 @@ GetTs	BaseData.cpp	/^int MinuteData::GetTs() {$/;"	f	class:MinuteData
 GetTs	BaseData.cpp	/^int Tick::GetTs()$/;"	f	class:Tick
 GetTypeId	core_test/googletest/include/gtest/internal/gtest-internal.h	/^TypeId GetTypeId() {$/;"	f	namespace:testing::internal
 GetTypeName	core_test/googletest/include/gtest/internal/gtest-type-util.h	/^std::string GetTypeName() {$/;"	f	namespace:testing::internal
+GetUpperLimitPrice	market.cpp	/^double CMdSpi::GetUpperLimitPrice(const string& instrument) {$/;"	f	class:CMdSpi
 GetVolume	StrategyData.cpp	/^int TradeInfo::GetVolume() {$/;"	f	class:TradeInfo
+GiveOrder	trade.cpp	/^void CTraderSpi::GiveOrder(const string& instrument, double price, int volume, const string& direction, const string& type) {$/;"	f	class:CTraderSpi
 Global	easylogging/easylogging++.h	/^  Global = 1,$/;"	m	class:el::Level
 GoogleTestFailureException	core_test/googletest/include/gtest/internal/gtest-internal.h	/^class GTEST_API_ GoogleTestFailureException : public ::std::runtime_error {$/;"	c	namespace:testing::internal
 GroupIP	ctp/ThostFtdcUserApiStruct.h	/^	TThostFtdcIPAddressType	GroupIP;$/;"	m	struct:CThostFtdcMulticastGroupInfoField
@@ -3739,6 +3748,7 @@ MarginRateByVolume	ctp/ThostFtdcUserApiStruct.h	/^	TThostFtdcRatioType	MarginRat
 MarginRateByVolume	ctp/ThostFtdcUserApiStruct.h	/^	TThostFtdcRatioType	MarginRateByVolume;$/;"	m	struct:CThostFtdcInvestorPositionField
 MarginRateByVolume	ctp/ThostFtdcUserApiStruct.h	/^	TThostFtdcRatioType	MarginRateByVolume;$/;"	m	struct:CThostFtdcSyncingInvestorPositionField
 MarketInit	start.cpp	/^void MarketInit()$/;"	f
+MarketOrder	minutes_strategy.cpp	/^void M_Strategy::MarketOrder(const string& instrument, char order_dir, char order_type, int volume) {$/;"	f	class:M_Strategy
 MarketStatus	ctp/ThostFtdcUserApiStruct.h	/^	TThostFtdcInstrumentStatusType	MarketStatus;$/;"	m	struct:CThostFtdcExchangeSequenceField
 MarketUtil	tutils.h	/^class MarketUtil$/;"	c
 Max	core_test/googletest/include/gtest/internal/gtest-internal.h	/^inline double FloatingPoint<double>::Max() { return DBL_MAX; }$/;"	f	class:testing::internal::FloatingPoint
@@ -4530,8 +4540,7 @@ RepealedTimes	ctp/ThostFtdcUserApiStruct.h	/^	TThostFtdcRepealedTimesType	Repeal
 RepealedTimes	ctp/ThostFtdcUserApiStruct.h	/^	TThostFtdcRepealedTimesType	RepealedTimes;$/;"	m	struct:CThostFtdcRspRepealField
 ReqMarketPriceOrderInsert	trade.cpp	/^void CTraderSpi::ReqMarketPriceOrderInsert(TThostFtdcInstrumentIDType instrumentID, $/;"	f	class:CTraderSpi
 ReqOrderAction	trade.cpp	/^void CTraderSpi::ReqOrderAction(CThostFtdcOrderField *pOrder)$/;"	f	class:CTraderSpi
-ReqOrderInsert	trade.cpp	/^void CTraderSpi::ReqOrderInsert(TThostFtdcInstrumentIDType instrumentID, $/;"	f	class:CTraderSpi
-ReqPositionVolume	trade.cpp	/^int ReqPositionVolume(const std::string instrument) {$/;"	f
+ReqOrderInsert	trade.cpp	/^void CTraderSpi::ReqOrderInsert(TThostFtdcInstrumentIDType instrumentID, TThostFtdcDirectionType direction, $/;"	f	class:CTraderSpi
 ReqQryInstrument	trade.cpp	/^void CTraderSpi::ReqQryInstrument()$/;"	f	class:CTraderSpi
 ReqQryInvestorPosition	trade.cpp	/^void CTraderSpi::ReqQryInvestorPosition()$/;"	f	class:CTraderSpi
 ReqQryTradingAccount	trade.cpp	/^void CTraderSpi::ReqQryTradingAccount()$/;"	f	class:CTraderSpi
@@ -4672,6 +4681,9 @@ SecuPwdFlag	ctp/ThostFtdcUserApiStruct.h	/^	TThostFtdcPwdFlagType	SecuPwdFlag;$/
 SecuPwdFlag	ctp/ThostFtdcUserApiStruct.h	/^	TThostFtdcPwdFlagType	SecuPwdFlag;$/;"	m	struct:CThostFtdcRspTransferField
 Sell	StrategyData.h	/^    const static char Sell = THOST_FTDC_D_Sell;$/;"	m	class:TradeInfo
 Sell	trade.h	9;"	d
+SellCloseToday	trade.cpp	/^void CTraderSpi::SellCloseToday(const string& instrument, double price, int volume) {$/;"	f	class:CTraderSpi
+SellOpen	trade.cpp	/^void CTraderSpi::SellOpen(const string& instrument, double price, int volume) {$/;"	f	class:CTraderSpi
+SendOrder	trade.cpp	/^void CTraderSpi::SendOrder(CThostFtdcInputOrderField &order) {$/;"	f	class:CTraderSpi
 SendTime	ctp/ThostFtdcUserApiStruct.h	/^	TThostFtdcTimeType	SendTime;$/;"	m	struct:CThostFtdcTradingNoticeField
 SendTime	ctp/ThostFtdcUserApiStruct.h	/^	TThostFtdcTimeType	SendTime;$/;"	m	struct:CThostFtdcTradingNoticeInfoField
 SequenceLabel	ctp/ThostFtdcUserApiStruct.h	/^	TThostFtdcSequenceLabelType	SequenceLabel;$/;"	m	struct:CThostFtdcNoticeField
@@ -4750,6 +4762,14 @@ SetInstrumentList	market.cpp	/^void CMdSpi::SetInstrumentList(const std::vector<
 SetInvestorID	market.cpp	/^void CMdSpi::SetInvestorID(const std::string &investorID) $/;"	f	class:CMdSpi
 SetInvestorID	trade.cpp	/^void CTraderSpi::SetInvestorID(const std::string &investorID)$/;"	f	class:CTraderSpi
 SetMarketAddress	market.cpp	/^void CMdSpi::SetMarketAddress(const string &marketAddress)$/;"	f	class:CMdSpi
+SetOrderBrokerID	trade.cpp	/^void CTraderSpi::SetOrderBrokerID(CThostFtdcInputOrderField &order, const string& broker) {$/;"	f	class:CTraderSpi
+SetOrderDirectionType	trade.cpp	/^void CTraderSpi::SetOrderDirectionType(CThostFtdcInputOrderField &order, const string& direction) {$/;"	f	class:CTraderSpi
+SetOrderInstrumentID	trade.cpp	/^void CTraderSpi::SetOrderInstrumentID(CThostFtdcInputOrderField &order, const string& instrument_id) {$/;"	f	class:CTraderSpi
+SetOrderInvestorID	trade.cpp	/^void CTraderSpi::SetOrderInvestorID(CThostFtdcInputOrderField &order, const string& investor_id) {$/;"	f	class:CTraderSpi
+SetOrderOpenCloseType	trade.cpp	/^void CTraderSpi::SetOrderOpenCloseType(CThostFtdcInputOrderField &order, const string& direction) {$/;"	f	class:CTraderSpi
+SetOrderPrice	trade.cpp	/^void CTraderSpi::SetOrderPrice(CThostFtdcInputOrderField &order, double price) {$/;"	f	class:CTraderSpi
+SetOrderRef	trade.cpp	/^void CTraderSpi::SetOrderRef(CThostFtdcInputOrderField &order, const string& order_ref) {$/;"	f	class:CTraderSpi
+SetOrderVolume	trade.cpp	/^void CTraderSpi::SetOrderVolume(CThostFtdcInputOrderField &order, int volume) {$/;"	f	class:CTraderSpi
 SetParam	core_test/googletest/include/gtest/gtest.h	/^  static void SetParam(const ParamType* parameter) {$/;"	f	class:testing::WithParamInterface
 SetPassword	market.cpp	/^void CMdSpi::SetPassword(const std::string &passwd)$/;"	f	class:CMdSpi
 SetPassword	trade.cpp	/^void CTraderSpi::SetPassword(const std::string &passwd)$/;"	f	class:CTraderSpi
@@ -4813,9 +4833,11 @@ ShortOffsetAmount	ctp/ThostFtdcUserApiStruct.h	/^	TThostFtdcMoneyType	ShortOffse
 ShortUseMargin	ctp/ThostFtdcUserApiStruct.h	/^	TThostFtdcMoneyType	ShortUseMargin;$/;"	m	struct:CThostFtdcInvestorProductGroupMarginField
 ShouldRunTest	core_test/googletest/include/gtest/gtest.h	/^  static bool ShouldRunTest(const TestInfo* test_info) {$/;"	f	class:testing::TestCase
 ShowInfo	minutes_strategy.cpp	/^void M_Strategy::ShowInfo() {$/;"	f	class:M_Strategy
+ShowInputOrderField	trade.cpp	/^void CTraderSpi::ShowInputOrderField(CThostFtdcInputOrderField &order) {$/;"	f	class:CTraderSpi
 ShowMinutesData	market.cpp	/^void CMdSpi::ShowMinutesData(const std::string instrument) {$/;"	f	class:CMdSpi
 SignAndMagnitudeToBiased	core_test/googletest/include/gtest/internal/gtest-internal.h	/^  static Bits SignAndMagnitudeToBiased(const Bits &sam) {$/;"	f	class:testing::internal::FloatingPoint
 Signal	minutes_strategy.cpp	/^char M_Strategy::Signal(double ma, double tail_max, double tail_min, double current_price) {$/;"	f	class:M_Strategy
+Signal	minutes_strategy.cpp	/^char M_Strategy::Signal(double ma10, double ma20, double ma30, double tail_max, double tail_min, double now) {$/;"	f	class:M_Strategy
 SingleFailureChecker	core_test/googletest/include/gtest/gtest-spi.h	/^class GTEST_API_ SingleFailureChecker {$/;"	c	namespace:testing::internal
 SkipComma	core_test/googletest/include/gtest/internal/gtest-internal.h	/^inline const char* SkipComma(const char* str) {$/;"	f	namespace:testing::internal
 SleepMilliseconds	core_test/googletest/include/gtest/internal/gtest-port.h	/^inline void SleepMilliseconds(int n) {$/;"	f	namespace:testing::internal
@@ -8121,6 +8143,7 @@ build	easylogging/easylogging++.cc	/^void TypedConfigurations::build(Configurati
 buildBaseFilename	easylogging/easylogging++.cc	/^void File::buildBaseFilename(const std::string& fullPath, char buff[], std::size_t limit, const char* separator) {$/;"	f	class:el::base::utils::File
 buildStrippedFilename	easylogging/easylogging++.cc	/^void File::buildStrippedFilename(const char* filename, char buff[], std::size_t limit) {$/;"	f	class:el::base::utils::File
 buildTimeInfo	easylogging/easylogging++.cc	/^struct ::tm* DateTime::buildTimeInfo(struct timeval* currTime, struct ::tm* timeInfo) {$/;"	f	class:el::base::utils::DateTime
+buy_flag	strategy.h	/^	bool buy_flag;$/;"	m	class:StrategyBase
 cInstrumentList	market.h	/^	char cInstrumentList[105][15];$/;"	m	class:CMdSpi
 cStringCaseEq	easylogging/easylogging++.cc	/^bool Str::cStringCaseEq(const char* s1, const char* s2) {$/;"	f	class:el::base::utils::Str
 cStringEq	easylogging/easylogging++.cc	/^bool Str::cStringEq(const char* s1, const char* s2) {$/;"	f	class:el::base::utils::Str
@@ -8373,6 +8396,7 @@ end_index_	core_test/googletest/include/gtest/internal/gtest-param-util.h	/^  co
 endsWith	easylogging/easylogging++.cc	/^bool Str::endsWith(const std::string& str, const std::string& end) {$/;"	f	class:el::base::utils::Str
 enumStr	ta-lib/include/ta_common.h	/^   const char *enumStr; \/* Like "TA_IP_SOCKETERROR"     *\/$/;"	m	struct:TA_RetCodeInfo
 event_	core_test/googletest/include/gtest/internal/gtest-port.h	/^  AutoHandle event_;$/;"	m	class:testing::internal::Notification
+exch_table	trade.h	/^	map<string, string> exch_table;$/;"	m	class:CTraderSpi
 excute_command	manager.cpp	/^void StrategyControl::excute_command(const string& command)$/;"	f	class:StrategyControl
 exit_code_	core_test/googletest/include/gtest/gtest-death-test.h	/^  const int exit_code_;$/;"	m	class:testing::ExitedWithCode
 exp_flag_table	strategy.h	/^    map<int, char> exp_flag_table;$/;"	m	class:TradeAssistant
@@ -9312,6 +9336,7 @@ save_minutes_list	tutils.cpp	/^bool MarketUtil::save_minutes_list(const std::vec
 scoped_ptr	core_test/googletest/include/gtest/internal/gtest-port.h	/^  explicit scoped_ptr(T* p = NULL) : ptr_(p) {}$/;"	f	class:testing::internal::scoped_ptr
 scoped_ptr	core_test/googletest/include/gtest/internal/gtest-port.h	/^class scoped_ptr {$/;"	c	namespace:testing::internal
 second	BaseData.h	/^    int hour, minute, second;$/;"	m	class:Time
+sell_flag	strategy.h	/^	bool sell_flag;$/;"	m	class:StrategyBase
 set	core_test/googletest/include/gtest/internal/gtest-port.h	/^  void set(const T& value) { *pointer() = value; }$/;"	f	class:testing::internal::ThreadLocal
 set	core_test/googletest/include/gtest/internal/gtest-port.h	/^  void set(const T& value) { value_ = value; }$/;"	f	class:testing::internal::ThreadLocal
 set	easylogging/easylogging++.cc	/^void Configurations::set(Configuration* conf) {$/;"	f	class:el::Configurations

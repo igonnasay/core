@@ -664,6 +664,18 @@ void CTraderSpi::SellCloseToday(const string& instrument, double price, int volu
 	SetOrderVolume(order, volume);
 	SendOrder(order);
 }
+void CTraderSpi::GiveOrder(const string& instrument, double price, int volume, const string& direction, const string& type) {
+	CThostFtdcInputOrderField order = GetSampleInputOrderField();
+	SetOrderBrokerID(order, BROKER_ID);
+	SetOrderInvestorID(order, INVESTOR_ID);
+	SetOrderInstrumentID(order, instrument.c_str());
+	SetOrderRef(order, ORDER_REF);
+	SetOrderPrice(order, price);
+	SetOrderDirectionType(order, direction);
+	SetOrderOpenCloseType(order, type);
+	SetOrderVolume(order, volume);
+	SendOrder(order);
+}
 
 void CTraderSpi::SendOrder(CThostFtdcInputOrderField &order) {
 	AutoIncOrderRef();
