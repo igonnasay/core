@@ -138,8 +138,8 @@ void M_Strategy::Stop() {
 }
 
 void M_Strategy::ShowInfo() {
-	printf("instrument : %s    volume : %d\n buy_flag : %d   sell_flag : %d\n", this->instrument.c_str(), this->volume, 
-			this->buy_flag, this->sell_flag);
+	printf("instrument : %s    volume : %d\nbuy_flag : %d   sell_flag : %d\nrun_sig : %d\n", this->instrument.c_str(), this->volume, 
+			this->buy_flag, this->sell_flag, this->run_sig_);
 }
 
 
