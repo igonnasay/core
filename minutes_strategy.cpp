@@ -134,7 +134,6 @@ void M_Strategy::Start() {
 void M_Strategy::Stop() {
     this->run_sig_ = false;
     cout << "[Day Strategy] : thread " << this->s_thread->get_id() << "will be ended..." << endl;
-	this->volume = 0;
 }
 
 void M_Strategy::ShowInfo() {
