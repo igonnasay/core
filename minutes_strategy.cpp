@@ -20,8 +20,8 @@ char M_Strategy::Signal(double ma, double tail_max, double tail_min, double curr
 	if((current_price < ma) && (current_price < tail_min)) return 's';
 }
 char M_Strategy::Signal(double ma10, double ma20, double ma30, double tail_max, double tail_min, double now) {
-	if((now > ma10) && (now > ma20) && (now > ma30) && (now > tail_max))  return 'b';
-	if((now < ma10) && (now < ma20) && (now < ma30) && (now < tail_min))  return 's';
+	if((now > this->open_price) && (now > ma10) && (now > ma20) && (now > ma30) && (now > tail_max))  return 'b';
+	if((now < this->open_price) && (now < ma10) && (now < ma20) && (now < ma30) && (now < tail_min))  return 's';
 }
 
 void M_Strategy::StrategyMethod() {
@@ -57,6 +57,9 @@ void M_Strategy::StrategyMethod() {
             openPrice = this->marketSpi->GetOpenPrice(this->instrument);
 			upper_limit_price = this->marketSpi->GetUpperLimitPrice(this->instrument);
 			lower_limit_price = this->marketSpi->GetLowerLimitPrice(this->instrument);
+			this->open_price = openPrice;
+			this->upper_limit_price = upper_limit_price;
+			this->lower_limit_price = lower_limit_price;
             printf("openPrice = %.2f highlimit_price = %.2f  lowlimit_price = %.2f\n", openPrice, upper_limit_price, lower_limit_price);
         }
         if(data.cur <= N_+1 || data.cur <= M_+1) {

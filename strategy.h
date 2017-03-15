@@ -21,6 +21,9 @@ public:
 	bool buy_flag;
 	bool sell_flag;
 	int volume;
+	double upper_limit_price;
+	double lower_limit_price;
+	double open_price;
     string instrument;
     thread *s_thread;
     virtual void StrategyMethod() = 0;
