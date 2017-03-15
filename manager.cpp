@@ -73,6 +73,7 @@ void StrategyControl::CmdStart() {
         command = MarketUtil::strip(command);
         MarketUtil::split(command, " ", cmd);
         if(command == "start") {
+			// note : 必须开盘后才可以调用此命令，否则无法获得合约开盘／涨停／跌停价格，程序会发生崩溃，自动退出。
             base->Start();
         }
         else if(command == "stop")
