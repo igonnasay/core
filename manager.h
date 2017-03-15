@@ -15,6 +15,14 @@
 
 using namespace std;
 
+class StrategyPool {
+public:
+	StrategyPool(string config_file);
+	
+private:
+	vector<StrategyBase*> strategy;
+};
+
 class StrategyControl
 {
 public:

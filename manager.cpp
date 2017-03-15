@@ -13,6 +13,10 @@
 
 using namespace std;
 
+StrategyPool::StrategyPool(string config_file) {
+	// init strategy pool with config file.
+}
+
 StrategyControl::StrategyControl(CMdSpi **marketSpi, CTraderSpi **traderSpi)
 {
     while((*marketSpi)==NULL || (!(*marketSpi)->IsMarketInited()))
