@@ -11,7 +11,7 @@
 //#define DLL __declspec(dllexport)
 #endif
 
-#include "BaseData.h"
+#include "base_data.h"
 #include "tutils.h"
 #include "ThostFtdcMdApi.h"
 #include <string>

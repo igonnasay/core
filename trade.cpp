@@ -13,8 +13,6 @@
 
 using namespace std;
 
-
-
 void CTraderSpi::AutoIncOrderRef()
 {
 	int val = 0;

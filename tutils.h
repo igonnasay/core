@@ -5,7 +5,7 @@
 #ifndef CLION_TUTILS_H
 #define CLION_TUTILS_H
 
-#include "BaseData.h"
+#include "base_data.h"
 
 #include <cmath>
 #include <cstring>

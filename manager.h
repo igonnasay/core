@@ -6,7 +6,7 @@
 #define CORE_MANAGER_H
 
 #include "strategy.h"
-#include "BaseData.h"
+#include "base_data.h"
 #include "market.h"
 #include "trade.h"
 #include <string>

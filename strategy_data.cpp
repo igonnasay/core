@@ -2,7 +2,7 @@
 // Created by AIdancer on 16/10/16.
 //
 
-#include "StrategyData.h"
+#include "strategy_data.h"
 #include <iostream>
 
 string TradeInfo::GetInstrument() {
