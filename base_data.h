@@ -22,26 +22,26 @@ public:
 	int get_ts();
 	string ToString() const;
 
-    int hour, minute, second;
+	int hour, minute, second;
 };
 
 struct Bar {
 	double open, high, low, close;
 
-    void set_bar_data(double _open, double _high, double _low, double _close)
-    {
-        open = _open;
-        high = _high;
-        low = _low;
-        close = _close;
-    }
+	void set_bar_data(double _open, double _high, double _low, double _close)
+	{
+		open = _open;
+		high = _high;
+		low = _low;
+		close = _close;
+	}
 };
 
 struct BarList
 {
-    int bar_size;
-    int cur;
-    std::vector<Bar> bar_list;
+  int bar_size;
+  int cur;
+  std::vector<Bar> bar_list;
 	void clear() {
 		bar_size = 0;
 		cur = 0;
@@ -106,7 +106,7 @@ private:
 class ExpInfo {
 public:
 	ExpInfo(const string& exp_str);
-    bool open_suggest(double price);
+  bool open_suggest(double price);
 	bool close_suggest(double price);
 	void set_status(char _status);
 	static bool is_exp_str(const string& exp_str);

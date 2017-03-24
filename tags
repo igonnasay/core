@@ -463,8 +463,8 @@ BankSerial	ctp/ThostFtdcUserApiStruct.h	/^	TThostFtdcBankSerialType	BankSerial;$
 BankSerial	ctp/ThostFtdcUserApiStruct.h	/^	TThostFtdcTradeSerialNoType	BankSerial;$/;"	m	struct:CThostFtdcTransferQryDetailRspField
 BankUseAmount	ctp/ThostFtdcUserApiStruct.h	/^	TThostFtdcTradeAmountType	BankUseAmount;$/;"	m	struct:CThostFtdcNotifyQueryAccountField
 BankUseAmount	ctp/ThostFtdcUserApiStruct.h	/^	TThostFtdcTradeAmountType	BankUseAmount;$/;"	m	struct:CThostFtdcRspQueryAccountField
-Bar	BaseData.h	/^struct Bar {$/;"	s
-BarList	BaseData.h	/^struct BarList$/;"	s
+Bar	base_data.h	/^struct Bar {$/;"	s
+BarList	base_data.h	/^struct BarList$/;"	s
 BaseGenerator	core_test/googletest/include/gtest/internal/gtest-param-util-generated.h	/^    virtual const ParamGeneratorInterface<ParamType>* BaseGenerator() const {$/;"	f	class:testing::internal::CartesianProductGenerator10::Iterator
 BaseGenerator	core_test/googletest/include/gtest/internal/gtest-param-util-generated.h	/^    virtual const ParamGeneratorInterface<ParamType>* BaseGenerator() const {$/;"	f	class:testing::internal::CartesianProductGenerator2::Iterator
 BaseGenerator	core_test/googletest/include/gtest/internal/gtest-param-util-generated.h	/^    virtual const ParamGeneratorInterface<ParamType>* BaseGenerator() const {$/;"	f	class:testing::internal::CartesianProductGenerator3::Iterator
@@ -827,7 +827,7 @@ BusinessUnit	ctp/ThostFtdcUserApiStruct.h	/^	TThostFtdcBusinessUnitType	Business
 BusinessUnit	ctp/ThostFtdcUserApiStruct.h	/^	TThostFtdcBusinessUnitType	BusinessUnit;$/;"	m	struct:CThostFtdcQuoteActionField
 BusinessUnit	ctp/ThostFtdcUserApiStruct.h	/^	TThostFtdcBusinessUnitType	BusinessUnit;$/;"	m	struct:CThostFtdcQuoteField
 BusinessUnit	ctp/ThostFtdcUserApiStruct.h	/^	TThostFtdcBusinessUnitType	BusinessUnit;$/;"	m	struct:CThostFtdcTradeField
-Buy	StrategyData.h	/^    const static char Buy = THOST_FTDC_D_Buy;$/;"	m	class:TradeInfo
+Buy	strategy_data.h	/^    const static char Buy = THOST_FTDC_D_Buy;$/;"	m	class:TradeInfo
 Buy	trade.h	8;"	d
 BuyCloseToday	trade.cpp	/^void CTraderSpi::BuyCloseToday(const string& instrument, double price, int volume) {$/;"	f	class:CTraderSpi
 BuyOpen	trade.cpp	/^void CTraderSpi::BuyOpen(const string& instrument, double price, int volume) {$/;"	f	class:CTraderSpi
@@ -923,7 +923,7 @@ CINFO_IF	easylogging/easylogging++.h	4037;"	d
 CINFO_N_TIMES	easylogging/easylogging++.h	3991;"	d
 CINFO_N_TIMES	easylogging/easylogging++.h	4166;"	d
 CLION_MINUTES_STRATEGY_H	minutes_strategy.h	6;"	d
-CLION_STRATEGYDATA_H	StrategyData.h	6;"	d
+CLION_STRATEGYDATA_H	strategy_data.h	6;"	d
 CLION_STRATEGY_H	strategy.h	6;"	d
 CLION_TUTILS_H	tutils.h	6;"	d
 CLOG	easylogging/easylogging++.h	4211;"	d
@@ -1419,8 +1419,8 @@ Clone	core_test/googletest/include/gtest/internal/gtest-param-util-generated.h	/
 Clone	core_test/googletest/include/gtest/internal/gtest-param-util-generated.h	/^    virtual ParamIteratorInterface<ParamType>* Clone() const {$/;"	f	class:testing::internal::CartesianProductGenerator9::Iterator
 Clone	core_test/googletest/include/gtest/internal/gtest-param-util.h	/^    virtual ParamIteratorInterface<T>* Clone() const {$/;"	f	class:testing::internal::RangeGenerator::Iterator
 Clone	core_test/googletest/include/gtest/internal/gtest-param-util.h	/^    virtual ParamIteratorInterface<T>* Clone() const {$/;"	f	class:testing::internal::ValuesInIteratorRangeGenerator::Iterator
-Close	StrategyData.h	/^    const static char Close = THOST_FTDC_OFEN_Close;$/;"	m	class:TradeInfo
 Close	core_test/googletest/include/gtest/internal/gtest-port.h	/^inline int Close(int fd) { return close(fd); }$/;"	f	namespace:testing::internal::posix
+Close	strategy_data.h	/^    const static char Close = THOST_FTDC_OFEN_Close;$/;"	m	class:TradeInfo
 Close	trade.h	12;"	d
 CloseAmount	ctp/ThostFtdcUserApiStruct.h	/^	TThostFtdcMoneyType	CloseAmount;$/;"	m	struct:CThostFtdcInvestorPositionDetailField
 CloseAmount	ctp/ThostFtdcUserApiStruct.h	/^	TThostFtdcMoneyType	CloseAmount;$/;"	m	struct:CThostFtdcInvestorPositionField
@@ -1830,8 +1830,8 @@ DVLOG_IF	easylogging/easylogging++.h	4407;"	d
 DVLOG_IF	easylogging/easylogging++.h	4419;"	d
 DVLOG_N_TIMES	easylogging/easylogging++.h	4413;"	d
 DVLOG_N_TIMES	easylogging/easylogging++.h	4426;"	d
-Data	BaseData.cpp	/^Data::Data() {$/;"	f	class:Data
-Data	BaseData.h	/^struct Data {$/;"	s
+Data	base_data.cpp	/^Data::Data() {$/;"	f	class:Data
+Data	base_data.h	/^struct Data {$/;"	s
 DataSyncStatus	ctp/ThostFtdcUserApiStruct.h	/^	TThostFtdcDataSyncStatusType	DataSyncStatus;$/;"	m	struct:CThostFtdcSyncStatusField
 DataType	easylogging/easylogging++.h	/^  enum class DataType : base::type::EnumType {$/;"	c	class:el::Level::ConfigurationType::LoggingFlag::base::TimestampUnit::base::base::PerformanceTrackingData
 DateTime	easylogging/easylogging++.h	/^  DateTime = 1 << 1,$/;"	m	class:el::Level::ConfigurationType::LoggingFlag::base::TimestampUnit::FormatFlags
@@ -2386,8 +2386,8 @@ ExecOrderSysID	ctp/ThostFtdcUserApiStruct.h	/^	TThostFtdcExecOrderSysIDType	Exec
 ExecResult	ctp/ThostFtdcUserApiStruct.h	/^	TThostFtdcExecResultType	ExecResult;$/;"	m	struct:CThostFtdcExchangeExecOrderField
 ExecResult	ctp/ThostFtdcUserApiStruct.h	/^	TThostFtdcExecResultType	ExecResult;$/;"	m	struct:CThostFtdcExecOrderField
 ExitedWithCode	core_test/googletest/include/gtest/gtest-death-test.h	/^class GTEST_API_ ExitedWithCode {$/;"	c	namespace:testing
-ExpInfo	BaseData.cpp	/^ExpInfo::ExpInfo(const string& exp_str)$/;"	f	class:ExpInfo
-ExpInfo	BaseData.h	/^class ExpInfo {$/;"	c
+ExpInfo	base_data.cpp	/^ExpInfo::ExpInfo(const string& exp_str)$/;"	f	class:ExpInfo
+ExpInfo	base_data.h	/^class ExpInfo {$/;"	c
 ExpireDate	ctp/ThostFtdcUserApiStruct.h	/^	TThostFtdcDateType	ExpireDate;$/;"	m	struct:CThostFtdcInstrumentField
 FAIL	core_test/googletest/include/gtest/gtest.h	1822;"	d
 FATAL	easylogging/easylogging++.h	3959;"	d
@@ -2429,7 +2429,7 @@ FilePath	core_test/googletest/include/gtest/internal/gtest-filepath.h	/^class GT
 FileStreamPtr	easylogging/easylogging++.h	/^typedef std::shared_ptr<base::type::fstream_t> FileStreamPtr;$/;"	t	namespace:el::Level::ConfigurationType::LoggingFlag::base::TimestampUnit::base
 Filename	easylogging/easylogging++.h	/^  Filename = 16,$/;"	m	class:el::Level::ConfigurationType
 FindMarginRateAlgoID	ctp/ThostFtdcUserApiStruct.h	/^	TThostFtdcFindMarginRateAlgoIDType	FindMarginRateAlgoID;$/;"	m	struct:CThostFtdcBrokerTradingAlgosField
-Finished	StrategyData.h	/^    const static char Finished = 'F';$/;"	m	class:TradeInfo
+Finished	strategy_data.h	/^    const static char Finished = 'F';$/;"	m	class:TradeInfo
 FirstOTP	ctp/ThostFtdcUserApiStruct.h	/^	TThostFtdcPasswordType	FirstOTP;$/;"	m	struct:CThostFtdcManualSyncBrokerUserOTPField
 FixedMargin	ctp/ThostFtdcUserApiStruct.h	/^	TThostFtdcMoneyType	FixedMargin;$/;"	m	struct:CThostFtdcOptionInstrTradeCostField
 FixedTimeFormat	easylogging/easylogging++.h	/^  FixedTimeFormat = 16384$/;"	m	class:el::Level::ConfigurationType::LoggingFlag
@@ -2871,20 +2871,20 @@ Gender	ctp/ThostFtdcUserApiStruct.h	/^	TThostFtdcGenderType	Gender;$/;"	m	struct
 GeneratorCreationFunc	core_test/googletest/include/gtest/internal/gtest-param-util.h	/^  typedef ParamGenerator<ParamType>(GeneratorCreationFunc)();$/;"	t	class:testing::internal::ParameterizedTestCaseInfo
 GetAskPrice1	market.cpp	/^double CMdSpi::GetAskPrice1(const string& instrument) {$/;"	f	class:CMdSpi
 GetBidPrice1	market.cpp	/^double CMdSpi::GetBidPrice1(const string& instrument) {$/;"	f	class:CMdSpi
-GetClosePrice	BaseData.cpp	/^double MinuteData::GetClosePrice()$/;"	f	class:MinuteData
+GetClosePrice	base_data.cpp	/^double MinuteData::GetClosePrice()$/;"	f	class:MinuteData
 GetCodeLocation	core_test/googletest/include/gtest/internal/gtest-internal.h	/^  const CodeLocation& GetCodeLocation(const std::string& test_name) const {$/;"	f	class:testing::internal::TypedTestCasePState
-GetDirection	StrategyData.cpp	/^char TradeInfo::GetDirection() {$/;"	f	class:TradeInfo
+GetDirection	strategy_data.cpp	/^char TradeInfo::GetDirection() {$/;"	f	class:TradeInfo
 GetEnv	core_test/googletest/include/gtest/internal/gtest-port.h	/^inline const char* GetEnv(const char* name) {$/;"	f	namespace:testing::internal::posix
 GetExchange	trade.cpp	/^string CTraderSpi::GetExchange(const string& instrument) {$/;"	f	class:CTraderSpi
 GetGlobalTradeCnt	tutils.cpp	/^int MarketUtil::GetGlobalTradeCnt() {$/;"	f	class:MarketUtil
-GetHighPrice	BaseData.cpp	/^double MinuteData::GetHighPrice()$/;"	f	class:MinuteData
+GetHighPrice	base_data.cpp	/^double MinuteData::GetHighPrice()$/;"	f	class:MinuteData
 GetInput	market.cpp	/^std::string CMdSpi::GetInput(std::string prompt)$/;"	f	class:CMdSpi
-GetInstrument	BaseData.cpp	/^string MinuteData::GetInstrument() const$/;"	f	class:MinuteData
-GetInstrument	BaseData.cpp	/^string Tick::GetInstrument()$/;"	f	class:Tick
-GetInstrument	StrategyData.cpp	/^string TradeInfo::GetInstrument() {$/;"	f	class:TradeInfo
+GetInstrument	base_data.cpp	/^string MinuteData::GetInstrument() const$/;"	f	class:MinuteData
+GetInstrument	base_data.cpp	/^string Tick::GetInstrument()$/;"	f	class:Tick
+GetInstrument	strategy_data.cpp	/^string TradeInfo::GetInstrument() {$/;"	f	class:TradeInfo
 GetInstrumentListSize	market.cpp	/^int CMdSpi::GetInstrumentListSize()$/;"	f	class:CMdSpi
 GetLastPrice	market.cpp	/^double CMdSpi::GetLastPrice(const std::string& instrument) {$/;"	f	class:CMdSpi
-GetLowPrice	BaseData.cpp	/^double MinuteData::GetLowPrice()$/;"	f	class:MinuteData
+GetLowPrice	base_data.cpp	/^double MinuteData::GetLowPrice()$/;"	f	class:MinuteData
 GetLowerLimitPrice	market.cpp	/^double CMdSpi::GetLowerLimitPrice(const string& instrument) {$/;"	f	class:CMdSpi
 GetMinuteDataAtIndex	market.cpp	/^MinuteData CMdSpi::GetMinuteDataAtIndex(const string instrument, int index)$/;"	f	class:CMdSpi
 GetMinutesList	market.cpp	/^std::vector<MinuteData>& CMdSpi::GetMinutesList(const std::string& instrument)$/;"	f	class:CMdSpi
@@ -2893,30 +2893,30 @@ GetMinutesRangeMax	market.cpp	/^double CMdSpi::GetMinutesRangeMax(const string& 
 GetMinutesRangeMin	market.cpp	/^double CMdSpi::GetMinutesRangeMin(const string& instrument, int start, int last)$/;"	f	class:CMdSpi
 GetMinutesTailRangeMax	market.cpp	/^double CMdSpi::GetMinutesTailRangeMax(const std::string& instrument, int tailcount) {$/;"	f	class:CMdSpi
 GetMinutesTailRangeMin	market.cpp	/^double CMdSpi::GetMinutesTailRangeMin(const std::string& instrument, int tailcount) {$/;"	f	class:CMdSpi
-GetOpenPrice	BaseData.cpp	/^double MinuteData::GetOpenPrice()$/;"	f	class:MinuteData
-GetOpenPrice	StrategyData.cpp	/^double TradeInfo::GetOpenPrice() {$/;"	f	class:TradeInfo
+GetOpenPrice	base_data.cpp	/^double MinuteData::GetOpenPrice()$/;"	f	class:MinuteData
 GetOpenPrice	market.cpp	/^double CMdSpi::GetOpenPrice(const std::string& instrument) {$/;"	f	class:CMdSpi
+GetOpenPrice	strategy_data.cpp	/^double TradeInfo::GetOpenPrice() {$/;"	f	class:TradeInfo
 GetOrCreateValue	core_test/googletest/include/gtest/internal/gtest-port.h	/^  T* GetOrCreateValue() const {$/;"	f	class:testing::internal::ThreadLocal
 GetParam	core_test/googletest/include/gtest/gtest.h	/^  const ParamType& GetParam() const {$/;"	f	class:testing::WithParamInterface
 GetParamNameGen	core_test/googletest/include/gtest/internal/gtest-param-util.h	/^ParamNameGenFunctor GetParamNameGen(ParamNameGenFunctor func) {$/;"	f	namespace:testing::internal
 GetParamNameGen	core_test/googletest/include/gtest/internal/gtest-param-util.h	/^typename ParamNameGenFunc<ParamType>::Type *GetParamNameGen() {$/;"	f	namespace:testing::internal
 GetPrefixUntilComma	core_test/googletest/include/gtest/internal/gtest-internal.h	/^inline std::string GetPrefixUntilComma(const char* str) {$/;"	f	namespace:testing::internal
-GetPrice	BaseData.cpp	/^double Tick::GetPrice()$/;"	f	class:Tick
+GetPrice	base_data.cpp	/^double Tick::GetPrice()$/;"	f	class:Tick
 GetSampleInputOrderField	trade.cpp	/^CThostFtdcInputOrderField CTraderSpi::GetSampleInputOrderField() {$/;"	f	class:CTraderSpi
-GetStopLoss	StrategyData.cpp	/^double TradeInfo::GetStopLoss() {$/;"	f	class:TradeInfo
+GetStopLoss	strategy_data.cpp	/^double TradeInfo::GetStopLoss() {$/;"	f	class:TradeInfo
 GetStream	core_test/googletest/include/gtest/internal/gtest-port.h	/^  ::std::ostream& GetStream() { return ::std::cerr; }$/;"	f	class:testing::internal::GTestLog
 GetTestCaseName	core_test/googletest/include/gtest/internal/gtest-param-util.h	/^  virtual const string& GetTestCaseName() const { return test_case_name_; }$/;"	f	class:testing::internal::ParameterizedTestCaseInfo
 GetTestCasePatternHolder	core_test/googletest/include/gtest/internal/gtest-param-util.h	/^  ParameterizedTestCaseInfo<TestCase>* GetTestCasePatternHolder($/;"	f	class:testing::internal::ParameterizedTestCaseRegistry
 GetTestCaseTypeId	core_test/googletest/include/gtest/internal/gtest-param-util.h	/^  virtual TypeId GetTestCaseTypeId() const { return GetTypeId<TestCase>(); }$/;"	f	class:testing::internal::ParameterizedTestCaseInfo
-GetTime	BaseData.cpp	/^string MinuteData::GetTime() const$/;"	f	class:MinuteData
-GetTime	BaseData.cpp	/^string Tick::GetTime()$/;"	f	class:Tick
-GetTradeState	StrategyData.cpp	/^char TradeInfo::GetTradeState() {$/;"	f	class:TradeInfo
-GetTs	BaseData.cpp	/^int MinuteData::GetTs() {$/;"	f	class:MinuteData
-GetTs	BaseData.cpp	/^int Tick::GetTs()$/;"	f	class:Tick
+GetTime	base_data.cpp	/^string MinuteData::GetTime() const$/;"	f	class:MinuteData
+GetTime	base_data.cpp	/^string Tick::GetTime()$/;"	f	class:Tick
+GetTradeState	strategy_data.cpp	/^char TradeInfo::GetTradeState() {$/;"	f	class:TradeInfo
+GetTs	base_data.cpp	/^int MinuteData::GetTs() {$/;"	f	class:MinuteData
+GetTs	base_data.cpp	/^int Tick::GetTs()$/;"	f	class:Tick
 GetTypeId	core_test/googletest/include/gtest/internal/gtest-internal.h	/^TypeId GetTypeId() {$/;"	f	namespace:testing::internal
 GetTypeName	core_test/googletest/include/gtest/internal/gtest-type-util.h	/^std::string GetTypeName() {$/;"	f	namespace:testing::internal
 GetUpperLimitPrice	market.cpp	/^double CMdSpi::GetUpperLimitPrice(const string& instrument) {$/;"	f	class:CMdSpi
-GetVolume	StrategyData.cpp	/^int TradeInfo::GetVolume() {$/;"	f	class:TradeInfo
+GetVolume	strategy_data.cpp	/^int TradeInfo::GetVolume() {$/;"	f	class:TradeInfo
 GiveOrder	trade.cpp	/^void CTraderSpi::GiveOrder(const string& instrument, double price, int volume, const string& direction, const string& type) {$/;"	f	class:CTraderSpi
 Global	easylogging/easylogging++.h	/^  Global = 1,$/;"	m	class:el::Level
 GoogleTestFailureException	core_test/googletest/include/gtest/internal/gtest-internal.h	/^class GTEST_API_ GoogleTestFailureException : public ::std::runtime_error {$/;"	c	namespace:testing::internal
@@ -3748,7 +3748,6 @@ MarginRateByVolume	ctp/ThostFtdcUserApiStruct.h	/^	TThostFtdcRatioType	MarginRat
 MarginRateByVolume	ctp/ThostFtdcUserApiStruct.h	/^	TThostFtdcRatioType	MarginRateByVolume;$/;"	m	struct:CThostFtdcInvestorPositionField
 MarginRateByVolume	ctp/ThostFtdcUserApiStruct.h	/^	TThostFtdcRatioType	MarginRateByVolume;$/;"	m	struct:CThostFtdcSyncingInvestorPositionField
 MarketInit	start.cpp	/^void MarketInit()$/;"	f
-MarketOrder	minutes_strategy.cpp	/^void M_Strategy::MarketOrder(const string& instrument, char order_dir, char order_type, int volume) {$/;"	f	class:M_Strategy
 MarketStatus	ctp/ThostFtdcUserApiStruct.h	/^	TThostFtdcInstrumentStatusType	MarketStatus;$/;"	m	struct:CThostFtdcExchangeSequenceField
 MarketUtil	tutils.h	/^class MarketUtil$/;"	c
 Max	core_test/googletest/include/gtest/internal/gtest-internal.h	/^inline double FloatingPoint<double>::Max() { return DBL_MAX; }$/;"	f	class:testing::internal::FloatingPoint
@@ -3797,9 +3796,9 @@ MinVolume	ctp/ThostFtdcUserApiStruct.h	/^	TThostFtdcVolumeType	MinVolume;$/;"	m	
 MinVolume	ctp/ThostFtdcUserApiStruct.h	/^	TThostFtdcVolumeType	MinVolume;$/;"	m	struct:CThostFtdcParkedOrderField
 MiniMargin	ctp/ThostFtdcUserApiStruct.h	/^	TThostFtdcMoneyType	MiniMargin;$/;"	m	struct:CThostFtdcOptionInstrTradeCostField
 Minute	easylogging/easylogging++.h	/^  Microsecond = 0, Millisecond = 1, Second = 2, Minute = 3, Hour = 4, Day = 5$/;"	m	class:el::Level::ConfigurationType::LoggingFlag::base::TimestampUnit
-MinuteData	BaseData.cpp	/^MinuteData::MinuteData(Tick &tick)$/;"	f	class:MinuteData
-MinuteData	BaseData.cpp	/^MinuteData::MinuteData(const string& _instrument, double _open, double _high, double _low, double _close, const Time& _t)$/;"	f	class:MinuteData
-MinuteData	BaseData.h	/^class MinuteData$/;"	c
+MinuteData	base_data.cpp	/^MinuteData::MinuteData(Tick &tick)$/;"	f	class:MinuteData
+MinuteData	base_data.cpp	/^MinuteData::MinuteData(const string& _instrument, double _open, double _high, double _low, double _close, const Time& _t)$/;"	f	class:MinuteData
+MinuteData	base_data.h	/^class MinuteData$/;"	c
 Mobile	ctp/ThostFtdcUserApiStruct.h	/^	TThostFtdcMobileType	Mobile;$/;"	m	struct:CThostFtdcInvestorField
 Mobile	ctp/ThostFtdcUserApiStruct.h	/^	TThostFtdcMobileType	Mobile;$/;"	m	struct:CThostFtdcSyncingInvestorField
 MobilePhone	ctp/ThostFtdcUserApiStruct.h	/^	TThostFtdcMobilePhoneType	MobilePhone;$/;"	m	struct:CThostFtdcCancelAccountField
@@ -3835,7 +3834,7 @@ Mutex	easylogging/easylogging++.h	/^typedef base::threading::internal::Mutex Mut
 MutexBase	core_test/googletest/include/gtest/internal/gtest-port.h	/^class MutexBase {$/;"	c	namespace:testing::internal
 MutexLock	core_test/googletest/include/gtest/internal/gtest-port.h	/^typedef GTestMutexLock MutexLock;$/;"	t	namespace:testing::internal
 MutexType	core_test/googletest/include/gtest/internal/gtest-port.h	/^  enum MutexType { kStatic = 0, kDynamic = 1 };$/;"	g	class:testing::internal::Mutex
-N	BaseData.h	/^	const static int N = 2000;$/;"	m	struct:Data
+N	base_data.h	/^	const static int N = 2000;$/;"	m	struct:Data
 NAMESPACE	ta-lib/include/ta_defs.h	133;"	d
 NAMESPACE	ta-lib/include/ta_defs.h	158;"	d
 NAMESPACE	ta-lib/include/ta_defs.h	184;"	d
@@ -4054,7 +4053,7 @@ OnTestProgramStart	core_test/googletest/include/gtest/gtest.h	/^  virtual void O
 OnTestStart	core_test/googletest/include/gtest/gtest.h	/^  virtual void OnTestStart(const TestInfo& \/*test_info*\/) {}$/;"	f	class:testing::EmptyTestEventListener
 OneTimePassword	ctp/ThostFtdcUserApiStruct.h	/^	TThostFtdcPasswordType	OneTimePassword;$/;"	m	struct:CThostFtdcLoginInfoField
 OneTimePassword	ctp/ThostFtdcUserApiStruct.h	/^	TThostFtdcPasswordType	OneTimePassword;$/;"	m	struct:CThostFtdcReqUserLoginField
-Open	StrategyData.h	/^    const static char Open = THOST_FTDC_OFEN_Open;$/;"	m	class:TradeInfo
+Open	strategy_data.h	/^    const static char Open = THOST_FTDC_OFEN_Open;$/;"	m	class:TradeInfo
 Open	trade.h	11;"	d
 OpenAmount	ctp/ThostFtdcUserApiStruct.h	/^	TThostFtdcMoneyType	OpenAmount;$/;"	m	struct:CThostFtdcInvestorPositionField
 OpenAmount	ctp/ThostFtdcUserApiStruct.h	/^	TThostFtdcMoneyType	OpenAmount;$/;"	m	struct:CThostFtdcSyncingInvestorPositionField
@@ -4654,7 +4653,7 @@ SYSLOG_IF	easylogging/easylogging++.h	4308;"	d
 SYSLOG_IF	easylogging/easylogging++.h	4331;"	d
 SYSLOG_N_TIMES	easylogging/easylogging++.h	4311;"	d
 SYSLOG_N_TIMES	easylogging/easylogging++.h	4334;"	d
-SameMinute	BaseData.cpp	/^bool MinuteData::SameMinute(Tick &tick) $/;"	f	class:MinuteData
+SameMinute	base_data.cpp	/^bool MinuteData::SameMinute(Tick &tick) $/;"	f	class:MinuteData
 ScopedAddFlag	easylogging/easylogging++.h	/^    ScopedAddFlag(LoggingFlag flag) : m_flag(flag) {$/;"	f	class:el::Level::ConfigurationType::LoggingFlag::base::TimestampUnit::base::base::PerformanceTrackingData::Loggers::ScopedAddFlag
 ScopedAddFlag	easylogging/easylogging++.h	/^  class ScopedAddFlag {$/;"	c	class:el::Level::ConfigurationType::LoggingFlag::base::TimestampUnit::base::base::PerformanceTrackingData::Loggers
 ScopedFakeTestPartResultReporter	core_test/googletest/include/gtest/gtest-spi.h	/^class GTEST_API_ ScopedFakeTestPartResultReporter$/;"	c	namespace:testing
@@ -4679,7 +4678,7 @@ SecuPwdFlag	ctp/ThostFtdcUserApiStruct.h	/^	TThostFtdcPwdFlagType	SecuPwdFlag;$/
 SecuPwdFlag	ctp/ThostFtdcUserApiStruct.h	/^	TThostFtdcPwdFlagType	SecuPwdFlag;$/;"	m	struct:CThostFtdcRspQueryAccountField
 SecuPwdFlag	ctp/ThostFtdcUserApiStruct.h	/^	TThostFtdcPwdFlagType	SecuPwdFlag;$/;"	m	struct:CThostFtdcRspRepealField
 SecuPwdFlag	ctp/ThostFtdcUserApiStruct.h	/^	TThostFtdcPwdFlagType	SecuPwdFlag;$/;"	m	struct:CThostFtdcRspTransferField
-Sell	StrategyData.h	/^    const static char Sell = THOST_FTDC_D_Sell;$/;"	m	class:TradeInfo
+Sell	strategy_data.h	/^    const static char Sell = THOST_FTDC_D_Sell;$/;"	m	class:TradeInfo
 Sell	trade.h	9;"	d
 SellCloseToday	trade.cpp	/^void CTraderSpi::SellCloseToday(const string& instrument, double price, int volume) {$/;"	f	class:CTraderSpi
 SellOpen	trade.cpp	/^void CTraderSpi::SellOpen(const string& instrument, double price, int volume) {$/;"	f	class:CTraderSpi
@@ -4774,7 +4773,7 @@ SetParam	core_test/googletest/include/gtest/gtest.h	/^  static void SetParam(con
 SetPassword	market.cpp	/^void CMdSpi::SetPassword(const std::string &passwd)$/;"	f	class:CMdSpi
 SetPassword	trade.cpp	/^void CTraderSpi::SetPassword(const std::string &passwd)$/;"	f	class:CTraderSpi
 SetTradeAddress	trade.cpp	/^void CTraderSpi::SetTradeAddress(const string &tradeAddress)$/;"	f	class:CTraderSpi
-SetTradeState	StrategyData.cpp	/^void TradeInfo::SetTradeState(char state) {$/;"	f	class:TradeInfo
+SetTradeState	strategy_data.cpp	/^void TradeInfo::SetTradeState(char state) {$/;"	f	class:TradeInfo
 SetUp	core_test/googletest/include/gtest/gtest.h	/^  virtual void SetUp() {}$/;"	f	class:testing::Environment
 SetUpTestCase	core_test/googletest/include/gtest/gtest.h	/^  static void SetUpTestCase() {}$/;"	f	class:testing::Test
 SetUpTestCaseFunc	core_test/googletest/include/gtest/gtest.h	/^  typedef internal::SetUpTestCaseFunc SetUpTestCaseFunc;$/;"	t	class:testing::Test
@@ -4869,7 +4868,7 @@ StartDate	ctp/ThostFtdcUserApiStruct.h	/^	TThostFtdcDateType	StartDate;$/;"	m	st
 StartDelivDate	ctp/ThostFtdcUserApiStruct.h	/^	TThostFtdcDateType	StartDelivDate;$/;"	m	struct:CThostFtdcInstrumentField
 StartTime	ctp/ThostFtdcUserApiStruct.h	/^	TThostFtdcTimeType	StartTime;$/;"	m	struct:CThostFtdcMDTraderOfferField
 StartTime	ctp/ThostFtdcUserApiStruct.h	/^	TThostFtdcTimeType	StartTime;$/;"	m	struct:CThostFtdcTraderOfferField
-Started	StrategyData.h	/^    const static char Started = 'Y';$/;"	m	class:TradeInfo
+Started	strategy_data.h	/^    const static char Started = 'Y';$/;"	m	class:TradeInfo
 Stat	core_test/googletest/include/gtest/internal/gtest-port.h	/^inline int Stat(const char* path, StatStruct* buf) { return _stat(path, buf); }$/;"	f	namespace:testing::internal::posix
 StatStruct	core_test/googletest/include/gtest/internal/gtest-port.h	/^typedef struct _stat StatStruct;$/;"	t	namespace:testing::internal::posix	typeref:struct:testing::internal::posix::_stat
 StaticAssertTypeEq	core_test/googletest/include/gtest/gtest.h	/^bool StaticAssertTypeEq() {$/;"	f	namespace:testing
@@ -4909,6 +4908,8 @@ StrategyControl	manager.cpp	/^StrategyControl::StrategyControl(CMdSpi **marketSp
 StrategyControl	manager.h	/^class StrategyControl$/;"	c
 StrategyInit	start.cpp	/^void StrategyInit()$/;"	f
 StrategyMethod	minutes_strategy.cpp	/^void M_Strategy::StrategyMethod() {$/;"	f	class:M_Strategy
+StrategyPool	manager.cpp	/^StrategyPool::StrategyPool(string config_file) {$/;"	f	class:StrategyPool
+StrategyPool	manager.h	/^class StrategyPool {$/;"	c
 StreamHelper	core_test/googletest/include/gtest/gtest-message.h	/^  inline void StreamHelper(internal::false_type \/*is_pointer*\/,$/;"	f	class:testing::Message
 StreamHelper	core_test/googletest/include/gtest/gtest-message.h	/^  inline void StreamHelper(internal::true_type \/*is_pointer*\/, T* pointer) {$/;"	f	class:testing::Message
 StreamableToString	core_test/googletest/include/gtest/gtest-message.h	/^std::string StreamableToString(const T& streamable) {$/;"	f	namespace:testing::internal
@@ -5030,13 +5031,6 @@ TA_RetCodeInfo	ta-lib/include/ta_common.h	/^typedef struct TA_RetCodeInfo$/;"	s
 TA_RetCodeInfo	ta-lib/include/ta_common.h	/^} TA_RetCodeInfo;$/;"	t	typeref:struct:TA_RetCodeInfo
 TA_StringTable	ta-lib/include/ta_common.h	/^typedef struct TA_StringTable$/;"	s
 TA_StringTable	ta-lib/include/ta_common.h	/^} TA_StringTable;$/;"	t	typeref:struct:TA_StringTable
-TEST	core_test/core_test.cpp	/^TEST(BaseData, Data)$/;"	f
-TEST	core_test/core_test.cpp	/^TEST(BaseData, ExpInfo)$/;"	f
-TEST	core_test/core_test.cpp	/^TEST(BaseData, Time)$/;"	f
-TEST	core_test/core_test.cpp	/^TEST(Regex, Example)$/;"	f
-TEST	core_test/core_test.cpp	/^TEST(TestSample, Add)$/;"	f
-TEST	core_test/core_test.cpp	/^TEST(Tutils, Tradecnt)$/;"	f
-TEST	core_test/core_test.cpp	/^TEST(Tutils, strip)$/;"	f
 TEST	core_test/googletest/include/gtest/gtest.h	2187;"	d
 TESTS	core_test/Makefile	/^TESTS = core_test$/;"	m
 TEST_DID_NOT_DIE	core_test/googletest/include/gtest/internal/gtest-death-test-internal.h	/^    TEST_DID_NOT_DIE$/;"	e	enum:testing::internal::DeathTest::AbortReason
@@ -7213,13 +7207,13 @@ ThreadWithParam	core_test/googletest/include/gtest/internal/gtest-port.h	/^  Thr
 ThreadWithParam	core_test/googletest/include/gtest/internal/gtest-port.h	/^class ThreadWithParam : public ThreadWithParamBase {$/;"	c	namespace:testing::internal
 ThreadWithParamBase	core_test/googletest/include/gtest/internal/gtest-port.h	/^class GTEST_API_ ThreadWithParamBase {$/;"	c	namespace:testing::internal
 ThreadWithParamBase	core_test/googletest/include/gtest/internal/gtest-port.h	/^class ThreadWithParamBase {$/;"	c	namespace:testing::internal
-Tick	BaseData.cpp	/^Tick::Tick(const string &_instrument, const string &_time, double _price)$/;"	f	class:Tick
-Tick	BaseData.h	/^class Tick$/;"	c
-Time	BaseData.cpp	/^Time::Time() {}$/;"	f	class:Time
-Time	BaseData.cpp	/^Time::Time(const int ts)$/;"	f	class:Time
-Time	BaseData.cpp	/^Time::Time(const string& t)$/;"	f	class:Time
-Time	BaseData.cpp	/^Time::Time(int _hour, int _minute, int _second)$/;"	f	class:Time
-Time	BaseData.h	/^class Time$/;"	c
+Tick	base_data.cpp	/^Tick::Tick(const string &_instrument, const string &_time, double _price)$/;"	f	class:Tick
+Tick	base_data.h	/^class Tick$/;"	c
+Time	base_data.cpp	/^Time::Time() {}$/;"	f	class:Time
+Time	base_data.cpp	/^Time::Time(const int ts)$/;"	f	class:Time
+Time	base_data.cpp	/^Time::Time(const string& t)$/;"	f	class:Time
+Time	base_data.cpp	/^Time::Time(int _hour, int _minute, int _second)$/;"	f	class:Time
+Time	base_data.h	/^class Time$/;"	c
 TimeCondition	ctp/ThostFtdcUserApiStruct.h	/^	TThostFtdcTimeConditionType	TimeCondition;$/;"	m	struct:CThostFtdcErrOrderField
 TimeCondition	ctp/ThostFtdcUserApiStruct.h	/^	TThostFtdcTimeConditionType	TimeCondition;$/;"	m	struct:CThostFtdcErrorConditionalOrderField
 TimeCondition	ctp/ThostFtdcUserApiStruct.h	/^	TThostFtdcTimeConditionType	TimeCondition;$/;"	m	struct:CThostFtdcExchangeOrderField
@@ -7235,9 +7229,9 @@ ToCurrencyID	ctp/ThostFtdcUserApiStruct.h	/^	TThostFtdcCurrencyIDType	ToCurrency
 ToFile	easylogging/easylogging++.h	/^  ToFile = 2,$/;"	m	class:el::Level::ConfigurationType
 ToLower	core_test/googletest/include/gtest/internal/gtest-port.h	/^inline char ToLower(char ch) {$/;"	f	namespace:testing::internal
 ToStandardOutput	easylogging/easylogging++.h	/^  ToStandardOutput = 4,$/;"	m	class:el::Level::ConfigurationType
-ToString	BaseData.cpp	/^string MinuteData::ToString() {$/;"	f	class:MinuteData
-ToString	BaseData.cpp	/^string Tick::ToString()$/;"	f	class:Tick
-ToString	BaseData.cpp	/^string Time::ToString() const$/;"	f	class:Time
+ToString	base_data.cpp	/^string MinuteData::ToString() {$/;"	f	class:MinuteData
+ToString	base_data.cpp	/^string Tick::ToString()$/;"	f	class:Tick
+ToString	base_data.cpp	/^string Time::ToString() const$/;"	f	class:Time
 ToUpper	core_test/googletest/include/gtest/internal/gtest-port.h	/^inline char ToUpper(char ch) {$/;"	f	namespace:testing::internal
 TodayPosition	ctp/ThostFtdcUserApiStruct.h	/^	TThostFtdcVolumeType	TodayPosition;$/;"	m	struct:CThostFtdcInvestorPositionField
 TodayPosition	ctp/ThostFtdcUserApiStruct.h	/^	TThostFtdcVolumeType	TodayPosition;$/;"	m	struct:CThostFtdcSyncingInvestorPositionField
@@ -7326,7 +7320,7 @@ TradeID	ctp/ThostFtdcUserApiStruct.h	/^	TThostFtdcTradeIDType	TradeID;$/;"	m	str
 TradeID	ctp/ThostFtdcUserApiStruct.h	/^	TThostFtdcTradeIDType	TradeID;$/;"	m	struct:CThostFtdcInvestorPositionDetailField
 TradeID	ctp/ThostFtdcUserApiStruct.h	/^	TThostFtdcTradeIDType	TradeID;$/;"	m	struct:CThostFtdcQryTradeField
 TradeID	ctp/ThostFtdcUserApiStruct.h	/^	TThostFtdcTradeIDType	TradeID;$/;"	m	struct:CThostFtdcTradeField
-TradeInfo	StrategyData.h	/^class TradeInfo {$/;"	c
+TradeInfo	strategy_data.h	/^class TradeInfo {$/;"	c
 TradeSerial	ctp/ThostFtdcUserApiStruct.h	/^	TThostFtdcTradeSerialType	TradeSerial;$/;"	m	struct:CThostFtdcTransferHeaderField
 TradeSource	ctp/ThostFtdcUserApiStruct.h	/^	TThostFtdcTradeSourceType	TradeSource;$/;"	m	struct:CThostFtdcExchangeTradeField
 TradeSource	ctp/ThostFtdcUserApiStruct.h	/^	TThostFtdcTradeSourceType	TradeSource;$/;"	m	struct:CThostFtdcTradeField
@@ -7627,7 +7621,7 @@ Unknown	easylogging/easylogging++.h	/^  Unknown = 1010$/;"	m	class:el::Level
 Unknown	easylogging/easylogging++.h	/^  Unknown = 1010$/;"	m	class:el::Level::ConfigurationType
 Unlock	core_test/googletest/include/gtest/internal/gtest-port.h	/^  void Unlock() {$/;"	f	class:testing::internal::MutexBase
 Unlock	core_test/googletest/include/gtest/internal/gtest-port.h	/^  void Unlock() {}$/;"	f	class:testing::internal::Mutex
-Update	BaseData.cpp	/^void MinuteData::Update(Tick &tick)$/;"	f	class:MinuteData
+Update	base_data.cpp	/^void MinuteData::Update(Tick &tick)$/;"	f	class:MinuteData
 UpdateMillisec	ctp/ThostFtdcUserApiStruct.h	/^	TThostFtdcMillisecType	UpdateMillisec;$/;"	m	struct:CThostFtdcDepthMarketDataField
 UpdateMillisec	ctp/ThostFtdcUserApiStruct.h	/^	TThostFtdcMillisecType	UpdateMillisec;$/;"	m	struct:CThostFtdcMarketDataField
 UpdateMillisec	ctp/ThostFtdcUserApiStruct.h	/^	TThostFtdcMillisecType	UpdateMillisec;$/;"	m	struct:CThostFtdcMarketDataUpdateTimeField
@@ -8006,7 +8000,7 @@ VolumeTraded	ctp/ThostFtdcUserApiStruct.h	/^	TThostFtdcVolumeType	VolumeTraded;$
 VolumeTraded	ctp/ThostFtdcUserApiStruct.h	/^	TThostFtdcVolumeType	VolumeTraded;$/;"	m	struct:CThostFtdcOrderField
 WARNING	easylogging/easylogging++.h	3956;"	d
 WaitForNotification	core_test/googletest/include/gtest/internal/gtest-port.h	/^  void WaitForNotification() {$/;"	f	class:testing::internal::Notification
-Waiting	StrategyData.h	/^    const static char Waiting = 'N';$/;"	m	class:TradeInfo
+Waiting	strategy_data.h	/^    const static char Waiting = 'N';$/;"	m	class:TradeInfo
 Warning	easylogging/easylogging++.h	/^  Warning = 32,$/;"	m	class:el::Level
 WithParamInterface	core_test/googletest/include/gtest/gtest.h	/^class WithParamInterface {$/;"	c	namespace:testing
 Withdraw	ctp/ThostFtdcUserApiStruct.h	/^	TThostFtdcMoneyType	Withdraw;$/;"	m	struct:CThostFtdcBrokerDepositField
@@ -8035,12 +8029,12 @@ __64BIT__	ta-lib/include/ta_defs.h	61;"	d
 __64BIT__	ta-lib/include/ta_defs.h	65;"	d
 __64BIT__	ta-lib/include/ta_defs.h	74;"	d
 abort	easylogging/easylogging++.cc	/^static void abort(int status, const std::string& reason) {$/;"	f	namespace:el::base::utils
-action	BaseData.h	/^	string action;$/;"	m	class:ExpInfo
-action_id	BaseData.h	/^	int action_id;$/;"	m	class:ExpInfo
-action_price	BaseData.h	/^	double action_price;$/;"	m	class:ExpInfo
+action	base_data.h	/^	string action;$/;"	m	class:ExpInfo
+action_id	base_data.h	/^	int action_id;$/;"	m	class:ExpInfo
+action_price	base_data.h	/^	double action_price;$/;"	m	class:ExpInfo
 ad_hoc_test_result	core_test/googletest/include/gtest/gtest.h	/^  const TestResult& ad_hoc_test_result() const { return ad_hoc_test_result_; }$/;"	f	class:testing::TestCase
 ad_hoc_test_result_	core_test/googletest/include/gtest/gtest.h	/^  TestResult ad_hoc_test_result_;$/;"	m	class:testing::TestCase
-add	BaseData.cpp	/^void Data::add(double _open, double _high, double _low, double _close)$/;"	f	class:Data
+add	base_data.cpp	/^void Data::add(double _open, double _high, double _low, double _close)$/;"	f	class:Data
 addFlag	easylogging/easylogging++.h	/^  inline void addFlag(LoggingFlag flag) {$/;"	f	class:el::Level::ConfigurationType::LoggingFlag::base::TimestampUnit::base::base::Storage
 addFlag	easylogging/easylogging++.h	/^  inline void addFlag(base::FormatFlags flag) {$/;"	f	class:el::Level::ConfigurationType::LoggingFlag::base::TimestampUnit::base::LogFormat
 addFlag	easylogging/easylogging++.h	/^  static inline void addFlag(LoggingFlag flag) {$/;"	f	class:el::Level::ConfigurationType::LoggingFlag::base::TimestampUnit::base::base::PerformanceTrackingData::Loggers
@@ -8051,8 +8045,8 @@ allowed	easylogging/easylogging++.cc	/^bool VRegistry::allowed(base::type::Verbo
 array_	core_test/googletest/include/gtest/gtest-test-part.h	/^  std::vector<TestPartResult> array_;$/;"	m	class:testing::TestPartResultArray
 array_	core_test/googletest/include/gtest/internal/gtest-internal.h	/^  const Element* array_;$/;"	m	class:testing::internal::NativeArray
 asyncLogQueue	easylogging/easylogging++.h	/^  inline base::AsyncLogQueue* asyncLogQueue(void) const {$/;"	f	class:el::Level::ConfigurationType::LoggingFlag::base::TimestampUnit::base::base::Storage
-bar_list	BaseData.h	/^    std::vector<Bar> bar_list;$/;"	m	struct:BarList
-bar_size	BaseData.h	/^    int bar_size;$/;"	m	struct:BarList
+bar_list	base_data.h	/^    std::vector<Bar> bar_list;$/;"	m	struct:BarList
+bar_size	base_data.h	/^    int bar_size;$/;"	m	struct:BarList
 base	easylogging/easylogging++.cc	/^namespace base {$/;"	n	namespace:el	file:
 base	easylogging/easylogging++.h	/^namespace base {$/;"	n	class:el::Level::ConfigurationType::LoggingFlag
 base	easylogging/easylogging++.h	/^namespace base {$/;"	n	class:el::Level::ConfigurationType::LoggingFlag::base::TimestampUnit
@@ -8070,7 +8064,7 @@ base_	core_test/googletest/include/gtest/internal/gtest-param-util-generated.h	/
 base_	core_test/googletest/include/gtest/internal/gtest-param-util-generated.h	/^    const ParamGeneratorInterface<ParamType>* const base_;$/;"	m	class:testing::internal::CartesianProductGenerator9::Iterator
 base_	core_test/googletest/include/gtest/internal/gtest-param-util.h	/^    const ParamGeneratorInterface<T>* const base_;$/;"	m	class:testing::internal::RangeGenerator::Iterator
 base_	core_test/googletest/include/gtest/internal/gtest-param-util.h	/^    const ParamGeneratorInterface<T>* const base_;$/;"	m	class:testing::internal::ValuesInIteratorRangeGenerator::Iterator
-basedata_h	BaseData.h	2;"	d
+basedata_h	base_data.h	2;"	d
 basic_manipulator	core_test/googletest/include/gtest/gtest.h	/^      ::std::ostream& (*basic_manipulator)(::std::ostream& stream)) {$/;"	f	class:testing::AssertionResult
 begin	core_test/googletest/include/gtest/internal/gtest-internal.h	/^  const_iterator begin() const { return array_; }$/;"	f	class:testing::internal::NativeArray
 begin	core_test/googletest/include/gtest/internal/gtest-param-util.h	/^  iterator begin() const { return iterator(impl_->Begin()); }$/;"	f	class:testing::internal::ParamGenerator
@@ -8159,22 +8153,22 @@ char_t	easylogging/easylogging++.h	/^typedef wchar_t char_t;$/;"	t	namespace:el:
 checkpoint	easylogging/easylogging++.cc	/^void PerformanceTracker::checkpoint(const std::string& id, const char* file, base::type::LineNumber line,$/;"	f	class:el::base::PerformanceTracker
 checkpointId	easylogging/easylogging++.h	/^  inline std::string checkpointId(void) const {$/;"	f	class:el::Level::ConfigurationType::LoggingFlag::base::TimestampUnit::base::base::PerformanceTrackingData::DataType
 clean	easylogging/easylogging++.cc	/^bool AsyncDispatchWorker::clean(void) {$/;"	f	class:el::base::AsyncDispatchWorker
-clear	BaseData.cpp	/^void Data::clear() {$/;"	f	class:Data
-clear	BaseData.h	/^	void clear() {$/;"	f	struct:BarList
+clear	base_data.cpp	/^void Data::clear() {$/;"	f	class:Data
+clear	base_data.h	/^	void clear() {$/;"	f	struct:BarList
 clear	easylogging/easylogging++.h	/^  inline void clear(void) {$/;"	f	class:el::Level::ConfigurationType::LoggingFlag::base::TimestampUnit::Configurations
 clearBuff	easylogging/easylogging++.cc	/^char* Str::clearBuff(char buff[], std::size_t lim) {$/;"	f	class:el::base::utils::Str
 clearModules	easylogging/easylogging++.h	/^  inline void clearModules(void) {$/;"	f	class:el::Level::ConfigurationType::LoggingFlag::base::TimestampUnit::base::base::VRegistry
 clearVModules	easylogging/easylogging++.cc	/^void Loggers::clearVModules(void) {$/;"	f	class:el::Loggers
 clone_	core_test/googletest/include/gtest/internal/gtest-internal.h	/^  void (NativeArray::*clone_)(const Element*, size_t);$/;"	m	class:testing::internal::NativeArray
-close	BaseData.h	/^	double open, close, high, low;$/;"	m	class:MinuteData
-close	BaseData.h	/^	double open, high, low, close;$/;"	m	struct:Bar
-close	BaseData.h	/^	double open[N], high[N], low[N], close[N];$/;"	m	struct:Data
-close_suggest	BaseData.cpp	/^bool ExpInfo::close_suggest(double price) {$/;"	f	class:ExpInfo
-close_sum	BaseData.h	/^	double close_sum[N];$/;"	m	struct:Data
+close	base_data.h	/^	double open, close, high, low;$/;"	m	class:MinuteData
+close	base_data.h	/^	double open, high, low, close;$/;"	m	struct:Bar
+close	base_data.h	/^	double open[N], high[N], low[N], close[N];$/;"	m	struct:Data
+close_suggest	base_data.cpp	/^bool ExpInfo::close_suggest(double price) {$/;"	f	class:ExpInfo
+close_sum	base_data.h	/^	double close_sum[N];$/;"	m	struct:Data
 code_location_	core_test/googletest/include/gtest/internal/gtest-param-util.h	/^  CodeLocation code_location_;$/;"	m	class:testing::internal::ParameterizedTestCaseInfo
 commandLineArgs	easylogging/easylogging++.h	/^  inline const base::utils::CommandLineArgs* commandLineArgs(void) const {$/;"	f	class:el::Level::ConfigurationType::LoggingFlag::base::TimestampUnit::base::base::Storage
 commandLineArgs	easylogging/easylogging++.h	/^  static inline const el::base::utils::CommandLineArgs* commandLineArgs(void) {$/;"	f	class:el::Level::ConfigurationType::LoggingFlag::base::TimestampUnit::base::base::PerformanceTrackingData::Helpers
-condition	BaseData.h	/^	string condition;$/;"	m	class:ExpInfo
+condition	base_data.h	/^	string condition;$/;"	m	class:ExpInfo
 configString	easylogging/easylogging++.cc	/^  const char* configString;$/;"	m	struct:el::ConfigurationStringToTypeItem	file:
 configStringToTypeMap	easylogging/easylogging++.cc	/^static struct ConfigurationStringToTypeItem configStringToTypeMap[] = {$/;"	m	namespace:el	typeref:struct:el::ConfigurationStringToTypeItem	file:
 configType	easylogging/easylogging++.cc	/^  ConfigurationType configType;$/;"	m	struct:el::ConfigurationStringToTypeItem	file:
@@ -8204,15 +8198,15 @@ convertToColoredOutput	easylogging/easylogging++.cc	/^void LogBuilder::convertTo
 convertToString	easylogging/easylogging++.cc	/^const char* ConfigurationTypeHelper::convertToString(ConfigurationType configurationType) {$/;"	f	class:el::ConfigurationTypeHelper
 convertToString	easylogging/easylogging++.cc	/^const char* LevelHelper::convertToString(Level level) {$/;"	f	class:el::LevelHelper
 copy	core_test/googletest/include/gtest/internal/gtest-linked_ptr.h	/^  template <typename U> void copy(linked_ptr<U> const* ptr) {$/;"	f	class:testing::internal::linked_ptr
-core_objects	Makefile	/^core_objects = bfunc.o base.o tutils.o market.o trade.o strategy.o strategydata.o \\$/;"	m
+core_objects	Makefile	/^core_objects = bfunc.o base_data.o tutils.o market.o trade.o strategy.o strategy_data.o \\$/;"	m
 crashAbort	easylogging/easylogging++.cc	/^static inline void crashAbort(int sig) {$/;"	f	namespace:el::base::debug
 crashAbort	easylogging/easylogging++.cc	/^void Helpers::crashAbort(int sig, const char* sourceFile, unsigned int long line) {$/;"	f	class:el::Helpers
 crashReason	easylogging/easylogging++.cc	/^static std::string crashReason(int sig) {$/;"	f	namespace:el::base::debug
 createPath	easylogging/easylogging++.cc	/^bool File::createPath(const std::string& path) {$/;"	f	class:el::base::utils::File
 critical_section_	core_test/googletest/include/gtest/internal/gtest-port.h	/^  GTEST_CRITICAL_SECTION* critical_section_;$/;"	m	class:testing::internal::Mutex
 critical_section_init_phase_	core_test/googletest/include/gtest/internal/gtest-port.h	/^  long critical_section_init_phase_;  \/\/ NOLINT$/;"	m	class:testing::internal::Mutex
-cur	BaseData.h	/^	int cur;$/;"	m	struct:Data
-cur	BaseData.h	/^    int cur;$/;"	m	struct:BarList
+cur	base_data.h	/^	int cur;$/;"	m	struct:Data
+cur	base_data.h	/^    int cur;$/;"	m	struct:BarList
 current10_	core_test/googletest/include/gtest/internal/gtest-param-util-generated.h	/^    typename ParamGenerator<T10>::iterator current10_;$/;"	m	class:testing::internal::CartesianProductGenerator10::Iterator
 current1_	core_test/googletest/include/gtest/internal/gtest-param-util-generated.h	/^    typename ParamGenerator<T1>::iterator current1_;$/;"	m	class:testing::internal::CartesianProductGenerator10::Iterator
 current1_	core_test/googletest/include/gtest/internal/gtest-param-util-generated.h	/^    typename ParamGenerator<T1>::iterator current1_;$/;"	m	class:testing::internal::CartesianProductGenerator2::Iterator
@@ -8309,7 +8303,7 @@ default_xml_generator_	core_test/googletest/include/gtest/gtest.h	/^  TestEventL
 depart	core_test/googletest/include/gtest/internal/gtest-linked_ptr.h	/^  void depart() {$/;"	f	class:testing::internal::linked_ptr
 detail	easylogging/easylogging++.h	/^  const char* detail;$/;"	m	struct:el::Level::ConfigurationType::LoggingFlag::base::consts::__anon2
 difference_type	core_test/googletest/include/gtest/internal/gtest-param-util.h	/^  typedef ptrdiff_t difference_type;$/;"	t	class:testing::internal::ParamIterator
-direction	StrategyData.h	/^    TThostFtdcDirectionType direction;$/;"	m	class:TradeInfo
+direction	strategy_data.h	/^    TThostFtdcDirectionType direction;$/;"	m	class:TradeInfo
 dispatch	easylogging/easylogging++.cc	/^void DefaultLogDispatchCallback::dispatch(base::type::string_t&& logLine) {$/;"	f	class:el::base::DefaultLogDispatchCallback
 dispatch	easylogging/easylogging++.cc	/^void LogDispatcher::dispatch(void) {$/;"	f	class:el::base::LogDispatcher
 dispatchAction	easylogging/easylogging++.h	/^  inline base::DispatchAction dispatchAction(void) const {$/;"	f	class:el::Level::ConfigurationType::LoggingFlag::base::TimestampUnit::base::LogDispatchData
@@ -8616,7 +8610,7 @@ getULong	easylogging/easylogging++.cc	/^unsigned long TypedConfigurations::getUL
 getWindowsEnvironmentVariable	easylogging/easylogging++.cc	/^const char* OS::getWindowsEnvironmentVariable(const char* varname) {$/;"	f	class:el::base::utils::OS
 get_data_table	market.cpp	/^Data& CMdSpi::get_data_table(const string& instrument)$/;"	f	class:CMdSpi
 get_trading_day	market.cpp	/^std::string CMdSpi::get_trading_day()$/;"	f	class:CMdSpi
-get_ts	BaseData.cpp	/^int Time::get_ts() {$/;"	f	class:Time
+get_ts	base_data.cpp	/^int Time::get_ts() {$/;"	f	class:Time
 get_ts	market.cpp	/^int CMdSpi::get_ts() {$/;"	f	class:CMdSpi
 gettimeofday	easylogging/easylogging++.cc	/^void DateTime::gettimeofday(struct timeval* tv) {$/;"	f	class:el::base::utils::DateTime
 group	ta-lib/include/ta_abstract.h	/^   const char * group;$/;"	m	struct:TA_FuncInfo
@@ -8646,14 +8640,14 @@ has_owner_	core_test/googletest/include/gtest/internal/gtest-port.h	/^  bool has
 helpFile	ta-lib/include/ta_abstract.h	/^   const char *helpFile;$/;"	m	struct:TA_OptInputParameterInfo
 hiddenData	ta-lib/include/ta_abstract.h	/^  void *hiddenData;$/;"	m	struct:TA_ParamHolder
 hiddenData	ta-lib/include/ta_common.h	/^   void *hiddenData;$/;"	m	struct:TA_StringTable
-high	BaseData.h	/^	double open, close, high, low;$/;"	m	class:MinuteData
-high	BaseData.h	/^	double open, high, low, close;$/;"	m	struct:Bar
-high	BaseData.h	/^	double open[N], high[N], low[N], close[N];$/;"	m	struct:Data
+high	base_data.h	/^	double open, close, high, low;$/;"	m	class:MinuteData
+high	base_data.h	/^	double open, high, low, close;$/;"	m	struct:Bar
+high	base_data.h	/^	double open[N], high[N], low[N], close[N];$/;"	m	struct:Data
 hint	ta-lib/include/ta_abstract.h	/^   const char * hint;$/;"	m	struct:TA_FuncInfo
 hint	ta-lib/include/ta_abstract.h	/^   const char *hint;$/;"	m	struct:TA_OptInputParameterInfo
 hitCounters	easylogging/easylogging++.h	/^  inline base::RegisteredHitCounters* hitCounters(void) const {$/;"	f	class:el::Level::ConfigurationType::LoggingFlag::base::TimestampUnit::base::base::Storage
 hitCounts	easylogging/easylogging++.h	/^  inline std::size_t hitCounts(void) const {$/;"	f	class:el::Level::ConfigurationType::LoggingFlag::base::TimestampUnit::base::HitCounter
-hour	BaseData.h	/^    int hour, minute, second;$/;"	m	class:Time
+hour	base_data.h	/^    int hour, minute, second;$/;"	m	class:Time
 iNextOrderRef	trade.h	/^	int iNextOrderRef;$/;"	m	class:CTraderSpi
 id	easylogging/easylogging++.h	/^  inline const std::string& id(void) const {$/;"	f	class:el::Level::ConfigurationType::LoggingFlag::base::TimestampUnit::base::Logger
 ignoreComments	easylogging/easylogging++.cc	/^void Configurations::Parser::ignoreComments(std::string* line) {$/;"	f	class:el::Configurations::Parser
@@ -8687,12 +8681,12 @@ installPerformanceTrackingCallback	easylogging/easylogging++.h	/^  inline bool i
 installPerformanceTrackingCallback	easylogging/easylogging++.h	/^  static inline bool installPerformanceTrackingCallback(const std::string& id) {$/;"	f	class:el::Level::ConfigurationType::LoggingFlag::base::TimestampUnit::base::base::PerformanceTrackingData::Helpers
 installPreRollOutCallback	easylogging/easylogging++.h	/^  static inline void installPreRollOutCallback(const PreRollOutCallback& callback) {$/;"	f	class:el::Level::ConfigurationType::LoggingFlag::base::TimestampUnit::base::base::PerformanceTrackingData::Helpers
 instantiations_	core_test/googletest/include/gtest/internal/gtest-param-util.h	/^  InstantiationContainer instantiations_;$/;"	m	class:testing::internal::ParameterizedTestCaseInfo
-instrument	BaseData.h	/^	string instrument;$/;"	m	class:ExpInfo
-instrument	BaseData.h	/^	string instrument;$/;"	m	class:MinuteData
-instrument	BaseData.h	/^	string instrument;$/;"	m	class:Tick
-instrument	BaseData.h	/^	string instrument;$/;"	m	struct:Data
-instrument	StrategyData.h	/^    TThostFtdcInstrumentIDType instrument;$/;"	m	class:TradeInfo
+instrument	base_data.h	/^	string instrument;$/;"	m	class:ExpInfo
+instrument	base_data.h	/^	string instrument;$/;"	m	class:MinuteData
+instrument	base_data.h	/^	string instrument;$/;"	m	class:Tick
+instrument	base_data.h	/^	string instrument;$/;"	m	struct:Data
 instrument	strategy.h	/^    string instrument;$/;"	m	class:StrategyBase
+instrument	strategy_data.h	/^    TThostFtdcInstrumentIDType instrument;$/;"	m	class:TradeInfo
 instrumentList	market.h	/^	std::vector< std::string > instrumentList;$/;"	m	class:CMdSpi
 intercept_mode_	core_test/googletest/include/gtest/gtest-spi.h	/^  const InterceptMode intercept_mode_;$/;"	m	class:testing::ScopedFakeTestPartResultReporter
 internal	core_test/googletest/include/gtest/gtest-death-test.h	/^namespace internal {$/;"	n	namespace:testing
@@ -8719,7 +8713,7 @@ isFlushNeeded	easylogging/easylogging++.h	/^  inline bool isFlushNeeded(Level le
 isLevel	easylogging/easylogging++.cc	/^bool Configurations::Parser::isLevel(const std::string& line) {$/;"	f	class:el::Configurations::Parser
 isValidId	easylogging/easylogging++.cc	/^bool Logger::isValidId(const std::string& id) {$/;"	f	class:el::Logger
 is_disabled_	core_test/googletest/include/gtest/gtest.h	/^  bool is_disabled_;                \/\/ True iff this test is disabled$/;"	m	class:testing::TestInfo
-is_exp_str	BaseData.cpp	/^bool ExpInfo::is_exp_str(const string& exp_str)$/;"	f	class:ExpInfo
+is_exp_str	base_data.cpp	/^bool ExpInfo::is_exp_str(const string& exp_str)$/;"	f	class:ExpInfo
 is_nan	core_test/googletest/include/gtest/internal/gtest-internal.h	/^  bool is_nan() const {$/;"	f	class:testing::internal::FloatingPoint
 is_pointer	core_test/googletest/include/gtest/internal/gtest-port.h	/^struct is_pointer : public false_type {};$/;"	s	namespace:testing::internal
 is_pointer	core_test/googletest/include/gtest/internal/gtest-port.h	/^struct is_pointer<T*> : public true_type {};$/;"	s	namespace:testing::internal
@@ -8898,9 +8892,10 @@ logger	easylogging/easylogging++.h	/^  inline Logger* logger(void) const {$/;"	f
 loggerId	easylogging/easylogging++.h	/^inline const std::string& PerformanceTrackingData::loggerId(void) const {$/;"	f	class:el::Level::ConfigurationType::LoggingFlag::base::TimestampUnit::base::base::PerformanceTrackingData::PerformanceTrackingData
 loggerRegistrationCallback	easylogging/easylogging++.h	/^  inline T* loggerRegistrationCallback(const std::string& id) {$/;"	f	class:el::Level::ConfigurationType::LoggingFlag::base::TimestampUnit::base::base::RegisteredLoggers
 loggerRegistrationCallback	easylogging/easylogging++.h	/^  static inline T* loggerRegistrationCallback(const std::string& id) {$/;"	f	class:el::Level::ConfigurationType::LoggingFlag::base::TimestampUnit::base::base::PerformanceTrackingData::Loggers
-low	BaseData.h	/^	double open, close, high, low;$/;"	m	class:MinuteData
-low	BaseData.h	/^	double open, high, low, close;$/;"	m	struct:Bar
-low	BaseData.h	/^	double open[N], high[N], low[N], close[N];$/;"	m	struct:Data
+low	base_data.h	/^	double open, close, high, low;$/;"	m	class:MinuteData
+low	base_data.h	/^	double open, high, low, close;$/;"	m	struct:Bar
+low	base_data.h	/^	double open[N], high[N], low[N], close[N];$/;"	m	struct:Data
+lower_limit_price	strategy.h	/^	double lower_limit_price;$/;"	m	class:StrategyBase
 ltrim	easylogging/easylogging++.cc	/^std::string& Str::ltrim(std::string& str) {$/;"	f	class:el::base::utils::Str
 m_addr	easylogging/easylogging++.h	/^    std::string m_addr;$/;"	m	class:el::Level::ConfigurationType::LoggingFlag::base::TimestampUnit::base::base::PerformanceTrackingData::base::debug::StackTrace::StackTraceEntry
 m_argc	easylogging/easylogging++.h	/^  int m_argc;$/;"	m	class:el::Level::ConfigurationType::LoggingFlag::base::TimestampUnit::FormatFlags::utils::CommandLineArgs
@@ -9016,7 +9011,7 @@ m_stream	easylogging/easylogging++.h	/^  base::type::stringstream_t m_stream;$/;
 m_subsecondPrecisionMap	easylogging/easylogging++.h	/^  std::map<Level, base::SubsecondPrecision> m_subsecondPrecisionMap;$/;"	m	class:el::Level::ConfigurationType::LoggingFlag::base::TimestampUnit::base::TypedConfigurations
 m_termSupportsColor	easylogging/easylogging++.h	/^  bool m_termSupportsColor;$/;"	m	class:el::Level::ConfigurationType::LoggingFlag::base::TimestampUnit::base::LogBuilder
 m_threadNames	easylogging/easylogging++.h	/^  std::map<std::string, std::string> m_threadNames;$/;"	m	class:el::Level::ConfigurationType::LoggingFlag::base::TimestampUnit::base::base::Storage
-m_time	BaseData.h	/^	Time m_time;$/;"	m	class:MinuteData
+m_time	base_data.h	/^	Time m_time;$/;"	m	class:MinuteData
 m_timestampUnit	easylogging/easylogging++.h	/^  base::TimestampUnit m_timestampUnit;$/;"	m	class:el::Level::ConfigurationType::LoggingFlag::base::TimestampUnit::base::base::PerformanceTrackingData::base::PerformanceTracker
 m_toFileMap	easylogging/easylogging++.h	/^  std::map<Level, bool> m_toFileMap;$/;"	m	class:el::Level::ConfigurationType::LoggingFlag::base::TimestampUnit::base::TypedConfigurations
 m_toStandardOutputMap	easylogging/easylogging++.h	/^  std::map<Level, bool> m_toStandardOutputMap;$/;"	m	class:el::Level::ConfigurationType::LoggingFlag::base::TimestampUnit::base::TypedConfigurations
@@ -9064,7 +9059,7 @@ message_	core_test/googletest/include/gtest/gtest.h	/^  internal::scoped_ptr< ::
 millisecondsWidth	easylogging/easylogging++.cc	/^const base::MillisecondsWidth& TypedConfigurations::millisecondsWidth(Level level) {$/;"	f	class:el::base::TypedConfigurations
 min	ta-lib/include/ta_abstract.h	/^   TA_Integer  min;$/;"	m	struct:TA_IntegerRange
 min	ta-lib/include/ta_abstract.h	/^   TA_Real     min;$/;"	m	struct:TA_RealRange
-minute	BaseData.h	/^    int hour, minute, second;$/;"	m	class:Time
+minute	base_data.h	/^    int hour, minute, second;$/;"	m	class:Time
 modules	easylogging/easylogging++.h	/^  inline const std::map<std::string, base::type::VerboseLevel>& modules(void) const {$/;"	f	class:el::Level::ConfigurationType::LoggingFlag::base::TimestampUnit::base::base::VRegistry
 msleep	easylogging/easylogging++.cc	/^static void msleep(int ms) {$/;"	f	namespace:el::base::threading
 mutex_	core_test/googletest/include/gtest/gtest.h	/^  mutable internal::Mutex mutex_;$/;"	m	class:testing::UnitTest
@@ -9093,11 +9088,12 @@ nonfatally_failed	core_test/googletest/include/gtest/gtest-test-part.h	/^  bool 
 notified_	core_test/googletest/include/gtest/internal/gtest-port.h	/^  bool notified_;$/;"	m	class:testing::internal::Notification
 numb	easylogging/easylogging++.h	/^  int numb;$/;"	m	struct:el::Level::ConfigurationType::LoggingFlag::base::consts::__anon2
 old_reporter_	core_test/googletest/include/gtest/gtest-spi.h	/^  TestPartResultReporterInterface* old_reporter_;$/;"	m	class:testing::ScopedFakeTestPartResultReporter
-open	BaseData.h	/^	double open, close, high, low;$/;"	m	class:MinuteData
-open	BaseData.h	/^	double open, high, low, close;$/;"	m	struct:Bar
-open	BaseData.h	/^	double open[N], high[N], low[N], close[N];$/;"	m	struct:Data
-openPrice	StrategyData.h	/^    double openPrice;$/;"	m	class:TradeInfo
-open_suggest	BaseData.cpp	/^bool ExpInfo::open_suggest(double price)$/;"	f	class:ExpInfo
+open	base_data.h	/^	double open, close, high, low;$/;"	m	class:MinuteData
+open	base_data.h	/^	double open, high, low, close;$/;"	m	struct:Bar
+open	base_data.h	/^	double open[N], high[N], low[N], close[N];$/;"	m	struct:Data
+openPrice	strategy_data.h	/^    double openPrice;$/;"	m	class:TradeInfo
+open_price	strategy.h	/^	double open_price;$/;"	m	class:StrategyBase
+open_suggest	base_data.cpp	/^bool ExpInfo::open_suggest(double price)$/;"	f	class:ExpInfo
 operator !=	core_test/googletest/include/gtest/internal/gtest-linked_ptr.h	/^  bool operator!=(T* p) const { return value_ != p; }$/;"	f	class:testing::internal::linked_ptr
 operator !=	core_test/googletest/include/gtest/internal/gtest-linked_ptr.h	/^  bool operator!=(linked_ptr<U> const& ptr) const {$/;"	f	class:testing::internal::linked_ptr
 operator !=	core_test/googletest/include/gtest/internal/gtest-linked_ptr.h	/^bool operator!=(T* ptr, const linked_ptr<T>& x) {$/;"	f	namespace:testing::internal
@@ -9287,7 +9283,7 @@ populateAllLoggerIds	easylogging/easylogging++.cc	/^std::vector<std::string>* Lo
 posix	core_test/googletest/include/gtest/internal/gtest-port.h	/^namespace posix {$/;"	n	namespace:testing::internal
 preRollOutCallback	easylogging/easylogging++.h	/^  inline PreRollOutCallback& preRollOutCallback(void) {$/;"	f	class:el::Level::ConfigurationType::LoggingFlag::base::TimestampUnit::base::base::Storage
 precision	ta-lib/include/ta_abstract.h	/^   TA_Integer  precision; \/* nb of digit after the '.' *\/$/;"	m	struct:TA_RealRange
-price	BaseData.h	/^	double price;$/;"	m	class:Tick
+price	base_data.h	/^	double price;$/;"	m	class:Tick
 processDispatch	easylogging/easylogging++.cc	/^void Writer::processDispatch() {$/;"	f	class:el::base::Writer
 proto2	core_test/googletest/include/gtest/internal/gtest-internal.h	/^namespace proto2 { class Message; }$/;"	n
 ptr_	core_test/googletest/include/gtest/internal/gtest-port.h	/^  T* ptr_;$/;"	m	class:testing::internal::scoped_ptr
@@ -9335,7 +9331,7 @@ save_minutes_data	manager.cpp	/^void StrategyControl::save_minutes_data(std::str
 save_minutes_list	tutils.cpp	/^bool MarketUtil::save_minutes_list(const std::vector<MinuteData>& list, std::string path)$/;"	f	class:MarketUtil
 scoped_ptr	core_test/googletest/include/gtest/internal/gtest-port.h	/^  explicit scoped_ptr(T* p = NULL) : ptr_(p) {}$/;"	f	class:testing::internal::scoped_ptr
 scoped_ptr	core_test/googletest/include/gtest/internal/gtest-port.h	/^class scoped_ptr {$/;"	c	namespace:testing::internal
-second	BaseData.h	/^    int hour, minute, second;$/;"	m	class:Time
+second	base_data.h	/^    int hour, minute, second;$/;"	m	class:Time
 sell_flag	strategy.h	/^	bool sell_flag;$/;"	m	class:StrategyBase
 set	core_test/googletest/include/gtest/internal/gtest-port.h	/^  void set(const T& value) { *pointer() = value; }$/;"	f	class:testing::internal::ThreadLocal
 set	core_test/googletest/include/gtest/internal/gtest-port.h	/^  void set(const T& value) { value_ = value; }$/;"	f	class:testing::internal::ThreadLocal
@@ -9378,13 +9374,13 @@ setVModules	easylogging/easylogging++.cc	/^void Loggers::setVModules(const char*
 setValue	easylogging/easylogging++.h	/^  inline void setValue(const std::string& value) {$/;"	f	class:el::Level::ConfigurationType::LoggingFlag::base::TimestampUnit::Configuration
 setValue	easylogging/easylogging++.h	/^  void setValue(Level level, const Conf_T& value, std::map<Level, Conf_T>* confMap, bool includeGlobalLevel = true) {$/;"	f	class:el::Level::ConfigurationType::LoggingFlag::base::TimestampUnit::base::TypedConfigurations
 setVerboseLevel	easylogging/easylogging++.cc	/^void Loggers::setVerboseLevel(base::type::VerboseLevel level) {$/;"	f	class:el::Loggers
-set_bar_data	BaseData.h	/^    void set_bar_data(double _open, double _high, double _low, double _close)$/;"	f	struct:Bar
+set_bar_data	base_data.h	/^    void set_bar_data(double _open, double _high, double _low, double _close)$/;"	f	struct:Bar
 set_elapsed_time	core_test/googletest/include/gtest/gtest.h	/^  void set_elapsed_time(TimeInMillis elapsed) { elapsed_time_ = elapsed; }$/;"	f	class:testing::TestResult
 set_should_run	core_test/googletest/include/gtest/gtest.h	/^  void set_should_run(bool should) { should_run_ = should; }$/;"	f	class:testing::TestCase
-set_status	BaseData.cpp	/^void ExpInfo::set_status(char _status) {$/;"	f	class:ExpInfo
-set_time	BaseData.cpp	/^void Time::set_time(const string& t)$/;"	f	class:Time
-set_time	BaseData.cpp	/^void Time::set_time(int _hour, int _minute, int _second)$/;"	f	class:Time
-set_time	BaseData.cpp	/^void Time::set_time(int _ts)$/;"	f	class:Time
+set_status	base_data.cpp	/^void ExpInfo::set_status(char _status) {$/;"	f	class:ExpInfo
+set_time	base_data.cpp	/^void Time::set_time(const string& t)$/;"	f	class:Time
+set_time	base_data.cpp	/^void Time::set_time(int _hour, int _minute, int _second)$/;"	f	class:Time
+set_time	base_data.cpp	/^void Time::set_time(int _ts)$/;"	f	class:Time
 set_up_tc_	core_test/googletest/include/gtest/gtest.h	/^  Test::SetUpTestCaseFunc set_up_tc_;$/;"	m	class:testing::TestCase
 severity_	core_test/googletest/include/gtest/internal/gtest-port.h	/^  const GTestLogSeverity severity_;$/;"	m	class:testing::internal::GTestLog
 should_run	core_test/googletest/include/gtest/gtest.h	/^  bool should_run() const { return should_run_; }$/;"	f	class:testing::TestCase
@@ -9399,7 +9395,7 @@ size	core_test/googletest/include/gtest/internal/gtest-internal.h	/^  size_t siz
 size	easylogging/easylogging++.cc	/^std::size_t CommandLineArgs::size(void) const {$/;"	f	class:el::base::utils::CommandLineArgs
 size	ta-lib/include/ta_common.h	/^    unsigned int size;    \/* Number of string. *\/$/;"	m	struct:TA_StringTable
 size_	core_test/googletest/include/gtest/internal/gtest-internal.h	/^  size_t size_;$/;"	m	class:testing::internal::NativeArray
-split	BaseData.cpp	/^void ExpInfo::split(const string& exp_str, vector<string>& ret)$/;"	f	class:ExpInfo
+split	base_data.cpp	/^void ExpInfo::split(const string& exp_str, vector<string>& ret)$/;"	f	class:ExpInfo
 split	tutils.cpp	/^void MarketUtil::split(const string& str, const string& ch_set, vector<string>& result)$/;"	f	class:MarketUtil
 split_str	bfunc.cpp	/^void split_str(const string& str, const string& ch_set, vector<string>& result) {$/;"	f	namespace:bfunc
 ss_	core_test/googletest/include/gtest/gtest-message.h	/^  const internal::scoped_ptr< ::std::stringstream> ss_;$/;"	m	class:testing::Message
@@ -9407,15 +9403,16 @@ start	easylogging/easylogging++.cc	/^void AsyncDispatchWorker::start(void) {$/;"
 startTime	easylogging/easylogging++.h	/^inline const struct timeval* PerformanceTrackingData::startTime() const {$/;"	f	class:el::Level::ConfigurationType::LoggingFlag::base::TimestampUnit::base::base::PerformanceTrackingData::PerformanceTrackingData
 startsWith	easylogging/easylogging++.cc	/^bool Str::startsWith(const std::string& str, const std::string& start) {$/;"	f	class:el::base::utils::Str
 state_	core_test/googletest/include/gtest/internal/gtest-internal.h	/^  UInt32 state_;$/;"	m	class:testing::internal::Random
-status	BaseData.h	/^	char status;$/;"	m	class:ExpInfo
+status	base_data.h	/^	char status;$/;"	m	class:ExpInfo
 std	core_test/googletest/include/gtest/internal/gtest-port.h	/^namespace std {$/;"	n
 std	core_test/googletest/include/gtest/internal/gtest-tuple.h	/^namespace std {$/;"	n
 step_	core_test/googletest/include/gtest/internal/gtest-param-util.h	/^    const IncrementT step_;$/;"	m	class:testing::internal::RangeGenerator::Iterator
 step_	core_test/googletest/include/gtest/internal/gtest-param-util.h	/^  const IncrementT step_;$/;"	m	class:testing::internal::RangeGenerator
-stopLoss	StrategyData.h	/^    double stopLoss;$/;"	m	class:TradeInfo
-stop_loss	BaseData.h	/^	double stop_loss;$/;"	m	class:ExpInfo
-stop_profit	BaseData.h	/^	double stop_profit;$/;"	m	class:ExpInfo
+stopLoss	strategy_data.h	/^    double stopLoss;$/;"	m	class:TradeInfo
+stop_loss	base_data.h	/^	double stop_loss;$/;"	m	class:ExpInfo
+stop_profit	base_data.h	/^	double stop_profit;$/;"	m	class:ExpInfo
 storage	easylogging/easylogging++.h	/^  static inline base::type::StoragePointer storage() {$/;"	f	class:el::Level::ConfigurationType::LoggingFlag::base::TimestampUnit::base::base::PerformanceTrackingData::Helpers
+strategy	manager.h	/^	vector<StrategyBase*> strategy;$/;"	m	class:StrategyPool
 stream	easylogging/easylogging++.h	/^  inline base::type::stringstream_t& stream(void) {$/;"	f	class:el::Level::ConfigurationType::LoggingFlag::base::TimestampUnit::base::Logger
 string	core_test/googletest/include/gtest/internal/gtest-filepath.h	/^  const std::string& string() const { return pathname_; }$/;"	f	class:testing::internal::FilePath
 string	core_test/googletest/include/gtest/internal/gtest-port.h	/^typedef ::std::string string;$/;"	t	namespace:testing::internal
@@ -9439,7 +9436,7 @@ suggested_start	ta-lib/include/ta_abstract.h	/^   TA_Real     suggested_start;$/
 summary	core_test/googletest/include/gtest/gtest-test-part.h	/^  const char* summary() const { return summary_.c_str(); }$/;"	f	class:testing::TestPartResult
 summary_	core_test/googletest/include/gtest/gtest-test-part.h	/^  std::string summary_;  \/\/ The test failure summary.$/;"	m	class:testing::TestPartResult
 swap	core_test/googletest/include/gtest/internal/gtest-port.h	/^  friend void swap(scoped_ptr& a, scoped_ptr& b) {$/;"	f	class:testing::internal::scoped_ptr
-t_time	BaseData.h	/^	Time t_time;$/;"	m	class:Tick
+t_time	base_data.h	/^	Time t_time;$/;"	m	class:Tick
 tear_down_tc_	core_test/googletest/include/gtest/gtest.h	/^  Test::TearDownTestCaseFunc tear_down_tc_;$/;"	m	class:testing::TestCase
 termSupportsColor	easylogging/easylogging++.cc	/^bool OS::termSupportsColor(void) {$/;"	f	class:el::base::utils::OS
 test_	core_test/googletest/include/gtest/internal/gtest-death-test-internal.h	/^    DeathTest* const test_;$/;"	m	class:testing::internal::DeathTest::ReturnSentinel
@@ -9483,8 +9480,8 @@ thread_	core_test/googletest/include/gtest/internal/gtest-port.h	/^  pthread_t t
 thread_can_start_	core_test/googletest/include/gtest/internal/gtest-port.h	/^  Notification* const thread_can_start_;$/;"	m	class:testing::internal::ThreadWithParam
 threading	easylogging/easylogging++.cc	/^namespace threading {$/;"	n	namespace:el::base	file:
 threading	easylogging/easylogging++.h	/^namespace threading {$/;"	n	class:el::Level::ConfigurationType::LoggingFlag::base::TimestampUnit::FormatFlags
-time	BaseData.h	/^	string time;$/;"	m	class:MinuteData
-time	BaseData.h	/^	string time;$/;"	m	class:Tick
+time	base_data.h	/^	string time;$/;"	m	class:MinuteData
+time	base_data.h	/^	string time;$/;"	m	class:Tick
 timevalToString	easylogging/easylogging++.cc	/^std::string DateTime::timevalToString(struct timeval tval, const char* format,$/;"	f	class:el::base::utils::DateTime
 toFile	easylogging/easylogging++.cc	/^bool TypedConfigurations::toFile(Level level) {$/;"	f	class:el::base::TypedConfigurations
 toStandardOutput	easylogging/easylogging++.cc	/^bool TypedConfigurations::toStandardOutput(Level level) {$/;"	f	class:el::base::TypedConfigurations
@@ -9492,7 +9489,7 @@ toUpper	easylogging/easylogging++.cc	/^std::string& Str::toUpper(std::string& st
 tr1	core_test/googletest/include/gtest/internal/gtest-port.h	/^namespace tr1 {$/;"	n	namespace:std
 tr1	core_test/googletest/include/gtest/internal/gtest-tuple.h	/^namespace tr1 {$/;"	n	namespace:std
 tradeInited	trade.h	/^    bool tradeInited;$/;"	m	class:CTraderSpi
-tradeState	StrategyData.h	/^    char tradeState;$/;"	m	class:TradeInfo
+tradeState	strategy_data.h	/^    char tradeState;$/;"	m	class:TradeInfo
 trade_cnt_	tutils.cpp	/^int MarketUtil::trade_cnt_ = 0;$/;"	m	class:MarketUtil	file:
 trade_cnt_	tutils.h	/^	static int trade_cnt_;$/;"	m	class:MarketUtil
 trade_h	trade.h	2;"	d
@@ -9696,11 +9693,12 @@ unsafeSetGlobally	easylogging/easylogging++.cc	/^void Configurations::unsafeSetG
 unsafeSetIfNotExist	easylogging/easylogging++.cc	/^void Configurations::unsafeSetIfNotExist(Level level, ConfigurationType configurationType, const std::string& value) {$/;"	f	class:el::Configurations
 unsafeValidateFileRolling	easylogging/easylogging++.cc	/^bool TypedConfigurations::unsafeValidateFileRolling(Level level, const PreRollOutCallback& PreRollOutCallback) {$/;"	f	class:el::base::TypedConfigurations
 unsetPreRollOutCallback	easylogging/easylogging++.h	/^  inline void unsetPreRollOutCallback(void) {$/;"	f	class:el::Level::ConfigurationType::LoggingFlag::base::TimestampUnit::base::base::Storage
-update	BaseData.cpp	/^void Data::update(double _open, double _high, double _low, double _close)$/;"	f	class:Data
-update	BaseData.cpp	/^void Data::update(double _price)$/;"	f	class:Data
+update	base_data.cpp	/^void Data::update(double _open, double _high, double _low, double _close)$/;"	f	class:Data
+update	base_data.cpp	/^void Data::update(double _price)$/;"	f	class:Data
 updateDateFormat	easylogging/easylogging++.cc	/^void LogFormat::updateDateFormat(std::size_t index, base::type::string_t& currFormat) {$/;"	f	class:el::base::LogFormat
 updateFormatSpec	easylogging/easylogging++.cc	/^void LogFormat::updateFormatSpec(void) {$/;"	f	class:el::base::LogFormat
-update_close_sum	BaseData.cpp	/^void Data::update_close_sum()$/;"	f	class:Data
+update_close_sum	base_data.cpp	/^void Data::update_close_sum()$/;"	f	class:Data
+upper_limit_price	strategy.h	/^	double upper_limit_price;$/;"	m	class:StrategyBase
 userFormat	easylogging/easylogging++.h	/^  inline const base::type::string_t& userFormat(void) const {$/;"	f	class:el::Level::ConfigurationType::LoggingFlag::base::TimestampUnit::base::LogFormat
 utils	easylogging/easylogging++.cc	/^namespace utils {$/;"	n	namespace:el::base	file:
 utils	easylogging/easylogging++.h	/^namespace utils {$/;"	n	class:el::Level::ConfigurationType::LoggingFlag::base::TimestampUnit::FormatFlags
@@ -11034,8 +11032,8 @@ verbose	easylogging/easylogging++.h	/^inline void Logger::verbose(int, const cha
 verboseLevel	easylogging/easylogging++.cc	/^base::type::VerboseLevel Loggers::verboseLevel(void) {$/;"	f	class:el::Loggers
 verboseLevel	easylogging/easylogging++.h	/^  inline base::type::VerboseLevel verboseLevel(void) const {$/;"	f	class:el::Level::ConfigurationType::LoggingFlag::base::TimestampUnit::base::LogMessage
 version	easylogging/easylogging++.cc	/^const std::string VersionInfo::version(void) {$/;"	f	class:el::VersionInfo
-volume	StrategyData.h	/^    int volume;$/;"	m	class:TradeInfo
 volume	strategy.h	/^	int volume;$/;"	m	class:StrategyBase
+volume	strategy_data.h	/^    int volume;$/;"	m	class:TradeInfo
 wcharPtrToCharPtr	easylogging/easylogging++.cc	/^char* Str::wcharPtrToCharPtr(const wchar_t* line) {$/;"	f	class:el::base::utils::Str
 wildCardMatch	easylogging/easylogging++.cc	/^bool Str::wildCardMatch(const char* str, const char* pattern) {$/;"	f	class:el::base::utils::Str
 workarounds	easylogging/easylogging++.h	/^namespace workarounds {$/;"	n	namespace:el::Level::ConfigurationType::LoggingFlag::base::TimestampUnit::base::base

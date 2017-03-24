@@ -52,7 +52,7 @@ void StrategyControl::CmdStart() {
 	
     string command;
     StrategyBase *base = new M_Strategy(this->marketSpi, this->traderSpi);
-    base->instrument = "m1705";
+    base->instrument = "";
     vector<string> cmd;
 
 	thread t([&]() {
@@ -135,38 +135,6 @@ void StrategyControl::CmdStart() {
 			// set sell_flag true
 			if(cmd[2] == "true")  base->sell_flag = true;
 			else if(cmd[2] == "false")  base->sell_flag = false;
-		}
-		else if(cmd.size() == 2 && cmd[0] == "buy_open") {
-			// buy_open 3000
-			double price = std::stod(cmd[1].c_str());
-			this->traderSpi->GiveOrder(base->instrument, price, base->volume, "buy", "open");
-		}
-		else if(cmd.size() == 2 && cmd[0] == "sell_open") {
-			// sell_open 2900
-			double price = std::stod(cmd[1].c_str());
-			this->traderSpi->GiveOrder(base->instrument, price, base->volume, "sell", "open");
-		}
-		else if(cmd.size() == 2 && cmd[0] == "buy_close_today") {
-			// buy_close_today 3010
-			double price = std::stod(cmd[1].c_str());
-			string exchange = this->traderSpi->GetExchange(base->instrument);
-			if(exchange == "SHFE") {
-				this->traderSpi->GiveOrder(base->instrument, price, base->volume, "buy", "close_today");
-			}
-			else {
-				this->traderSpi->GiveOrder(base->instrument, price, base->volume, "buy", "close");
-			}
-		}
-		else if(cmd.size() == 2 && cmd[0] == "sell_close_today") {
-			// sell_close_today 2875
-			double price = std::stod(cmd[1].c_str());
-			string exchange = this->traderSpi->GetExchange(base->instrument);
-			if(exchange == "SHFE") {
-				this->traderSpi->GiveOrder(base->instrument, price, base->volume, "sell", "close_today");
-			}
-			else {
-				this->traderSpi->GiveOrder(base->instrument, price, base->volume, "sell", "close");
-			}
 		}
     }
 }

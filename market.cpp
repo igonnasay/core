@@ -344,7 +344,7 @@ Data& CMdSpi::get_data_table(const string& instrument)
 
 double CMdSpi::GetAskPrice1(const string& instrument) {
 	if(marketMap.find(instrument) == marketMap.end()) {
-		LOG(FATAL) << "You didn't subscribe this instrument";
+		LOG(ERROR) << "You didn't subscribe this instrument";
 		return 0;
 	} else {
 		CThostFtdcDepthMarketDataField* p = marketMap[instrument];
@@ -353,7 +353,7 @@ double CMdSpi::GetAskPrice1(const string& instrument) {
 }
 double CMdSpi::GetBidPrice1(const string& instrument) {
 	if(marketMap.find(instrument) == marketMap.end()) {
-		LOG(FATAL) << "You didn't subscribe this instrument";
+		LOG(ERROR) << "You didn't subscribe this instrument";
 		return 0;
 	} else {
 		CThostFtdcDepthMarketDataField* p = marketMap[instrument];
@@ -363,7 +363,7 @@ double CMdSpi::GetBidPrice1(const string& instrument) {
 
 double CMdSpi::GetUpperLimitPrice(const string& instrument) {
 	if(marketMap.find(instrument) == marketMap.end()) {
-		LOG(FATAL) << "You didn't subscribe this instrument";
+		LOG(ERROR) << "You didn't subscribe this instrument";
 		return 0;
 	} else {
 		CThostFtdcDepthMarketDataField* p = marketMap[instrument];
@@ -372,7 +372,7 @@ double CMdSpi::GetUpperLimitPrice(const string& instrument) {
 }
 double CMdSpi::GetLowerLimitPrice(const string& instrument) {
 	if(marketMap.find(instrument) == marketMap.end()) {
-		LOG(FATAL) << "You didn't subscribe this instrument";
+		LOG(ERROR) << "You didn't subscribe this instrument";
 		return 0;
 	} else {
 		CThostFtdcDepthMarketDataField* p = marketMap[instrument];

@@ -20,8 +20,8 @@ char M_Strategy::Signal(double ma, double tail_max, double tail_min, double curr
 	if((current_price < ma) && (current_price < tail_min)) return 's';
 }
 char M_Strategy::Signal(double ma10, double ma20, double ma30, double tail_max, double tail_min, double now) {
-	if((now > this->open_price) && (now > ma10) && (now > ma20) && (now > ma30) && (now > tail_max))  return 'b';
-	if((now < this->open_price) && (now < ma10) && (now < ma20) && (now < ma30) && (now < tail_min))  return 's';
+	if((now > ma10) && (now > ma20) && (now > ma30) && (now > tail_max))  return 'b';
+	if((now < ma10) && (now < ma20) && (now < ma30) && (now < tail_min))  return 's';
 }
 
 void M_Strategy::StrategyMethod() {
