@@ -12,7 +12,7 @@
 using namespace std;
 
 char const* greet() {
-	return "Hello, World.\n"
+	return "Hello, World.\n";
 }
 
 TEST(TestHello, Hello) {
