@@ -20,18 +20,18 @@ using namespace std;
 class MarketUtil
 {
 public:
-    const static int Trade_Time_Begin = 9 * 3600;
-    const static int Trade_Time_End = 23 * 3600 + 30 * 60;
+  const static int Trade_Time_Begin = 9 * 3600;
+  const static int Trade_Time_End = 23 * 3600 + 30 * 60;
 	static int IntToTs(int t);
-    static bool IsValidTradeTime(const string& instrument, int ts);
-    static bool is_same_minute(int ts1, int ts2);
-    static bool is_same_second(int ts1, int ts2);
-    static bool is_same_5minute(int ts1, int ts2);
+  static bool IsValidTradeTime(const string& instrument, int ts);
+  static bool is_same_minute(int ts1, int ts2);
+  static bool is_same_second(int ts1, int ts2);
+  static bool is_same_5minute(int ts1, int ts2);
 
-    static bool save_minutes_list(const vector<MinuteData>& list, string path);
+  static bool save_minutes_list(const vector<MinuteData>& list, string path);
 
-    static string strip(const string& str);
-    static void split(const string& str, const string& ch_set, vector<string>& result);
+  static string strip(const string& str);
+  static void split(const string& str, const string& ch_set, vector<string>& result);
 
 	static int GetGlobalTradeCnt();
 	static int AddGlobalTradeCnt();

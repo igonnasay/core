@@ -256,11 +256,11 @@ double CMdSpi::GetMinutesRangeMin(const string& instrument, int start, int last)
 }
 
 double CMdSpi::GetMinutesTailRangeMax(const std::string& instrument, int tailcount) {
-    vector<MinuteData> &list = this->m_map[instrument];
-    assert(tailcount < list.size());
-    int start = list.size() - tailcount - 1;
-    int end = start + tailcount - 1;
-    double ans = list[start].GetHighPrice();
+  vector<MinuteData> &list = this->m_map[instrument];
+  assert(tailcount < list.size());
+  int start = list.size() - tailcount - 1;
+  int end = start + tailcount - 1;
+  double ans = list[start].GetHighPrice();
 	for(int i = start + 1; i <= end; i++)
 		ans = max(ans, list[i].GetHighPrice());
 	return  ans;
@@ -268,7 +268,7 @@ double CMdSpi::GetMinutesTailRangeMax(const std::string& instrument, int tailcou
 
 double CMdSpi::GetMinutesTailRangeMin(const std::string& instrument, int tailcount) {
 	vector<MinuteData> &list = this->m_map[instrument];
-    assert(tailcount < list.size());
+  assert(tailcount < list.size());
 	int start = list.size() - tailcount - 1;
 	int end = start + tailcount - 1;
 	double ans = list[start].GetLowPrice();
@@ -280,22 +280,22 @@ double CMdSpi::GetMinutesTailRangeMin(const std::string& instrument, int tailcou
 MinuteData CMdSpi::GetMinuteDataAtIndex(const string instrument, int index)
 {
 	vector<MinuteData> &list = this->m_map[instrument];
-    assert(index < list.size());
+  assert(index < list.size());
 	return  list[index];
 }
 
 void CMdSpi::save_all() {
-    FILE* file = fopen("./data_all.mdt", "wb");
-    for(auto it = this->m_map.begin(); it != this->m_map.end(); it++)
-    {
+	FILE* file = fopen("./data_all.mdt", "wb");
+	for(auto it = this->m_map.begin(); it != this->m_map.end(); it++)
+	{
 		auto& vec = it->second;
 		for(const auto& e : vec)
 		{
 			fprintf(file, "%s %s %.4f %.4f %.4f %.4f\n",
 					e.GetInstrument().c_str(), e.GetTime().c_str(), e.open, e.high, e.low, e.close);
 		}
-    }
-    fclose(file);
+	}
+	fclose(file);
 }
 
 void CMdSpi::load_all() {
@@ -317,19 +317,19 @@ void CMdSpi::show_bar_data(const string& instrument) {
 }
 
 void CMdSpi::ShowMinutesData(const std::string instrument) {
-    if(this->m_map.find(instrument) == this->m_map.end())
-		return;
-    vector<MinuteData> &list = this->m_map[instrument];
-    int size = list.size();
+  if(this->m_map.find(instrument) == this->m_map.end())
+	return;
+  vector<MinuteData> &list = this->m_map[instrument];
+  int size = list.size();
 	if(size == 0) {
 		cout << "Empty minutes list..." << endl;
 		return;
 	}
-    else {
-        for (int i = 0; i < size; i++) {
-            cout << list[i].ToString() << " " << list[i].GetTs() << endl;
-        }
+  else {
+    for (int i = 0; i < size; i++) {
+      cout << list[i].ToString() << " " << list[i].GetTs() << endl;
     }
+  }
 }
 
 Data& CMdSpi::get_data_table(const string& instrument)

@@ -28,11 +28,10 @@ public:
 	
 	static std::string GetInput(std::string prompt);
 
-
 	CMdSpi(CThostFtdcMdApi* pMarketUserApi);
 	///错误应答
 	virtual void OnRspError(CThostFtdcRspInfoField *pRspInfo,
-		int nRequestID, bool bIsLast);
+	int nRequestID, bool bIsLast);
 
 	///当客户端与交易后台通信连接断开时，该方法被调用。当发生这个情况后，API会自动重新连接，客户端可不做处理。
 	///@param nReason 错误原因
@@ -73,20 +72,20 @@ public:
 	//服务接口API
 
 	void DebugInfo();
-    bool IsMarketInited();
-    int get_ts();
+  bool IsMarketInited();
+  int get_ts();
 	std::string get_trading_day();
 
 	// API for MinuteData
-    std::vector<MinuteData>& GetMinutesList(const std::string& instrument);
+  std::vector<MinuteData>& GetMinutesList(const std::string& instrument);
 	int GetMinutesListSize(const std::string instrument);
 	double GetMinutesRangeMax(const std::string& instrument, int start, int last);
 	double GetMinutesRangeMin(const std::string& instrument, int start, int last);
-    double GetMinutesTailRangeMax(const std::string& instrument, int tailcount);
+  double GetMinutesTailRangeMax(const std::string& instrument, int tailcount);
 	double GetMinutesTailRangeMin(const std::string& instrument, int tailcount);
 	MinuteData GetMinuteDataAtIndex(const std::string instrument, int index);
-    void ShowMinutesData(const std::string instrument);
-    void save_all();
+  void ShowMinutesData(const std::string instrument);
+  void save_all();
 	void load_all();
 	void show_bar_data(const string& instrument);
 
@@ -104,7 +103,7 @@ public:
 	map<string, Time> last_time;
 
 private:
-    bool marketInited;
+  bool marketInited;
 	int marketIRequestID;
 	Time current_time_;
 	CThostFtdcMdApi* pMarketUserApi;

@@ -51,15 +51,15 @@ struct BarList
 
 struct Data {
 	const static int N = 2000;
-    Data();
+  Data();
 	string instrument;
 	int cur;
 	double open[N], high[N], low[N], close[N];
 	double close_sum[N];
 	void clear();
-    void add(double _open, double _high, double _low, double _close);
+  void add(double _open, double _high, double _low, double _close);
 	void update(double _open, double _high, double _low, double _close);
-    void update(double _price);
+  void update(double _price);
 	void update_close_sum();
 };
 
@@ -84,7 +84,7 @@ private:
 class MinuteData
 {
 public:
-    MinuteData(const string& _instrument, double _open, double _high, double _low, double _close, const Time& _t);
+  MinuteData(const string& _instrument, double _open, double _high, double _low, double _close, const Time& _t);
 	MinuteData(Tick &tick);
 	void Update(Tick &tick);
 	double GetOpenPrice();

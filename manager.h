@@ -26,16 +26,16 @@ private:
 class StrategyControl
 {
 public:
-    StrategyControl(CMdSpi **marketSpi, CTraderSpi **traderSpi);
-    void save_minutes_data(std::string instrument, std::string path);
-    void CmdStart();
+  StrategyControl(CMdSpi **marketSpi, CTraderSpi **traderSpi);
+  void save_minutes_data(std::string instrument, std::string path);
+  void CmdStart();
 
-    map<string, Data> data_table;
+  map<string, Data> data_table;
 private:
-    void excute_command(const string& command);
+  void excute_command(const string& command);
 
-    CMdSpi *marketSpi;
-    CTraderSpi *traderSpi;
+  CMdSpi *marketSpi;
+  CTraderSpi *traderSpi;
 };
 
 #endif //CORE_MANAGER_H

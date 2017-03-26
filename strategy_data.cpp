@@ -6,29 +6,29 @@
 #include <iostream>
 
 string TradeInfo::GetInstrument() {
-    string ret(this->instrument);
-    return  ret;
+  string ret(this->instrument);
+  return  ret;
 }
 char TradeInfo::GetDirection() {
-    return  this->direction;
+  return  this->direction;
 }
 int TradeInfo::GetVolume() {
-    return  this->volume;
+  return  this->volume;
 }
 double TradeInfo::GetOpenPrice() {
-    return  this->openPrice;
+  return  this->openPrice;
 }
 double TradeInfo::GetStopLoss() {
-    return  this->stopLoss;
+  return  this->stopLoss;
 }
 char TradeInfo::GetTradeState() {
-    return  this->tradeState;
+  return  this->tradeState;
 }
 void TradeInfo::SetTradeState(char state) {
-    if(state != TradeInfo::Started && state != TradeInfo::Waiting && state != TradeInfo::Finished) {
-        cout << "Error Occured" << endl;
-    }
-    else this->tradeState = state;
+  if(state != TradeInfo::Started && state != TradeInfo::Waiting && state != TradeInfo::Finished) {
+    cout << "Error Occured" << endl;
+  }
+  else this->tradeState = state;
 }
 
 

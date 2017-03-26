@@ -13,7 +13,7 @@ Time::Time() {}
 
 Time::Time(const string& t)
 {
-    this->set_time(t);
+  this->set_time(t);
 }
 Time::Time(const int ts)
 {
@@ -54,7 +54,7 @@ string Time::ToString() const
 }
 
 Data::Data() {
-    this->clear();
+  this->clear();
 }
 
 void Data::clear() {
@@ -75,7 +75,7 @@ void Data::add(double _open, double _high, double _low, double _close)
 	close[cur] = _close;
 	++cur;
 	if(cur >= Data::N)
-		LOG(FATAL) << this->instrument << " Data's size has exceeded it's capacity.";
+	LOG(FATAL) << this->instrument << " Data's size has exceeded it's capacity.";
 	this->update_close_sum();
 }
 
@@ -92,7 +92,7 @@ void Data::update(double _open, double _high, double _low, double _close)
 
 void Data::update(double _price)
 {
-    int index = cur - 1;
+  int index = cur - 1;
 	if(index < 0 )  LOG(FATAL) << "index out of bound.";
 	high[index] = max(high[index], _price);
 	low[index] = min(low[index], _price);
@@ -165,7 +165,7 @@ MinuteData::MinuteData(Tick &tick)
 string MinuteData::ToString() {
 	char str[205];
 	sprintf(str, "%s %s %.2f %.2f %.2f %.2f", this->instrument.c_str(), this->time.c_str(),
-		this->open, this->high, this->low, this->close);
+	this->open, this->high, this->low, this->close);
 	return string(str);
 }
 
@@ -274,8 +274,8 @@ void ExpInfo::set_status(char _status) {
 
 bool ExpInfo::is_exp_str(const string& exp_str)
 {
-    boost::regex pattern("^exp:\\d+:\\S+:\\S+:\\S+:\\S+:\\S+:\\S+$");
-    boost::smatch ret;
+  boost::regex pattern("^exp:\\d+:\\S+:\\S+:\\S+:\\S+:\\S+:\\S+$");
+  boost::smatch ret;
 	if(boost::regex_match(exp_str, ret, pattern))
 		return  true;
 	else {
@@ -285,7 +285,7 @@ bool ExpInfo::is_exp_str(const string& exp_str)
 
 void ExpInfo::split(const string& exp_str, vector<string>& ret)
 {
-    boost::algorithm::split(ret, exp_str, boost::algorithm::is_any_of(":"));
+  boost::algorithm::split(ret, exp_str, boost::algorithm::is_any_of(":"));
 }
 
 

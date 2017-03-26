@@ -107,7 +107,7 @@ public:
 	void SetPassword(const std::string &passwd);
 	void DebugInfo();
 	bool IsTradeInited();
-    int ReqPositionVolume(const std::string instrument);
+  int ReqPositionVolume(const std::string instrument);
 	string GetExchange(const string& instrument);
 
 	// Order API designed by liqiaz
@@ -131,7 +131,7 @@ private:
 
 	void ShowInputOrderField(CThostFtdcInputOrderField &order);
 
-    bool tradeInited;
+  bool tradeInited;
 	CThostFtdcTraderApi* pTraderUserApi;
 	CThostFtdcOrderField *myOrder;
 	char Trade_FRONT_ADDR[105];
