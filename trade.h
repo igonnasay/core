@@ -71,7 +71,7 @@ public:
 	///请求查询资金账户
 	void ReqQryTradingAccount();
 	///请求查询投资者持仓
-	void ReqQryInvestorPosition();
+	void ReqQryInvestorPosition(const string& instrument_id);
 	///报单录入请求
 	void ReqOrderInsert(TThostFtdcInstrumentIDType instrumentID, 
 		TThostFtdcDirectionType direction,

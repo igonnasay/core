@@ -253,14 +253,14 @@ void CTraderSpi::OnRspQryTradingAccount(CThostFtdcTradingAccountField *pTradingA
 	cerr << "--->>> " << "OnRspQryTradingAccount" << endl;
 	if (bIsLast && !IsErrorRspInfo(pRspInfo))
 	{
-		///请求查询投资者持仓
-		ReqQryInvestorPosition();
+		//
 	}
 }
 
-void CTraderSpi::ReqQryInvestorPosition()
+void CTraderSpi::ReqQryInvestorPosition(const string& instrument_id)
 {
-	TThostFtdcInstrumentIDType INSTRUMENT_ID = "m1701";
+	TThostFtdcInstrumentIDType INSTRUMENT_ID;
+	strcpy(INSTRUMENT_ID, instrument_id.c_str());
 	CThostFtdcQryInvestorPositionField req;
 	memset(&req, 0, sizeof(req));
 	strcpy(req.BrokerID, BROKER_ID);
@@ -284,11 +284,8 @@ void CTraderSpi::ReqQryInvestorPosition()
 void CTraderSpi::OnRspQryInvestorPosition(CThostFtdcInvestorPositionField *pInvestorPosition, CThostFtdcRspInfoField *pRspInfo, int nRequestID, bool bIsLast)
 {
 	cerr << "--->>> " << "OnRspQryInvestorPosition" << endl;
-	if (bIsLast && !IsErrorRspInfo(pRspInfo))
-	{
-		///报单录入请求
-		cout<<pInvestorPosition->InstrumentID<<pInvestorPosition->Position<<pInvestorPosition->OpenVolume<<pInvestorPosition->PositionProfit<<endl;
-	}
+	printf("Instrument_id : %s   Profit : %.4f\n", 
+			pInvestorPosition->InstrumentID, pInvestorPosition->PositionProfit);
 }
 
 void CTraderSpi::ReqOrderInsert(TThostFtdcInstrumentIDType instrumentID, TThostFtdcDirectionType direction, 
